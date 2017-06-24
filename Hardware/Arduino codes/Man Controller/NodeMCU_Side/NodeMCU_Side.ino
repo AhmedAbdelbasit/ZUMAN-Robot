@@ -1,3 +1,11 @@
+////////////////////////////////
+// reference:
+// Find last versions at:
+// https://github.com/agnunez/espros.git
+//
+// MIT License 2017 Agustin Nunez
+/////////////////////////////////
+
 #include <ESP8266WiFi.h>
 #include <ros.h>
 #include <zuman_msgs/Speeds.h>
