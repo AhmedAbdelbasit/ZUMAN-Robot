@@ -1,5 +1,0 @@
-<zuman_ws>
-|
-|--	<zuman_msgs>
-	|--	Speeds.msg
-	|--	Odometry.msg
