@@ -12,6 +12,7 @@ add_message_files(
    Qlandmark.msg
    Speeds.msg
    Odometry.msg
+   Instruction.msg
 )
 
 generate_messages(
