@@ -1,0 +1,4 @@
+float32 CompassAngle
+float32 MPUAngle
+float32 UltrasonicLeft
+float32 UltrasonicRight

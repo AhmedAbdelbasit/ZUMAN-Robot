@@ -13,6 +13,8 @@ add_message_files(
    Speeds.msg
    Odometry.msg
    Instruction.msg
+   Obstacle_Alert.msg
+   Zuman_Sensors.msg
 )
 
 generate_messages(
