@@ -19,7 +19,7 @@
 
 // Odometry
 #define Robot_Width 42
-#define Wheel_Diameter 13
+#define Wheel_Radius 6.5
 
 // Calibrated Speeds
 #define Cal_Left_Speed 130
@@ -48,7 +48,7 @@ char DirRight = 'F';
 // Cycle
 long Last_Tic;
 long Time_Now;
-int Sample_Time = 100;
+int Sample_Time = 500;
 char Dir='S';
 
 void inst_CB(const zuman_msgs::Instruction& msg) {
