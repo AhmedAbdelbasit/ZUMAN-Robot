@@ -10,7 +10,6 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
    FILES
    Qlandmark.msg
-   Speeds.msg
    Odometry.msg
    Instruction.msg
    Obstacle_Alert.msg
