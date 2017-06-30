@@ -31,6 +31,7 @@ public class VideoStream {
     private boolean cameraActive = false;
 
     private static int cameraId = 0;
+    private static String videoIp = "http://192.168.1.107:8080/video?dummy=param.mjpg";
 
     private VideoCapture camera = new VideoCapture();
 
@@ -38,7 +39,7 @@ public class VideoStream {
     public void startCamera(ActionEvent event) {
 
         if (!this.cameraActive) {
-            this.camera.open(cameraId);
+            this.camera.open(videoIp);
 
             if (this.camera.isOpened()) {
                 this.cameraActive = true;

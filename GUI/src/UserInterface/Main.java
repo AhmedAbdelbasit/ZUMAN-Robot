@@ -14,7 +14,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("video_stream.fxml"));
-        Scene scene = new Scene(root, 1000, 1000);
+        Scene scene = new Scene(root, 600, 600);
         primaryStage.setTitle("ZUMAN");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -30,6 +30,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+        // System.load();               // Put the absolute path of "libopencv_java320.so" inside "lib" folder between brackets
         launch(args);
     }
 }
