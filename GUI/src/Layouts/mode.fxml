@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.Mode">
+   <left>
+      <Button fx:id="manned_btn" mnemonicParsing="false" onAction="#mode" prefHeight="50.0" prefWidth="120.0" text="Manned" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="200.0" />
+         </BorderPane.margin>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </left>
+   <right>
+      <Button fx:id="auto_btn" mnemonicParsing="false" onAction="#mode" prefHeight="50.0" prefWidth="120.0" text="Autonumous" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="200.0" />
+         </BorderPane.margin>
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </right>
+</BorderPane>

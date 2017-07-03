@@ -1,5 +1,6 @@
 #include "iostream"
 #include "stdio.h"
+#include "string"
 
 #include "ros/ros.h"
 
@@ -10,6 +11,7 @@
 #include "opencv2/objdetect/objdetect.hpp"
 
 #include "cv_bridge/cv_bridge.h"
+#include "zuman_msgs/Instruction.h"
 #include "image_transport/image_transport.h"
 
 using namespace cv;
@@ -21,24 +23,61 @@ using namespace sensor_msgs;
 Mat frame;
 
 void imageCallback(const sensor_msgs::ImageConstPtr& msg);
+string recognizeLandmark();
 
 class Landmark {
 
 public:
     Landmark();
-    void recognizeLandmark(Mat frame);
-    void locateLandmark();
+    // char * recognizeLandmark(Mat frame);
+    void locateLandmark(Publisher publisher, zuman_msgs::Instruction instruction);
 
 private:
     tesseract::TessBaseAPI *tesseract;
     pair<int, Mat> detectLandmark(Mat frame);
+    char * recognizeLandmark();
 };
+
+int main(int argc, char* argv[]) {
+
+    init(argc, argv, "landmark");
+	cout <<  "start" <<  endl;
+    NodeHandle nh;
+    Landmark* landmark = new Landmark();
+    VideoCapture camera(0);
+	if (camera.isOpened()) {
+		// cout >> "Success..Camera" >> endl;
+		camera.set(CAP_PROP_FPS, 1);
+        //namedWindow("Stream", WINDOW_AUTOSIZE);
+	} else {
+		// cout >> "Failed...Camera" >> endl;
+		return 1;
+	}
+while(waitKey(10)!='c')
+{
+    camera >> frame;
+
+    waitKey(10);
+
+    Publisher publisher = nh.advertise<zuman_msgs::Instruction>("landmark", 10);
+    zuman_msgs::Instruction instruction;
+
+    // image_transport::ImageTransport it(nh);
+    // image_transport::Subscriber subscriber = it.subscribe("camera/image", 1, imageCallback);
+
+
+    landmark->locateLandmark(publisher, instruction);
+
+    spinOnce();
+}
+    return 0;
+}
 
 void imageCallback(const sensor_msgs::ImageConstPtr& msg) {
     try {
         frame = toCvShare(msg, "bgr8")->image;
-		imshow("Stream", frame);
-		waitKey(30);
+		 //imshow("Stream", frame);
+		// waitKey(30);
 	} catch (cv_bridge::Exception& e) {
 		ROS_ERROR("Could not convert from '%s' to 'bgr8'.", msg->encoding.c_str());
 	}
@@ -54,42 +93,82 @@ Landmark::Landmark() {
     } else {
 		ROS_INFO("%s", "OCR Success");
 	}
+	 tesseract->SetVariable("tessedit_char_whitelist","0123456789");
 }
 
-void Landmark::locateLandmark() {
+void Landmark::locateLandmark(Publisher publisher, zuman_msgs::Instruction instruction) {
 
     int resultant = 0;
+    char * landmarkText;
 
-    while (1) {
-        if (!frame.empty()) {
-            pair <int, Mat> resultpr = Landmark::detectLandmark(frame);
-            resultant = resultpr.first;
-        } else {
-            printf("No captured frame -- Break!");
-            break;
-        }
+    if (!frame.empty()) {
+        //resize(frame,frame,Size(frame.cols / 2, frame.rows / 2));
+        pair <int, Mat> resultpr = Landmark::detectLandmark(frame);
+        resultant = resultpr.first;
+		imshow("Stream", frame);
+        frame = resultpr.second;
+        
+ // cout << "begin tes" << endl;
+        if(!resultpr.second.empty())
+		{
+			Mat Max, Min;
+			cvtColor(frame,frame,CV_RGB2GRAY);
+			reduce(frame, Max, 0, CV_REDUCE_MAX);
+			reduce(frame, Max, 1, CV_REDUCE_MAX);
+			reduce(frame, Min, 0, CV_REDUCE_MIN);
+			reduce(frame, Min, 1, CV_REDUCE_MIN);
+			int thres = (Max.at<uchar>(0, 0) + 2 * Min.at<uchar>(0, 0)) / 3;
+			threshold(frame, frame, thres, 255, 0);
+			imshow("landmark", frame);
+        	landmarkText = Landmark::recognizeLandmark();
+		}
+	} else {
+        printf("No captured frame -- Break!");
+        //return
+    }
 
-        if (resultant == 0) {
-            cout << "nothing found";
-        } if (resultant % 4 == 1) {
+    if ( true) {
+
+         if (resultant % 4 == 1) {
             cout << "turn right and ";
-            //code to turn right
+
+            instruction.command = "rotate";
+            instruction.arg1 = 10;         // Right
+            instruction.arg2 = 0;
+
+            publisher.publish(instruction);
         } if (resultant % 4 == 2) {
             cout << "turn left and ";
-            //code to turn left
-        } if (resultant<16 && resultant>3) {
+
+            instruction.command = "rotate";
+            instruction.arg1 = -10;         // Right
+            instruction.arg2 = 0;
+
+            publisher.publish(instruction);
+        } if (resultant < 16 && resultant > 3) {
             cout << "move forwards";
-            //code to move forwards
-        } if (resultant>15) {
+
+            instruction.command = "move";
+            instruction.arg1 = 30;
+            instruction.arg2 = 0;
+
+            publisher.publish(instruction);
+        } if (resultant > 15) {
             cout << "stop moving forward";
-            //code to stop moving forwards
+
+            instruction.command = "move";
+            instruction.arg1 = 0;
+            instruction.arg2 = 0;
+
+            publisher.publish(instruction);
         } if (resultant == 16) {
-            cout << " , you have reached your destination";
+            cout << " , you have reached your destination , you are next to landmark " << landmarkText;
             //code to do after the destination is reached;
         }
+        //cout<<" now"<<endl;
     }
-}
 
+}
 pair<int, Mat> Landmark::detectLandmark(Mat frame) {
 
     int results = 0;
@@ -98,12 +177,13 @@ pair<int, Mat> Landmark::detectLandmark(Mat frame) {
 	Size size(frame.size().width, frame.size().height);
 	resize(frame, frame, size);
 	cvtColor(frame, gray, COLOR_BGR2GRAY);
-	equalizeHist(gray, gray);
+	//equalizeHist(gray, gray);
 	blur(gray, gray, Size(15, 15));
 
 	// Detect plates
 	vector<Vec3f> circles;
 
+    //imshow("Streamblur", gray);
 	// Apply the Hough Transform to find the circles
 	HoughCircles(gray, circles, HOUGH_GRADIENT, 1,
 		2, // change this value to detect circles with different distances to each other
@@ -125,7 +205,10 @@ pair<int, Mat> Landmark::detectLandmark(Mat frame) {
 			}
 		}
 	}
-
+                roi_b.x += roi_b.width/4;
+				roi_b.y += roi_b.height/4;
+				roi_b.width =roi_b.width/2;
+				roi_b.height =roi_b.height/2;
 	// Set Region of Interest
 	rectangle(frame, roi_b, Scalar(0, 255, 0), 2, 8, 0);
 
@@ -152,14 +235,18 @@ pair<int, Mat> Landmark::detectLandmark(Mat frame) {
 	return resultpair;
 }
 
-void Landmark::recognizeLandmark(Mat frame) {
+char * Landmark::recognizeLandmark() {
 
-    char* outText;
+    char * outText;
 
+    cout << "setImage begin" << endl;
     tesseract->SetImage((uchar*)frame.data, frame.size().width, frame.size().height, frame.channels(), frame.step1());
+    cout << "setImage" << endl;
 	tesseract->Recognize(0);
+	cout << "recognize" << endl;
 
 	outText = tesseract->GetUTF8Text();
 
 	ROS_INFO("%s", outText);
+    return outText;
 }

@@ -13,8 +13,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("video_stream.fxml"));
-        Scene scene = new Scene(root, 600, 600);
+        Parent root = FXMLLoader.load(getClass().getResource("../Layouts/mode.fxml"));
+        Scene scene = new Scene(root, 1000, 600);
+
         primaryStage.setTitle("ZUMAN");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -26,7 +27,6 @@ public class Main extends Application {
             }
         });
     }
-
 
     public static void main(String[] args) {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);

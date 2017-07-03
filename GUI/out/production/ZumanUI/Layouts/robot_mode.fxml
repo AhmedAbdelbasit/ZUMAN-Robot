@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserInterface.RobotMode">
+   <center>
+      <ImageView fx:id="frame" fitHeight="400.0" fitWidth="614.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="100.0" top="200.0" />
+         </BorderPane.margin></ImageView>
+   </center>
+   <left>
+      <Button fx:id="camera_btn" mnemonicParsing="false" onAction="#startCamera" prefHeight="40.0" prefWidth="150.0" text="Start Camera" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="100.0" top="50.0" />
+         </BorderPane.margin>
+      </Button>
+   </left>
+   <bottom>
+      <Button fx:id="connect_btn" mnemonicParsing="false" onAction="#startConnection" prefHeight="40.0" prefWidth="150.0" text="Start Connection" BorderPane.alignment="CENTER_LEFT">
+         <BorderPane.margin>
+            <Insets bottom="200.0" left="100.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+</BorderPane>
