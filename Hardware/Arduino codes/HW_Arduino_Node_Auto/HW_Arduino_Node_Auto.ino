@@ -21,8 +21,8 @@
 #define Wheel_Radius 6.5
 
 // Calibrated Speeds
-byte Cal_Left_Speed = 130;
-byte Cal_Right_Speed = 105;
+int Cal_Left_Speed = 130;
+int Cal_Right_Speed = 105;
 
 int Left_Encoder_Ticks=0;
 int Right_Encoder_Ticks=0;
@@ -51,13 +51,13 @@ void inst_CB(const zuman_msgs::Instruction& msg) {
   if( String(msg.command) == String("move")){
     Last_Tic = millis();
     moveStraight(msg.arg1);
-  }else if( String(msg.command) == String("calibrate_speed")){
-    Cal_Left_Speed = msg.arg1;
-    Cal_Right_Speed = msg.arg2;
-    
-    hw_msg.command = "speed set";
+  }else if( String(msg.command) == String("calspeed")){
+    Cal_Left_Speed = floor(msg.arg1);
+    Cal_Right_Speed = floor(msg.arg2);
+    delay(20);
+    hw_msg.command = "speed_set";
     hw_msg.arg1 = Cal_Left_Speed;
-    hw_msg.arg2 = Cal_Left_Speed;
+    hw_msg.arg2 = Cal_Right_Speed;
     info_Pub.publish(&hw_msg);
   } 
 }
