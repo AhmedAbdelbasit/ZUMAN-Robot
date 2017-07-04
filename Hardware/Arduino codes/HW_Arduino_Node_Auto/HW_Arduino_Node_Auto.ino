@@ -1,6 +1,5 @@
 #include <ros.h>
-#include <zuman_msgs/Speeds.h>
-#include <zuman_msgs/Odometry.h>
+#include <zuman_msgs/Instruction.h>
 
 // CH1
 #define Back_Left_Dir 10
@@ -18,30 +17,22 @@
 #define Front_Right_PWM 5
 
 // Odometry
-#define Robot_Width 40
-#define Wheel_Diameter 12.5
+#define Robot_Width 42
+#define Wheel_Radius 6.5
 
 // Calibrated Speeds
-#define Cal_Left_Speed 130
-#define Cal_Right_Speed 105
+byte Cal_Left_Speed = 130;
+byte Cal_Right_Speed = 105;
 
 int Left_Encoder_Ticks=0;
 int Right_Encoder_Ticks=0;
 long Total_Left_Encoder_Ticks;
 long Total_Right_Encoder_Ticks;
-int Inst_Left_Encoder_Ticks;
-int Inst_Right_Encoder_Ticks;
 
-float Inst_Left_Distance;
-float Inst_Right_Distance;
-float Inst_Angle;
 float X_Position = 0;
 float Y_Position = 0;
-float Angle = 0;
-float Angle_Deg=0;
+float Angle = PI/2;
 
-uint8_t setL;
-uint8_t setR;
 char DirLeft = 'F';
 char DirRight = 'F';
 
@@ -49,27 +40,28 @@ char DirRight = 'F';
 long Last_Tic;
 long Time_Now;
 int Sample_Time = 100;
-char Dir='S';
 
-void chatterCallback(const zuman_msgs::Speeds& msg) {
-  DirLeft='F';
-  DirRight='F';
-  
-  if(msg.leftSpeed <512)
-    DirLeft='B';
-  if(msg.rightSpeed <512)
-    DirRight='B';
-    
-  setL = abs((msg.leftSpeed-512)/2.0 );
-  setR = abs((msg.rightSpeed-512)/2.0 );
-}
+float Distance;
 
 ros::NodeHandle nh;
-zuman_msgs::Odometry  pos_msg;
+zuman_msgs::Instruction hw_msg;
+ros::Publisher info_Pub("hw_low", &hw_msg);
 
-ros::Subscriber<zuman_msgs::Speeds> vel_sub("vel_cmd", &chatterCallback);
-ros::Publisher pos_Pub("pos_odometry", &pos_msg);
-
+void inst_CB(const zuman_msgs::Instruction& msg) {
+  if( String(msg.command) == String("move")){
+    Last_Tic = millis();
+    moveStraight(msg.arg1);
+  }else if( String(msg.command) == String("calibrate_speed")){
+    Cal_Left_Speed = msg.arg1;
+    Cal_Right_Speed = msg.arg2;
+    
+    hw_msg.command = "speed set";
+    hw_msg.arg1 = Cal_Left_Speed;
+    hw_msg.arg2 = Cal_Left_Speed;
+    info_Pub.publish(&hw_msg);
+  } 
+}
+ros::Subscriber<zuman_msgs::Instruction> inst_sub("hw_low", &inst_CB);
 
 
 void setup()  
@@ -91,8 +83,8 @@ void setup()
   attachInterrupt(0, countRight,FALLING);
 
   nh.initNode();
-  nh.subscribe(vel_sub);
-  nh.advertise(pos_Pub);
+  nh.subscribe(inst_sub);
+  nh.advertise(info_Pub);
   
   Last_Tic = millis();
 }

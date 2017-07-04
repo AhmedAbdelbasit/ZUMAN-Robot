@@ -8,7 +8,7 @@
 
 #include <ESP8266WiFi.h>
 #include <ros.h>
-#include <zuman_msgs/Speeds.h>
+#include <zuman_msgs/Instruction.h>
 #include <SoftwareSerial.h>
 
 /////////////////////
@@ -73,8 +73,8 @@ void setupWiFi()
 
 int i;
 
-zuman_msgs::Speeds my_msg;
-ros::Publisher pub("vel_cmd", &my_msg);
+zuman_msgs::Instruction my_msg;
+ros::Publisher pub("HW_instruction", &my_msg);
 ros::NodeHandle_<WiFiHardware> nh;
 
 void setup() {
@@ -89,15 +89,16 @@ void setup() {
 }
 
 void loop() {
-  if (mySerial.available()) {   //read the two speeds
-    my_msg.leftSpeed = mySerial.read()*4;
-    my_msg.rightSpeed = mySerial.read()*4;
+  if (mySerial.available()) {   //read the two 
+    my_msg.command = "set_PWM";
+    my_msg.arg1 = mySerial.read()*4;
+    my_msg.arg2 = mySerial.read()*4;
     pub.publish(&my_msg);
     
     if (mySerial.read() == '\n') {
-      Serial.print(my_msg.leftSpeed);
+      Serial.print(my_msg.arg1);
       Serial.print("\t\t");
-      Serial.println(my_msg.rightSpeed);
+      Serial.println(my_msg.arg2);
     }
   }
   nh.spinOnce();
