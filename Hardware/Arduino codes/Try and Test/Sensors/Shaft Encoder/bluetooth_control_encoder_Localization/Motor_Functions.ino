@@ -37,14 +37,14 @@ void moveBackward(){
   digitalWrite(Front_Right_Dir,LOW);
 }
 
-void turnLeft(){
+void turnRight(){
   digitalWrite(Back_Left_Dir,HIGH);
   digitalWrite(Back_Right_Dir,LOW);
   digitalWrite(Front_Left_Dir,HIGH);
   digitalWrite(Front_Right_Dir,LOW);
 }
 
-void turnRight(){
+void turnLeft(){
   digitalWrite(Back_Left_Dir,LOW);
   digitalWrite(Back_Right_Dir,HIGH);
   digitalWrite(Front_Left_Dir,LOW);

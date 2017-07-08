@@ -1,17 +1,20 @@
 // CH1
-#define Back_Left_Dir 10
-#define Back_Left_PWM 11
-#define Back_Left_INT 3
+#define Front_Right_Dir 10
+#define Front_Right_PWM 11
+#define Front_Right_INT 3
+
 //CH2
-#define Back_Right_Dir 8
-#define Back_Right_PWM 9
-#define Back_Right_INT 2
+#define Front_Left_Dir 8
+#define Front_Left_PWM 9
+#define Front_Left_INT 2
+
 // CH3
-#define Front_Left_Dir 7
-#define Front_Left_PWM 6
+#define Back_Right_Dir 7
+#define Back_Right_PWM 6
+
 // CH4
-#define Front_Right_Dir 4
-#define Front_Right_PWM 5
+#define Back_Left_Dir 4
+#define Back_Left_PWM 55
 
 #define LOW_Back_Left_Speed 100
 #define LOW_Back_Right_Speed 100
@@ -52,12 +55,14 @@ void setup() {
   pinMode(Front_Left_PWM,OUTPUT);
   pinMode(Front_Right_Dir,OUTPUT);
   pinMode(Front_Right_PWM,OUTPUT);
-  pinMode(Back_Left_INT, INPUT);
-  digitalWrite(Back_Left_INT, HIGH);
-  pinMode(Back_Right_INT, INPUT);
-  digitalWrite(Back_Right_INT, HIGH);
+  
+  pinMode(Front_Left_INT, INPUT);
+  digitalWrite(Front_Left_INT, HIGH);
+  pinMode(Front_Right_INT, INPUT);
+  digitalWrite(Front_Right_INT, HIGH);
   delay(10);
-  attachInterrupt(1, countLeft,FALLING);
-  attachInterrupt(0, countRight,FALLING);
+  attachInterrupt(0, countLeft,FALLING);
+  attachInterrupt(1, countRight,FALLING);
+  
   Last_Tic = millis();
 }

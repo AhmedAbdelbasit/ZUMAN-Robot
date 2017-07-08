@@ -3,7 +3,6 @@
 #define Front_Right_PWM 11
 #define Front_Right_INT 3
 
-
 //CH2
 #define Front_Left_Dir 8
 #define Front_Left_PWM 9
@@ -23,8 +22,8 @@
 #define Distance_Per_Revolution 40
 
 // Calibrated Speeds
-int Cal_Left_Speed  = 40 ;
-int Cal_Right_Speed = 45 ;
+int Cal_Left_Speed  = 80 ;
+int Cal_Right_Speed = 90 ;
 
 int Left_Encoder_Ticks=0;
 int Right_Encoder_Ticks=0;
@@ -51,7 +50,7 @@ int Right_Speed = 0;
 // Cycle
 long Last_Tic;
 long Time_Now;
-int Sample_Time = 500;
+int Sample_Time = 100;
 char Dir='S';
 
 float Filter_Speed_Constant = 0.25;
