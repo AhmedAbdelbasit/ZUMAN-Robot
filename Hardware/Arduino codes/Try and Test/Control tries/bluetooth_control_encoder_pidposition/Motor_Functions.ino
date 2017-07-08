@@ -1,22 +1,26 @@
 void driveMotor(){
-  if( Dir=='F'){
-    moveForward();
-    setMotorSpeed(Left_Speed, Right_Speed);
-  }else if(Dir == 'B'){
-    moveBackward();
-    setMotorSpeed(Left_Speed, Right_Speed);
-  }else if(Dir == 'R'){
-    turnRight();
-    setMotorSpeed(Left_Speed, Right_Speed);
-  }else if(Dir == 'L'){
-    turnLeft();
-    setMotorSpeed(Left_Speed, Right_Speed);
-  }else if(Dir == 'W' || Dir == 'w'){
-    Temp_Left_Ticks = 0;
-    Temp_Right_Ticks = 0;
+  if(Dir == 'S' || Dir == 's'){
+    Front_Left_Speed = 0;
+    Front_Right_Speed = 0;
   }else{
-    stopMotion();
+    Front_Left_Speed = Cal_Left_Speed;
+    Front_Right_Speed = Cal_Right_Speed;
+    
+    if( Dir=='F' || Dir=='f'){
+      moveForward();
+    }else if(Dir == 'B' || Dir=='b'){
+      moveBackward();
+    }else if(Dir == 'R' || Dir=='r'){
+      turnRight();
+    }else if(Dir == 'L' || Dir=='l'){
+      turnLeft();
+    }else{
+      Dir = 'S';
+      Front_Left_Speed = 0;
+      Front_Right_Speed = 0;
+    }
   }
+  setMotorSpeed(Filtered_Left_Speed, Filtered_Right_Speed, Filtered_Left_Speed, Filtered_Right_Speed);
 }
   
 void moveForward(){
@@ -33,18 +37,18 @@ void moveBackward(){
   digitalWrite(Front_Right_Dir,LOW);
 }
 
-void turnRight(){
-  digitalWrite(Back_Left_Dir,HIGH);
-  digitalWrite(Back_Right_Dir,LOW);
-  digitalWrite(Front_Left_Dir,HIGH);
-  digitalWrite(Front_Right_Dir,LOW);
-}
-
 void turnLeft(){
   digitalWrite(Back_Left_Dir,LOW);
   digitalWrite(Back_Right_Dir,HIGH);
   digitalWrite(Front_Left_Dir,LOW);
   digitalWrite(Front_Right_Dir,HIGH);
+}
+
+void turnRight(){
+  digitalWrite(Back_Left_Dir,HIGH);
+  digitalWrite(Back_Right_Dir,LOW);
+  digitalWrite(Front_Left_Dir,HIGH);
+  digitalWrite(Front_Right_Dir,LOW);
 }
 
 void stopMotion(){
@@ -54,10 +58,10 @@ void stopMotion(){
   pinMode(Front_Right_PWM, 0);
 }
 
-void setMotorSpeed(int L,int R){
-  analogWrite(Back_Left_PWM, L);
-  analogWrite(Back_Right_PWM, R);
-  analogWrite(Front_Left_PWM, L);
-  analogWrite(Front_Right_PWM, R);
+void setMotorSpeed(int FL,int FR, int BL, int BR){
+  analogWrite(Back_Left_PWM, BL);
+  analogWrite(Back_Right_PWM, BR);
+  analogWrite(Front_Left_PWM, FL);
+  analogWrite(Front_Right_PWM, FR);
 }
 
