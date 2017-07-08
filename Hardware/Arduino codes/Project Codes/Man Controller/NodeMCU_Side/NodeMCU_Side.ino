@@ -74,7 +74,7 @@ void setupWiFi()
 int i;
 
 zuman_msgs::Instruction my_msg;
-ros::Publisher pub("HW_instruction", &my_msg);
+ros::Publisher pub("hw_low", &my_msg);
 ros::NodeHandle_<WiFiHardware> nh;
 
 void setup() {
