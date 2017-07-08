@@ -1,25 +1,30 @@
 // CH1
-#define Back_Left_Dir 10
-#define Back_Left_PWM 11
-#define Back_Left_INT 3
+#define Front_Right_Dir 10
+#define Front_Right_PWM 11
+#define Front_Right_INT 3
+
+
 //CH2
-#define Back_Right_Dir 8
-#define Back_Right_PWM 9
-#define Back_Right_INT 2
+#define Front_Left_Dir 8
+#define Front_Left_PWM 9
+#define Front_Left_INT 2
+
 // CH3
-#define Front_Left_Dir 7
-#define Front_Left_PWM 6
+#define Back_Right_Dir 7
+#define Back_Right_PWM 6
+
 // CH4
-#define Front_Right_Dir 4
-#define Front_Right_PWM 5
+#define Back_Left_Dir 4
+#define Back_Left_PWM 5
 
 // Odometry
 #define Robot_Width 33
 #define Wheel_Diameter 12.5
+#define Distance_Per_Revolution 40
 
 // Calibrated Speeds
-int Cal_Left_Speed  = 50 ;
-int Cal_Right_Speed = 50 ;
+int Cal_Left_Speed  = 40 ;
+int Cal_Right_Speed = 45 ;
 
 int Left_Encoder_Ticks=0;
 int Right_Encoder_Ticks=0;
@@ -54,7 +59,7 @@ float Filtered_Left_Speed=0;
 float Filtered_Right_Speed=0;
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(38400);
   pinMode(Back_Left_Dir,OUTPUT);
   pinMode(Back_Left_PWM,OUTPUT);
   pinMode(Back_Right_Dir,OUTPUT);
@@ -64,13 +69,13 @@ void setup() {
   pinMode(Front_Right_Dir,OUTPUT);
   pinMode(Front_Right_PWM,OUTPUT);
   
-  pinMode(Back_Left_INT, INPUT);
-  digitalWrite(Back_Left_INT, HIGH);
-  pinMode(Back_Right_INT, INPUT);
-  digitalWrite(Back_Right_INT, HIGH);
+  pinMode(Front_Left_INT, INPUT);
+  digitalWrite(Front_Left_INT, HIGH);
+  pinMode(Front_Right_INT, INPUT);
+  digitalWrite(Front_Right_INT, HIGH);
   delay(10);
-  attachInterrupt(1, countLeft,FALLING);
-  attachInterrupt(0, countRight,FALLING);
+  attachInterrupt(0, countLeft,FALLING);
+  attachInterrupt(1, countRight,FALLING);
   
-  Last_Tic = millis();
+  Last_Tic = int(millis() / Sample_Time)*Sample_Time;
 }
