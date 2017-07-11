@@ -19,9 +19,9 @@ SoftwareSerial mySerial(14, 12); // RX, TX  (D5 , D6)
 //////////////////////
 // WiFi Definitions //
 //////////////////////
-const char* ssid = "potonetwork";
-const char* password = "#omapoto#";
-IPAddress server(192, 168, 43, 217); // ip of your ROS server
+const char* ssid = "ahmedpoto";
+const char* password = "30ahmed30";
+IPAddress server(192, 168, 1, 6); // ip of your ROS server
 IPAddress ip_address;
 int status = WL_IDLE_STATUS;
 WiFiClient client;
@@ -90,17 +90,36 @@ void setup() {
 
 void loop() {
   if (mySerial.available()) {   //read the two 
-    my_msg.command = "set_PWM";
-    my_msg.arg1 = mySerial.read()*4;
-    my_msg.arg2 = mySerial.read()*4;
-    pub.publish(&my_msg);
+    my_msg.command = "";
+    my_msg.arg1 = 0;
+    my_msg.arg2 = 0;
+    
+    char command = mySerial.read();
+    if( command == 's'){
+      my_msg.command = "set_pwm";
+      my_msg.arg1 = mySerial.read()*4;
+      my_msg.arg2 = mySerial.read()*4;
+      pub.publish(&my_msg);
+    }else if(command == 'l'){
+      if(mySerial.read() == 'o'){
+        my_msg.command = "switch_on_light";
+      }else{
+        my_msg.command = "switch_off_light";
+      }
+      pub.publish(&my_msg);
+    }else if(command == 'z'){
+      my_msg.command = "sync";
+    }
+    
     
     if (mySerial.read() == '\n') {
+      Serial.print(my_msg.command);
+      Serial.print("\t\t");
       Serial.print(my_msg.arg1);
       Serial.print("\t\t");
       Serial.println(my_msg.arg2);
     }
+    nh.spinOnce();
   }
-  nh.spinOnce();
-  delay(25);
+  delay(50);
 }

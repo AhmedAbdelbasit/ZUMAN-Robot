@@ -32,10 +32,6 @@ int Right_Speed;
 int Left_Encoder_Ticks=0;
 int Right_Encoder_Ticks=0;
 
-float X_Position = 0;
-float Y_Position = 0;
-float Angle = PI/2;
-
 char DirLeft = 'F';
 char DirRight = 'F';
 
@@ -44,16 +40,47 @@ long Last_Tic;
 long Time_Now;
 int Sample_Time = 100;
 
-float Distance;
-
 ros::NodeHandle nh;
 zuman_msgs::Instruction hw_msg;
 ros::Publisher info_Pub("hw_low", &hw_msg);
 
 void inst_CB(const zuman_msgs::Instruction& msg) {
-  if( String(msg.command) == String("move")){
-    Last_Tic = millis();
+  hw_msg.arg1 = 0;
+  hw_msg.arg2 = 0;
+  
+  if( String(msg.command) == String("cv_move") ){
     moveStraight(msg.arg1);
+    delay(20000);
+    hw_msg.command = "cv_done";
+    info_Pub.publish(&hw_msg);
+    
+  }else if( String(msg.command) == String("cv_rotate") ){
+    rotateRobot(msg.arg1);
+    hw_msg.command = "cv_done";
+    info_Pub.publish(&hw_msg);
+    
+  }else if( String(msg.command) == String("cv_move_rotate") ){
+    moveStraight(msg.arg1);
+    rotateRobot(msg.arg2);
+    hw_msg.command = "cv_done";
+    info_Pub.publish(&hw_msg);
+    
+  }else if( String(msg.command) == String("map_move") ){
+    moveStraight(msg.arg1);
+    hw_msg.command = "map_done";
+    info_Pub.publish(&hw_msg);
+    
+  }else if( String(msg.command) == String("map_rotate") ){
+    rotateRobot(msg.arg1);
+    hw_msg.command = "map_done";
+    info_Pub.publish(&hw_msg);
+    
+  }else if( String(msg.command) == String("map_move_rotate") ){
+    moveStraight(msg.arg1);
+    rotateRobot(msg.arg2);
+    hw_msg.command = "map_done";
+    info_Pub.publish(&hw_msg);
+    
   }else if( String(msg.command) == String("calspeed")){
     Cal_Left_Speed = floor(msg.arg1);
     Cal_Right_Speed = floor(msg.arg2);
@@ -62,9 +89,12 @@ void inst_CB(const zuman_msgs::Instruction& msg) {
     hw_msg.arg1 = Cal_Left_Speed;
     hw_msg.arg2 = Cal_Right_Speed;
     info_Pub.publish(&hw_msg);
-  }else if( String(msg.command) == String("set_PWM") ){
+    
+  }else if( String(msg.command) == String("set_pwm") ){
     moveRobot(msg.arg1, msg.arg2);
   }
+
+  
 }
 ros::Subscriber<zuman_msgs::Instruction> inst_sub("hw_low", &inst_CB);
 
