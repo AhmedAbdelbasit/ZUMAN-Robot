@@ -14,21 +14,23 @@ void setup(){
   Serial.begin(9600);
   Wire.begin();
   compass_init(2);    //gain factor 1.22
-  compass_debug = 1;
+
   Compass_Servo.attach(9);
-  delay(100);
+  delay(10);
   Compass_Servo.write(90);
-  //compass_offset_calibration(3);
+  
 }
 
 int tt = 0;
 void loop(){
-//  compass_read_XYZdata();
-//  Serial.print(compass_x);
-//  Serial.print("\t\t");
-//  Serial.println(compass_y);
-  //Serial.println(compass_z);
-  //Serial.println(tt);
+  compass_read_XYZdata();
+  Serial.print(compass_x);
+  Serial.print("\t\t");
+  Serial.print(compass_y);
+  Serial.print("\t\t");
+  Serial.println(compass_z);
+
+  
   delay(100);
 
   if(Serial.available() > 0){

@@ -1,7 +1,7 @@
-void filterReading(){
-  Filtered_X_Reading = (1-Filter_Constant)*Filtered_X_Reading + Filter_Constant * compass_x;
-  Filtered_Y_Reading = (1-Filter_Constant)*Filtered_Y_Reading + Filter_Constant * compass_y;
-}
+//void filterReading(){
+//  Filtered_X_Reading = (1-Filter_Constant)*Filtered_X_Reading + Filter_Constant * compass_x;
+//  Filtered_Y_Reading = (1-Filter_Constant)*Filtered_Y_Reading + Filter_Constant * compass_y;
+//}
 
 void rotateRobot(char d){
   if(d == 'r'){
@@ -15,20 +15,22 @@ void rotateRobot(char d){
   // taking reference
   int Reference_x = 0;
   int Reference_y = 0;
+  int Reference_z = 0;
+  
   for (int i=0 ; i<10 ; i++){
     compass_read_XYZdata();
   }
   compass_read_XYZdata();
   Reference_x = compass_x;
   Reference_y = compass_y;
-  
+  Reference_z = compass_z;
   
   Serial.print("Reference taken as : ");
   Serial.print(Reference_x);
   Serial.print("\t\t");
   Serial.print(Reference_y);
   Serial.print("\t\t");
-  Serial.println(compass_z);
+  Serial.println(Reference_z);
   delay(1000);
   
   Compass_Servo.write(90);
@@ -47,8 +49,10 @@ void rotateRobot(char d){
     Serial.print("\t ");
     Serial.print(compass_y);
     Serial.print("\t ");
+    Serial.print(Reference_z);
+    Serial.print("\t ");
     Serial.println(compass_z);
-
+    
     if(Serial.available() > 0){
       break;
     }
