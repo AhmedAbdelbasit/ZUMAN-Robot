@@ -8,7 +8,11 @@ void measureSpeed(){
 void printData(){
   Serial.print(Measured_Left_Speed);
   Serial.print("\t\t");
-  Serial.println(Measured_Right_Speed);
+  Serial.print(Measured_Right_Speed);
+  Serial.print("\t\t");
+  Serial.print(analogRead(Front_Left_Cur)*5.0/1024.0);
+  Serial.print("\t\t");
+  Serial.println(analogRead(Front_Right_Cur)*5.0/1024.0);
 }
 
 void filterMotorSpeed(){

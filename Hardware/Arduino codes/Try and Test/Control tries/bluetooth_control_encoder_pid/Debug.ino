@@ -3,23 +3,23 @@ void tuneSpeedPID(){
   while(1){
     while(Serial.available()<1){}
     C = Serial.read();
-    if(C=='Q')
+    if(C=='Q' || C== 'q')
       Kp_S += 0.1;
-    else if(C=='A')
+    else if(C=='A' || C== 'a')
       Kp_S -= 0.1;
-    else if(C=='Z')
+    else if(C=='Z' || C== 'z')
       Ki_S += 0.1;
-    else if(C=='X')
+    else if(C=='X' || C== 'x')
       Ki_S -= 0.1;
-    else if(C=='C')
+    else if(C=='C' || C== 'c')
       Kd_S += 0.1;
-    else if(C=='V')
+    else if(C=='V' || C== 'v')
       Kd_S -= 0.1;
-    else if(C=='O')
+    else if(C=='O' || C== 'o')
       Robot_Speed += 1;
-    else if(C=='L')
+    else if(C=='L' || C== 'l')
       Robot_Speed -= 1;
-    else if(C=='E')
+    else if(C=='E' || C== 'e')
       break;
 
     Serial.print(Robot_Speed);

@@ -1,8 +1,10 @@
 #include <Servo.h>
-#define delay_step 25
+#define delay_step 20
 #define increament_step 1
 #include <ros.h>
 #include <zuman_msgs/Instruction.h>
+#define Light 4
+
 
 Servo Yaw;
 Servo Pitch;
@@ -20,6 +22,10 @@ void inst_CB(const zuman_msgs::Instruction& msg) {
   if( String(msg.command) == String("set_cam")){
     Yaw_Goal = msg.arg1;
     Pitch_Goal = msg.arg2;
+  }else if( String(msg.command) == String("switch_on_light")){
+    digitalWrite(Light, HIGH);
+  }else if( String(msg.command) == String("switch_off_light")){
+    digitalWrite(Light, LOW);
   }
 }
 
@@ -30,6 +36,7 @@ void setup() {
   Yaw.attach(9);
   Pitch.attach(10);
 
+  pinMode(Light, OUTPUT);
   Yaw_Angle = Yaw.read();
   Pitch_Angle = Pitch.read();
 

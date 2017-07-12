@@ -6,6 +6,8 @@ void loop() {
     Last_Tic += Sample_Time;
     
     if(Serial.available() > 0){
+      Error_Sum_Left = 0;
+      Error_Sum_Right = 0;
       Dir = Serial.read();
       if (Dir == 'T' || Dir=='t'){
         tuneSpeedPID();
@@ -13,8 +15,11 @@ void loop() {
       }
     }
     measureSpeed();
-    if(Dir == 'F' || Dir == 'f'){
+    if(Dir != 'S' && Dir != 's'){
       controlSpeed();
+    }
+
+    if(Measured_Left_Speed != 0 || Measured_Right_Speed != 0){
       printData();
     }
     filterMotorSpeed();

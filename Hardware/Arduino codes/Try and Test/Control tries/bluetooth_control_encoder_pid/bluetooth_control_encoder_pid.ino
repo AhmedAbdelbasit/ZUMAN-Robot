@@ -2,11 +2,13 @@
 #define Front_Right_Dir 10
 #define Front_Right_PWM 11
 #define Front_Right_INT 3
+#define Front_Right_Cur A1
 
 //CH2
 #define Front_Left_Dir 8
 #define Front_Left_PWM 9
 #define Front_Left_INT 2
+#define Front_Left_Cur A2
 
 // CH3
 #define Back_Right_Dir 7

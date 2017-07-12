@@ -1,6 +1,7 @@
 #include <Servo.h>
 #define delay_step 25
 #define increament_step 1
+#define Light 4
 
 Servo Yaw;
 Servo Pitch;
@@ -23,6 +24,8 @@ void setup() {
   Yaw_Angle = Yaw.read();
   Pitch_Angle = Pitch.read();
 
+  pinMode(Light, OUTPUT);
+  
   Yaw_Goal = Yaw_Angle;
   Pitch_Goal = Pitch_Angle;  
 }
@@ -36,6 +39,8 @@ void loop() {
       Yaw_Goal = degree;
     }else if(c == 'p'){
       Pitch_Goal = degree;
+    }else if(c == 'l'){
+      digitalWrite(Light, 1-digitalRead(Light));
     }
   }
 
