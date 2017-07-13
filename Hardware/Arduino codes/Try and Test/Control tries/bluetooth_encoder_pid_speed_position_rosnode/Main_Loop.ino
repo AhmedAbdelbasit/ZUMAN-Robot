@@ -10,7 +10,6 @@ void loop() {
       
     filterMotorSpeed();
     
-
     if(Move_Ack && Left_Encoder_Ticks <= 0 && Right_Encoder_Ticks <= 0){
       hw_msg.command = "done";
       hw_msg.arg1 = Goal_Distance;

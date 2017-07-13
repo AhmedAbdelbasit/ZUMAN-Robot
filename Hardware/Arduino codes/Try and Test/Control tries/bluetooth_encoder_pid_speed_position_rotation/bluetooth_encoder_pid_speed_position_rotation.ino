@@ -1,6 +1,3 @@
-#include <ros.h>
-#include <zuman_msgs/Instruction.h>
-
 // CH1
 #define Front_Right_Dir 10
 #define Front_Right_PWM 11
@@ -21,14 +18,17 @@
 #define Back_Left_Dir 4
 #define Back_Left_PWM 5
 
-#define Sample_Time 50.0
+#define Sample_Time 30.0
 #define Distance_Per_Rev 38.73
 
 #define Light_Pin 12
 
 volatile int Left_Encoder_Ticks=0;
 volatile int Right_Encoder_Ticks=0;
-
+int Rotation_Ticks = 120;
+float Goal_Distance = 90;
+boolean Move_Ack = LOW;
+boolean Rotate_Ack = LOW;
 
 
 // Left-Side Motors Control
@@ -69,58 +69,8 @@ float Kp_S= 2;
 float Ki_S= 2;
 float Kd_S= 0.5;
 
-boolean Move_Ack = LOW;
-float Goal_Distance = 0;
-boolean Rotate_Ack = LOW;
-float Angle_Distance = 0;
-
-ros::NodeHandle nh;
-zuman_msgs::Instruction hw_msg;
-ros::Publisher info_Pub("hw_low", &hw_msg);
-void inst_CB(const zuman_msgs::Instruction& msg) {
-  if( String(msg.command) == String("light_on")){
-    digitalWrite(Light_Pin, HIGH);
-  }else if( String(msg.command) == String("light_off")){
-    digitalWrite(Light_Pin, LOW);
-  }else if (String(msg.command) == String("move") ){
-    Error_Sum_Left = 0;
-    Error_Sum_Right = 0;
-    Last_Error_Left = 0;
-    Last_Error_Right = 0;
-
-    Goal_Distance = msg.arg1;
-    Dir = 'F';
-    int Ticks = floor(Goal_Distance*180.0/Distance_Per_Rev);
-    if(Ticks < 0)
-      Dir = 'B';
-    Right_Encoder_Ticks = abs(Ticks);
-    Left_Encoder_Ticks = abs(Ticks);
-    Move_Ack = HIGH;
-    
-  }else if (String(msg.command) == String("rotate") ){
-    Error_Sum_Left = 0;
-    Error_Sum_Right = 0;
-    Last_Error_Left = 0;
-    Last_Error_Right = 0;
-
-    Goal_Angle = msg.arg1;
-    if(Goal_Angle >0){
-      Dir = 'L';
-    }else{
-      Dir = 'R';
-    }
-    
-    int Ticks = floor(Goal_Angle*180.0/Distance_Per_Rev);
-    Right_Encoder_Ticks = abs(Ticks);
-    Left_Encoder_Ticks = abs(Ticks);
-    Rotate_Ack = HIGH;
-  }
-}
-ros::Subscriber<zuman_msgs::Instruction> inst_sub("hw_low", &inst_CB);
-
-
 void setup() {
-  
+  Serial.begin(38400);
   pinMode(Back_Left_Dir,OUTPUT);
   pinMode(Back_Left_PWM,OUTPUT);
   pinMode(Back_Right_Dir,OUTPUT);
@@ -140,10 +90,5 @@ void setup() {
 
   pinMode(Light_Pin, OUTPUT);
   digitalWrite(Light_Pin,LOW);
-
-  nh.initNode();
-  nh.subscribe(inst_sub);
-  nh.advertise(info_Pub);
-  
   Last_Tic = (millis()/Sample_Time)*Sample_Time;
 }
