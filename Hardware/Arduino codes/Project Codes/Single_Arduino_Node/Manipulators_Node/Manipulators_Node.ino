@@ -50,7 +50,6 @@ void inst_CB(const zuman_msgs::Instruction& msg) {
   
   if( String(msg.command) == String("cv_move") ){
     moveStraight(msg.arg1);
-    delay(20000);
     hw_msg.command = "cv_done";
     info_Pub.publish(&hw_msg);
     

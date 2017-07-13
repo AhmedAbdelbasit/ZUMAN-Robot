@@ -2,6 +2,9 @@
 #define delay_step 25
 #define increament_step 1
 #define Light 4
+#define Num_Of_Readings 20
+#define Yaw_In A0
+#define Pitch_In A1
 
 Servo Yaw;
 Servo Pitch;
@@ -32,18 +35,26 @@ void setup() {
 
 void loop() {
   
-  if( Serial.available() > 0){
-    c = Serial.read();
-    degree = Serial.parseInt();
-    if(c == 'y'){
-      Yaw_Goal = degree;
-    }else if(c == 'p'){
-      Pitch_Goal = degree;
-    }else if(c == 'l'){
-      digitalWrite(Light, 1-digitalRead(Light));
-    }
-  }
+//  if( Serial.available() > 0){
+//    c = Serial.read();
+//    degree = Serial.parseInt();
+//    if(c == 'y'){
+//      Yaw_Goal = degree;
+//    }else if(c == 'p'){
+//      Pitch_Goal = degree;
+//    }else if(c == 'l'){
+//      digitalWrite(Light, 1-digitalRead(Light));
+//    }
+//  }
 
+  int y=0, p=0;
+  for (int i=0 ; i<Num_Of_Readings ; i++){
+    y += analogRead(Yaw_In);
+    p += analogRead(Pitch_In);
+  }
+  Yaw_Goal = map(y/Num_Of_Readings, 0, 1023, 10, 170);
+  Pitch_Goal = map(p/Num_Of_Readings, 0, 1023, 10, 170);;
+  
   if(Yaw_Goal > Yaw_Angle){
     Yaw_Angle ++;
   }else if(Yaw_Goal < Yaw_Angle){
