@@ -318,14 +318,40 @@ In next section we are to talk about the navigation algorithm and the sequence o
 
 
 \subsection{Proposed Algorithm for Autonomous Navigation}
+In the autonomous navigation mission, each of the three nodes has its own task to do. We can categorize these tasks in two phases. First phase is executed between Mapping and hardware node. Its goal is to guide the robot from one landmark to the next one on path to destination. Once the robot reaches that landmark or someplace near it, the second phase starts between computer vision node and hardware telling the robot how to move to stand exactly in front of the landmark. Figure \ref{fig:algorithm-phases} visualize these phases with brief description.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{Fig/Algorithm-phases.png}
+	\caption{Proposed algorithm's phases}
+	\label{fig:algorithm-phases}
+\end{figure}
+
+\noindent In the first phase, a sequence on instructions are passed from mapping to hardware node. These instructions can be 'move', 'rotate', 'rotate-camera' or a query for information of sensors. After each instruction the hardware responds by 'next\_step' command as an acknowledgment to mapping node that the last instruction is done. When the mapping node receives acknowledgment of last instruction, it sends a 'tune' command telling the robot to start the second phase. 
+
+\noindent Second phase is a tuning process to eliminate any accumulated errors caused by hardware while performing mapping instructions. The computer vision node tries to guide the hardware to move in a way such that the land mark is detected at the center of picture frame. In this case, by knowing the distance between robot and wall we fully identify the robot position. Figure \ref{fig:localization} shows how localization is done by computer vision and range finder sensor.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width =1\textwidth]{Fig/hw_map.png}
-	\caption{Communication between hardware and mapping node over hw\_map topic.}
-	\label{fig:nodes}
+	\includegraphics[width =0.4\textwidth]{Fig/localization.png}
+	\caption{Localization using computer vision}
+	\label{fig:localization}
+\end{figure}
+
+\noindent The flowchart of autonomous navigation process is provided ni figure \ref{fig:full-algorithm} showing the whole communication steps and conditions involved in such process. You can identify in this flowchart the role of each node and how it deals with others.
+
+\newpage
+
+\begin{figure}
+	\centering
+	\includegraphics[width =0.75\textwidth]{Fig/full-algorithm.png}
+	\caption{Flowchart for whole algorithm applied for autonomous navigation.}
+	\label{fig:full-algorithm}
 \end{figure}
 
 \newpage
+\clearpage
+\newpage
+
 \section{GUI Implementation}
 talk about the Java application and how it is implemented, how it communicates with master unit to send navigation instruction. also how video stream is received
 
