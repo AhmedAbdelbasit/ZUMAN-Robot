@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import org.opencv.core.Core;
 
 public class Main extends Application {
 
@@ -29,8 +28,8 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        // System.load();               // Put the absolute path of "libopencv_java320.so" inside "lib" folder between brackets
+        // The absolute path of "libopencv_java320.so" inside "lib" folder between brackets
+        System.load("/media/ahmed/BEFE53D5FE538495/College/CSE2017/Graduation Project/ZumanUI/lib/libopencv_java320.so");
         launch(args);
     }
 }

@@ -7,8 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="opencv-320" level="project" />
-    <orderEntry type="library" exported="" name="lib" level="project" />
-    <orderEntry type="library" exported="" name="com.jcraft:jsch:0.1.54" level="project" />
+    <orderEntry type="library" name="opencv-320" level="project" />
+    <orderEntry type="library" name="jsch-0.1.54" level="project" />
   </component>
 </module>
