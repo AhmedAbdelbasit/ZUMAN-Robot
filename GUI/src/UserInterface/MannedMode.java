@@ -18,7 +18,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class RobotMode {
+public class MannedMode {
 
     @FXML
     private Button camera_btn;
@@ -29,6 +29,8 @@ public class RobotMode {
     @FXML
     private ImageView frame;
 
+    private SSHApplication sshApplication = null;
+
     private ScheduledExecutorService timer;
 
     private boolean cameraActive = false;
@@ -38,24 +40,21 @@ public class RobotMode {
 
     private VideoCapture camera = new VideoCapture();
 
-    private SSHApplication sshApplication = null;
+    public void initialize() {
+        this.sshApplication = new SSHApplication();
+    }
 
-    @FXML
     public void startCamera(ActionEvent event) {
-
         if (!this.cameraActive) {
             this.camera.open(videoIp);
 
             if (this.camera.isOpened()) {
                 this.cameraActive = true;
 
-                Runnable frameGrabber = new Runnable() {
-                    @Override
-                    public void run() {
-                        Mat currentFrame = grabFrame();
-                        Image imgToView = mat2Image(currentFrame);
-                        updateImageView(frame, imgToView);
-                    }
+                Runnable frameGrabber = () -> {
+                    Mat currentFrame = grabFrame();
+                    Image imgToView = mat2Image(currentFrame);
+                    updateImageView(frame, imgToView);
                 };
 
                 this.timer = Executors.newSingleThreadScheduledExecutor();
@@ -73,7 +72,7 @@ public class RobotMode {
             this.camera_btn.setText("Start Camera");
 
             // stop the timer
-            this.stopAcquisition();
+            this.setClosed();
         }
     }
 
@@ -83,7 +82,11 @@ public class RobotMode {
         if (btn_txt.contains("Start")) {
             this.sshApplication = new SSHApplication();
 
-            this.sshApplication.executeCommand("roscore");
+            this.sshApplication.executeCommand("sudo chown grad /dev/ttyUSB0");
+            this.sshApplication.executeCommand("123456789");
+            this.sshApplication.executeCommand("roscore &");
+            this.sshApplication.executeCommand("rosrun rosserial_python serial_node.py tcp __name:=\"stick_node\" &");
+            this.sshApplication.executeCommand("rosrun rosserial_python serial_node.py /dev/ttyUSB0 __name:=\"hw_node\"");
 
             this.connect_btn.setText("Stop Connection");
         } else if (btn_txt.contains("Stop")) {
@@ -169,7 +172,7 @@ public class RobotMode {
         }
     }
 
-    protected void setClosed() {
+    private void setClosed() {
         this.stopAcquisition();
     }
 }

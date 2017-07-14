@@ -5,10 +5,10 @@ package SSH;
  */
 public class SSHApplication {
 
-    private String host     = "192.168.1.103";
+    private String host     = "192.168.43.217";
     private int port        = 22;
-    private String username = "ahmed";
-    private String password = "AbdElsalam";
+    private String username = "grad";
+    private String password = "123456789";
     private int timeout     = 120000;
 
     private boolean connectionState = false;
@@ -30,7 +30,7 @@ public class SSHApplication {
             System.out.println("Connected Successfully \n");
 
             try {
-                Thread.sleep(500);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -49,7 +49,7 @@ public class SSHApplication {
         System.out.println(command + "\n");
 
         try {
-            Thread.sleep(500);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
