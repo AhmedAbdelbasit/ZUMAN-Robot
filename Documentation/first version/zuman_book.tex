@@ -282,7 +282,7 @@ The main system structure of our project as shown in figure \ref{fig:system-stru
 \section{User Manual and GUI}
 talk about how to use the GUI to run the project on different modes.
 
-
+\newpage
 
 \section{System Structure and Proposed Algorithm}
 In the design stage of project, three main parts arises to be implemented; mapping, computer vision and hardware. Each part represents an executable program that can interact with other parts in a manner to fulfill the required task. So, lets first talk briefly about ROS and how it provided a great help in connecting project parts and how communication between processes becomes easy.
@@ -301,7 +301,7 @@ In next section we are to talk about our project nodes and how communication per
 	\caption{ROS logo.}
 \end{figure}
 
-
+\newpage
 
 \subsection{Project Nodes and Communication Process}
 As mentioned before, we have three main nodes; mapping, computer vision and hardware. the communication between them were created as shown in figure \ref{fig:nodes}. 
@@ -311,7 +311,7 @@ As mentioned before, we have three main nodes; mapping, computer vision and hard
 	\caption{The implemented nodes and advertised topics between them.}
 	\label{fig:nodes}
 \end{figure}
-There are two advertised topics; hw\_landmark that connects hardware with computer vision and hw\_map that connects hardware to mapping node. Over the hw\_map topic the mapping node publishes the instructions that guide the robot from a landmark to another. When the robot reaches a new landmark, a tuning loop starts between hardware and computer vision node to put the robot exactly in front of the landmark. In this way, errors caused by inaccuracy of sensors or hardware motion performance are eliminated periodically resulting in a good autonomous navigation of the robot.\\
+\noindent There are two advertised topics; hw\_landmark that connects hardware with computer vision and hw\_map that connects hardware to mapping node. Over the hw\_map topic the mapping node publishes the instructions that guide the robot from a landmark to another. When the robot reaches a new landmark, a tuning loop starts between hardware and computer vision node to put the robot exactly in front of the landmark. In this way, errors caused by inaccuracy of sensors or hardware motion performance are eliminated periodically resulting in a good autonomous navigation of the robot.\\
 In next section we are to talk about the navigation algorithm and the sequence of instructions with some details.  
 
 
@@ -355,16 +355,76 @@ In the autonomous navigation mission, each of the three nodes has its own task t
 \section{GUI Implementation}
 talk about the Java application and how it is implemented, how it communicates with master unit to send navigation instruction. also how video stream is received
 
+\newpage
+
 \section{Mapping of Environment}
 talk about graph theory and how map is represented. 
 how landmarks are included in the map. 
 Search algorithms.
 instructions created to be sent to hardware.
 
+\newpage
+
 \section{Computer Vision}
 talk about how detection, recognition and tuning are processed.
 
-\section{Hardware Node and Low-Level Control}
+\newpage
+
+\section{Hardware Design and Low-Level Control}
+In this section we are about to take a close look on the design procedure of robot hardware both mechanical and electrical. The design stage of any application depends on the tasks and requirements it is supposed to fulfill. So, we will talk about functional requirements of project and how we select components to best suit them. Design engineers are usually constrained by one or more of these 5 concerns; time, money, knowledge, power and weight. So, there is no absolute good choice but we try to select the best one that meets the requirements and follow constraints. \cite{203} Then we will get a brief view on frame design, materials used and how manufacturing operation done. After that we will get closer to the low level control and talk about electronic modules and sensors used, function, advantages and disadvantages of each. Finally we reach the controller design; how it was implemented, tuned and tested.  
+
+\subsection{Choosing Suitable DC Motor  \cite{203}}
+In this project we introduce a robot for indoor navigation. So, in this case low speed is acceptable but at the same time it must be powerful enough for carrying and transporting most of parts we deal with at home or office. The requirements of robot were selected to be as follow:
+
+\begin{itemize}
+	\item \textbf{Functional Requirements:}
+	\\ DC Gear head motor capable of accelerating a 20 Kg, four-wheel drive robot with wheel diameter of 6.5 cm at a rate of 1 ${m/s^2}$. Top speed required will be around 0.75 m/s. This speed is suitable as it reasonably approachs human walking speed.
+	\item \textbf{Design Parameters:}
+	\\Supplied Voltage = 12 V, Motor size limited to an overall diameter of approximately 4 cm and an overall length of not more than 10 cm (Less than robot frame width).
+\end{itemize}
+Here is the calculation steps based on the lecture notes referenced in section title:
+\begin{itemize}
+	\item \textbf{Step One: Calculating Required Torque and rpm:}
+	\begin{itemize}
+		\item \textbf{Required Torque:} \\
+		${Force = Mass \times Acceleration}$\\
+		${F_{total} = ma = 20 kg \times 1 m/s^2 = 20 N}$\\
+		${F_w = F_{total} \div NumberOfWheels = 20 \div 4 = 5N }$\\
+		${\tau = F d = F_w \times WheelRadius = 5 N \times 0.065 m = 0.325 Nm}$\\
+		
+		\newpage
+		
+		\item \textbf{Required rpm:}\\
+		${Wheel Circumference = C_w = \pi D = 3.142 \times 0.13 m = 0.408m}$\\
+		${Speed = RPS \times C_w}$\\
+		${RPS = Speed \div C_w = 0.75 \div 0.408m = 1.838 rps = 110.294 rpm}$\\
+		
+	\end{itemize}
+	
+	\item \textbf{Step Two: Motor Selection to Meet the Requirements}\\
+	After searching available electronics stores we got the most suitable motor for our project. Its model name is SG-555123000-30K shown in figure . From the data sheet provided for it find the following specs:\cite{204}
+	\begin{itemize}
+		\item Rated Voltage : 12 V
+		\item No load Speed : 100 rpm
+		\item Load torque speed : 73 rpm
+		\item Torque : 0.34 Nm
+	\end{itemize}
+	By these specs we can conclude that robot features became as follow:
+	\begin{itemize}
+		\item ${Full  load  speed = rpm \times C_w \div 60 = 73 \times 0.408 \div 60 = 0.4964 m/s}$
+		\item ${Pay load = \frac{ \tau_w \times 4}{ R_w \times a} = \frac{0.34 \times 4}{0.065 * 1} = 20.923 kg}$
+		
+	\end{itemize}
+\end{itemize}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.35\textwidth]{Fig/dc-motor.jpg}
+	\caption{DC motor SG-555123000-30K selected for driving the robot.}
+	\label{fig:dc-motor}
+\end{figure}
+
 mechanical analysis, solid design, final assembly, Motors choice.
 Electric components, circuits, structure.
 Sensors

@@ -6,12 +6,13 @@
 \contentsline {subsection}{\numberline {1.3}Limitations}{3}{subsection.1.3}
 \contentsline {subsection}{\numberline {1.4}Overview on the project parts}{3}{subsection.1.4}
 \contentsline {section}{\numberline {2}User Manual and GUI}{4}{section.2}
-\contentsline {section}{\numberline {3}System Structure and Proposed Algorithm}{4}{section.3}
-\contentsline {subsection}{\numberline {3.1}Robots Operating System (ROS)}{4}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Project Nodes and Communication Process}{5}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Proposed Algorithm for Autonomous Navigation}{5}{subsection.3.3}
-\contentsline {section}{\numberline {4}GUI Implementation}{8}{section.4}
-\contentsline {section}{\numberline {5}Mapping of Environment}{8}{section.5}
-\contentsline {section}{\numberline {6}Computer Vision}{8}{section.6}
-\contentsline {section}{\numberline {7}Hardware Node and Low-Level Control}{8}{section.7}
-\contentsline {section}{\numberline {A}Solid Design Parts}{9}{appendix.A}
+\contentsline {section}{\numberline {3}System Structure and Proposed Algorithm}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Robots Operating System (ROS)}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Project Nodes and Communication Process}{6}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Proposed Algorithm for Autonomous Navigation}{6}{subsection.3.3}
+\contentsline {section}{\numberline {4}GUI Implementation}{9}{section.4}
+\contentsline {section}{\numberline {5}Mapping of Environment}{10}{section.5}
+\contentsline {section}{\numberline {6}Computer Vision}{11}{section.6}
+\contentsline {section}{\numberline {7}Hardware Design and Low-Level Control}{12}{section.7}
+\contentsline {subsection}{\numberline {7.1}Choosing Suitable DC Motor \cite {203}}{12}{subsection.7.1}
+\contentsline {section}{\numberline {A}Solid Design Parts}{14}{appendix.A}

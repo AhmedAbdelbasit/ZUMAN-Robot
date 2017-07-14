@@ -13,5 +13,6 @@
 \BOOKMARK [1][-]{section.4}{GUI Implementation}{}% 13
 \BOOKMARK [1][-]{section.5}{Mapping of Environment}{}% 14
 \BOOKMARK [1][-]{section.6}{Computer Vision}{}% 15
-\BOOKMARK [1][-]{section.7}{Hardware Node and Low-Level Control}{}% 16
-\BOOKMARK [1][-]{appendix.A}{Solid Design Parts}{}% 17
+\BOOKMARK [1][-]{section.7}{Hardware Design and Low-Level Control}{}% 16
+\BOOKMARK [2][-]{subsection.7.1}{Choosing Suitable DC Motor 203}{section.7}% 17
+\BOOKMARK [1][-]{appendix.A}{Solid Design Parts}{}% 18

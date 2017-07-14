@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.28)  14 JUL 2017 18:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.28)  14 JUL 2017 22:40
 entering extended mode
 **./zuman_book.tex
 (zuman_book.tex
@@ -1077,7 +1077,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count161
-<Fig/faculty.png, id=71, 568.37344pt x 455.45157pt>
+<Fig/faculty.png, id=75, 568.37344pt x 455.45157pt>
 File: Fig/faculty.png Graphic file (type png)
  <use Fig/faculty.png>
 Package pdftex.def Info: Fig/faculty.png used on input line 109.
@@ -1101,7 +1101,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout5 = `zuman_book.lof'.
 
  [4]
-<Fig/Introduction.png, id=141, 460.72125pt x 380.92313pt>
+<Fig/Introduction.png, id=150, 460.72125pt x 380.92313pt>
 File: Fig/Introduction.png Graphic file (type png)
 
 <use Fig/Introduction.png>
@@ -1113,23 +1113,23 @@ been already used, duplicate ignored
                    \relax 
 l.251 
        [1 <./Fig/Introduction.png>]
-<Fig/mobile_robots_apps.jpg, id=146, 602.25pt x 529.98pt>
+<Fig/mobile_robots_apps.jpg, id=155, 602.25pt x 529.98pt>
 File: Fig/mobile_robots_apps.jpg Graphic file (type jpg)
 
 <use Fig/mobile_robots_apps.jpg>
 Package pdftex.def Info: Fig/mobile_robots_apps.jpg used on input line 255.
 (pdftex.def)             Requested size: 268.847pt x 236.59647pt.
  [2 <./Fig/mobile_robots_apps.jpg>]
-<Fig/overview.png, id=154, 557.08125pt x 392.96812pt>
+<Fig/overview.png, id=163, 557.08125pt x 392.96812pt>
 File: Fig/overview.png Graphic file (type png)
  <use Fig/overview.png>
 Package pdftex.def Info: Fig/overview.png used on input line 276.
 (pdftex.def)             Requested size: 268.847pt x 189.64789pt.
 
-[3 <./Fig/overview.png>] <Fig/rosLogo.png, id=160, 705.63625pt x 342.27875pt>
+[3 <./Fig/overview.png>] [4]
+<Fig/rosLogo.png, id=173, 705.63625pt x 342.27875pt>
 File: Fig/rosLogo.png Graphic file (type png)
-
-<use Fig/rosLogo.png>
+ <use Fig/rosLogo.png>
 Package pdftex.def Info: Fig/rosLogo.png used on input line 300.
 (pdftex.def)             Requested size: 134.4235pt x 65.20076pt.
 
@@ -1137,74 +1137,113 @@ Underfull \hbox (badness 10000) in paragraph at lines 293--302
 
  []
 
-<Fig/Project-Nodes.png, id=162, 651.93562pt x 348.55219pt>
+[5 <./Fig/rosLogo.png>]
+<Fig/Project-Nodes.png, id=181, 651.93562pt x 348.55219pt>
 File: Fig/Project-Nodes.png Graphic file (type png)
 
 <use Fig/Project-Nodes.png>
 Package pdftex.def Info: Fig/Project-Nodes.png used on input line 310.
 (pdftex.def)             Requested size: 268.847pt x 143.74231pt.
- [4 <./Fig/rosLogo.png>]
-<Fig/Algorithm-phases.png, id=170, 587.19376pt x 359.84438pt>
+
+<Fig/Algorithm-phases.png, id=183, 587.19376pt x 359.84438pt>
 File: Fig/Algorithm-phases.png Graphic file (type png)
 
 <use Fig/Algorithm-phases.png>
 Package pdftex.def Info: Fig/Algorithm-phases.png used on input line 325.
 (pdftex.def)             Requested size: 313.65028pt x 192.2101pt.
 
-<Fig/localization.png, id=172, 630.355pt x 483.8075pt>
+<Fig/localization.png, id=185, 630.355pt x 483.8075pt>
 File: Fig/localization.png Graphic file (type png)
 
 <use Fig/localization.png>
 Package pdftex.def Info: Fig/localization.png used on input line 335.
 (pdftex.def)             Requested size: 179.22678pt x 137.55437pt.
- [5 <./Fig/Project-Nodes.png>] [6 <./Fig/Algorithm-phases.png> <./Fig/localizat
+ [6 <./Fig/Project-Nodes.png>] [7 <./Fig/Algorithm-phases.png> <./Fig/localizat
 ion.png>]
-<Fig/full-algorithm.png, id=183, 1020.81375pt x 1751.7947pt>
+<Fig/full-algorithm.png, id=196, 1020.81375pt x 1751.7947pt>
 File: Fig/full-algorithm.png Graphic file (type png)
 
 <use Fig/full-algorithm.png>
 Package pdftex.def Info: Fig/full-algorithm.png used on input line 346.
 (pdftex.def)             Requested size: 336.05534pt x 576.70407pt.
- [7 <./Fig/full-algorithm.png>] [8
+ [8 <./Fig/full-algorithm.png>] [9
 
-] [9]
-(zuman_book.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 384.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 384.
+] [10] [11]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 376.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 380.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 380.
+
+Underfull \hbox (badness 10000) in paragraph at lines 389--394
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 397--401
+
+ []
+
+<Fig/dc-motor.jpg, id=224, 433.62pt x 433.62pt>
+File: Fig/dc-motor.jpg Graphic file (type jpg)
+ <use Fig/dc-motor.jpg>
+Package pdftex.def Info: Fig/dc-motor.jpg used on input line 423.
+(pdftex.def)             Requested size: 156.82855pt x 156.83089pt.
+ [13 <./Fig/dc-motor.jpg>] [14] (zuman_book.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+[]\T1/cmr/m/n/12 M. Ahmed.  Lec-ture notes un-der-stand-ing us-ing dc mo-tors s
+pecs.
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 444.
+ [15]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 444.
  (zuman_book.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 384.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 384.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 444.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 444.
 Package rerunfilecheck Info: File `zuman_book.out' has not changed.
-(rerunfilecheck)             Checksum: 5C9EB42E71EFE24F36A2E1F2F2941541;1120.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 384.
+(rerunfilecheck)             Checksum: 5A7205069EFAA7837C968ADF2E4AF299;1203.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 444.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11924 strings out of 493333
- 173742 string characters out of 3139197
- 399514 words of memory out of 3000000
- 15203 multiletter control sequences out of 15000+200000
- 16252 words of font info for 39 fonts, out of 3000000 for 9000
+ 11969 strings out of 493333
+ 174372 string characters out of 3139197
+ 399657 words of memory out of 3000000
+ 15234 multiletter control sequences out of 15000+200000
+ 16936 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,11n,43p,718b,5115s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,11n,43p,958b,5288s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Poto\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
-en\ec\dpi600\ecsl1200.pk> <C:\Users\Poto\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
-ur\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Poto\AppData\Local\MiKTeX\2.9\font
-s\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Poto\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Poto\AppData\Loc
-al\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk> <C:\Users\Poto\Ap
-pData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\User
-s\Poto\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk>
- <C:\Users\Poto\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecr
-m1440.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on zuman_book.pdf (15 pages, 912657 bytes).
+en\ec\dpi600\ecti1200.pk> <C:\Users\Poto\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
+ur\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\Poto\AppData\Local\MiKTeX\2.9\font
+s\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Poto\AppData\Local\MiKTeX
+\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Poto\AppData\Loc
+al\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Poto\Ap
+pData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk> <C:\User
+s\Poto\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk>
+ <C:\Users\Poto\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
+x2488.pk> <C:\Users\Poto\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
+pi600\ecrm1440.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on zuman_book.pdf (20 pages, 1002794 bytes).
 PDF statistics:
- 555 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 500000)
- 182 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 650 PDF objects out of 1000 (max. 8388607)
+ 55 named destinations out of 1000 (max. 500000)
+ 195 words of extra memory for PDF output out of 10000 (max. 10000000)
 
