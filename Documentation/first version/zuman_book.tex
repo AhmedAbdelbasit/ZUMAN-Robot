@@ -211,7 +211,7 @@ Key abbreviations
     LiPo &   Lithium Polymer\\ 
     RPM   & Revolution Per Minute  \\
     ADC   & Analog-Digital Converter   \\  
-    LPF & Low Path Filter \\
+    LPF & Low Pass Filter \\
     FPS & Frame Per Seconds\\
     GND & Ground
     
@@ -247,7 +247,7 @@ Key abbreviations
 
 \subsection{History of Mobile Robots} 
 Mobile robots have the capability to move around in their environment and are not fixed to one physical location. Mobile robots can be "autonomous" (AMR - autonomous mobile robot) which means they are capable of navigating an uncontrolled environment without the need for physical or electro-mechanical guidance devices. Alternatively, mobile robots can rely on guidance devices that allow them to travel a pre-defined navigation route in relatively controlled space (AGV - autonomous guided vehicle). By contrast, industrial robots are usually more-or-less stationary, consisting of a jointed arm (multi-linked manipulator) and gripper assembly (or end effector), attached to a fixed surface.\\
-Mobile robots have become more commonplace in commercial and industrial settings. Hospitals have been using autonomous mobile robots to move materials for many years. Warehouses have installed mobile robotic systems to efficiently move materials from stocking shelves to order fulfillment zones. Mobile robots are also a major focus of current research and almost every major university has one or more labs that focus on mobile robot research. Mobile robots are also found in industrial, military and security settings. Domestic robots are consumer products, including entertainment robots and those that perform certain household tasks such as vacuuming or gardening. \cite{201}
+Mobile robots have become more commonplace in commercial and industrial settings. Hospitals have been using autonomous mobile robots to move materials for many years. Warehouses have installed mobile robotic systems to efficiently move materials from stocking shelves to order fulfillment zones. Mobile robots are also a major focus of current research and almost every major university has one or more labs that focus on mobile robot research. Mobile robots are also found in industrial, military and security settings. Domestic robots are consumer products, including entertainment robots and those that perform certain household tasks such as vacuuming or gardening. \cite{202}
 
 
 \begin{figure}[H]
@@ -270,26 +270,70 @@ In next sections we will talk about our trials, results and algorithms implement
 \noindent But lets start from a high-level point of view and gradually take important topics with some details.
 
 \subsection{Overview on the project parts}
-The main system structure of our project as shown in following figure consists of a GUI and controller box at user side and the master unit (RPi) at robot side. The operation starts from GUI to select the function needed and then a flow of communication commands are passed to master unit over the network to perform the required task. Controller box is used in manned mode of operation to guide robot motion and camera orientation. In next chapter we talk about the GUI; how you can use, how it is implemented and a quick over view on ROS (Robots Operating System).
+The main system structure of our project as shown in figure \ref{fig:system-structure} consists of a GUI and controller box at user side and the master unit (RPi) at robot side. The operation starts from GUI to select the function needed and then a flow of communication commands are passed to master unit over the network to perform the required task. Controller box is used in manned mode of operation to guide robot motion and camera orientation. In next chapter we talk about the GUI; how you can use, how it is implemented and a quick over view on ROS (Robots Operating System).
 \begin{figure}[H]
 	\centering
 	\includegraphics[width =0.6\textwidth]{Fig/overview.png}
 	\caption{Clustered view of main system structure}
-	
+	\label{fig:system-structure}
 \end{figure}
 \newpage
 
 \section{User Manual and GUI}
 talk about how to use the GUI to run the project on different modes.
 
-\section{System Structure and Proposed Algorithm}
-talk briefly about ROS. details of parts and communication between them. flow chart for overall processes.
 
+
+\section{System Structure and Proposed Algorithm}
+In the design stage of project, three main parts arises to be implemented; mapping, computer vision and hardware. Each part represents an executable program that can interact with other parts in a manner to fulfill the required task. So, lets first talk briefly about ROS and how it provided a great help in connecting project parts and how communication between processes becomes easy.
+
+
+
+\subsection{Robots Operating System (ROS)}
+The Robot Operating System (ROS) is a flexible framework for writing robot software. It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms. \cite{201} \\
+In ROS, Node is a common word that represents the executable file. So, in our project we have three main nodes; mapping, computer vision and hardware nodes. communication between nodes in ROS can be performed in many ways. The method we worked with is the message communication. Message represents the ROS data type. We developed a special type that can handle all communication needs between nodes. It is called Instruction and consists of a string variable that holds the command name and two float arguments. \\
+Nodes can deal with messages in two manners; as a publisher, subscriber or both. Another word commonly used in ROS is the topic. It is considered as an intermediate program that holds any published message and forward it to all nodes that subscribed for it. This feature is very useful as a node can perform just one publishing command and any number of nodes can receive it. 
+Now we know a bit about how ROS works and for more details and tutorials you can visit ROS tutorials site: http://wiki.ros.org/ROS/Tutorials. \\ \\
+In next section we are to talk about our project nodes and how communication performed among them.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 0.3\textwidth]{Fig/rosLogo.png}
+	\caption{ROS logo.}
+\end{figure}
+
+
+
+\subsection{Project Nodes and Communication Process}
+As mentioned before, we have three main nodes; mapping, computer vision and hardware. the communication between them were created as shown in figure \ref{fig:nodes}. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.6\textwidth]{Fig/Project-Nodes.png}
+	\caption{The implemented nodes and advertised topics between them.}
+	\label{fig:nodes}
+\end{figure}
+There are two advertised topics; hw\_landmark that connects hardware with computer vision and hw\_map that connects hardware to mapping node. Over the hw\_map topic the mapping node publishes the instructions that guide the robot from a landmark to another. When the robot reaches a new landmark, a tuning loop starts between hardware and computer vision node to put the robot exactly in front of the landmark. In this way, errors caused by inaccuracy of sensors or hardware motion performance are eliminated periodically resulting in a good autonomous navigation of the robot.\\
+In next section we are to talk about the navigation algorithm and the sequence of instructions with some details.  
+
+
+
+
+\subsection{Proposed Algorithm for Autonomous Navigation}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =1\textwidth]{Fig/hw_map.png}
+	\caption{Communication between hardware and mapping node over hw\_map topic.}
+	\label{fig:nodes}
+\end{figure}
+
+\newpage
 \section{GUI Implementation}
-talk about the Java application and how it is implemented, how it communicates with master unit. how video stream is received
+talk about the Java application and how it is implemented, how it communicates with master unit to send navigation instruction. also how video stream is received
 
 \section{Mapping of Environment}
-talk about graph theory and how map is represented. how landmarks are included in the map. Search algorithms. instructions created to be sent to hardware.
+talk about graph theory and how map is represented. 
+how landmarks are included in the map. 
+Search algorithms.
+instructions created to be sent to hardware.
 
 \section{Computer Vision}
 talk about how detection, recognition and tuning are processed.

@@ -7,8 +7,11 @@
 \contentsline {subsection}{\numberline {1.4}Overview on the project parts}{3}{subsection.1.4}
 \contentsline {section}{\numberline {2}User Manual and GUI}{4}{section.2}
 \contentsline {section}{\numberline {3}System Structure and Proposed Algorithm}{4}{section.3}
-\contentsline {section}{\numberline {4}GUI Implementation}{4}{section.4}
-\contentsline {section}{\numberline {5}Mapping of Environment}{4}{section.5}
-\contentsline {section}{\numberline {6}Computer Vision}{4}{section.6}
-\contentsline {section}{\numberline {7}Hardware Node and Low-Level Control}{4}{section.7}
-\contentsline {section}{\numberline {A}Solid Design Parts}{5}{appendix.A}
+\contentsline {subsection}{\numberline {3.1}Robots Operating System (ROS)}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Project Nodes and Communication Process}{5}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Proposed Algorithm for Autonomous Navigation}{6}{subsection.3.3}
+\contentsline {section}{\numberline {4}GUI Implementation}{7}{section.4}
+\contentsline {section}{\numberline {5}Mapping of Environment}{7}{section.5}
+\contentsline {section}{\numberline {6}Computer Vision}{7}{section.6}
+\contentsline {section}{\numberline {7}Hardware Node and Low-Level Control}{7}{section.7}
+\contentsline {section}{\numberline {A}Solid Design Parts}{8}{appendix.A}

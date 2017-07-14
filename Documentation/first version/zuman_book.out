@@ -7,8 +7,11 @@
 \BOOKMARK [2][-]{subsection.1.4}{Overview on the project parts}{section.1}% 7
 \BOOKMARK [1][-]{section.2}{User Manual and GUI}{}% 8
 \BOOKMARK [1][-]{section.3}{System Structure and Proposed Algorithm}{}% 9
-\BOOKMARK [1][-]{section.4}{GUI Implementation}{}% 10
-\BOOKMARK [1][-]{section.5}{Mapping of Environment}{}% 11
-\BOOKMARK [1][-]{section.6}{Computer Vision}{}% 12
-\BOOKMARK [1][-]{section.7}{Hardware Node and Low-Level Control}{}% 13
-\BOOKMARK [1][-]{appendix.A}{Solid Design Parts}{}% 14
+\BOOKMARK [2][-]{subsection.3.1}{Robots Operating System \(ROS\)}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Project Nodes and Communication Process}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.3}{Proposed Algorithm for Autonomous Navigation}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{GUI Implementation}{}% 13
+\BOOKMARK [1][-]{section.5}{Mapping of Environment}{}% 14
+\BOOKMARK [1][-]{section.6}{Computer Vision}{}% 15
+\BOOKMARK [1][-]{section.7}{Hardware Node and Low-Level Control}{}% 16
+\BOOKMARK [1][-]{appendix.A}{Solid Design Parts}{}% 17
