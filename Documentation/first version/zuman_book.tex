@@ -204,6 +204,9 @@ Key abbreviations
     GUI & Graphical User Interface	\\
     RPi &   Raspberry Pi	\\
     NiMH & Nickel–Metal Hydride\\
+    BMP & Bitmap \\
+    GBFS & Greedy Best First Search\\
+  
     PID & Proportion Integral Derivative  \\  
     PWM &  Pulse Width Modulation  \\   
     $I^2C$  & Inter-Integrated Circuit   \\  
@@ -358,14 +361,86 @@ talk about the Java application and how it is implemented, how it communicates w
 \newpage
 
 \section{Mapping of Environment}
-talk about graph theory and how map is represented. 
-how landmarks are included in the map. 
-Search algorithms.
-instructions created to be sent to hardware.
+Our robot is an off-line mapping system , meaning it only moves in a region when it has a map for it stored in its memory , we store the map in BMP format and the location of landmarks in a TXT file , and the mapping part gives the hardware part the instructions necessary to navigate from a start landmark to a destination landmark
+
+\subsection{Introduction}
+In this work, we present an algorithm for path planning to a target for mobile robot in known environment. The proposed algorithm allows a mobile robot to navigate through static obstacles, and finding the path in order to reach the target without collision. This algorithm provides robot the ability to move from the initial position to the final position (target). The path finding strategy is designed using a greedy and A* algorithms. The robot moves within the environment by sensing and avoiding the obstacles coming across its way towards the target. When the mission is executed, it is necessary to plan an optimal or feasible path for itself avoiding obstructions in its way and minimizing a cost such as time, energy, and distance. The proposed path planning must make the robot able to achieve these tasks: to avoid obstacles, and to make ones way toward its target. 
+
+\subsection{Mapping Algorithms considered}
+Navigating a terrain and finding the shortest path to a Goal location is one of the fundamental problems in path planning. While there are many approaches to this problem, Our robot uses an off-line map to navigate through its environment , so it needs a search algorithm to find the best way to reach the destination node from a start one. We had two algorithms to consider , GBFS and A*.
+
+\subsubsection{Greedy Best First Search(GBFS) Algorithm :}
+This algorithm depends on a heuristic function which is the direct distance from the node to the goal node , and traverses its graph by selecting the node with the lowest heuristic in its frontier.
+
+\begin{itemize}
+	\item \textbf{Advantages:}
+		\begin{itemize}
+			\item Fast(less than a second) , which allows for remapping and obstacle avoidance
+			\item Consumes the least possible memory space
+			
+		\end{itemize}
+	\item \textbf{Disadvantages:}
+		\begin{itemize}
+			\item It does not give the optimal route from source to destination
+			\item Not guaranteed to find the goal
+			
+		\end{itemize}
+\end{itemize}
+
+\subsubsection{A* Algorithm:}
+This algorithm depends on both a heuristic function (which is still the direct distance from the node to the goal node) and the cost which is the number of nodes that led to this node , and traverses its graph by selecting the node with the lowest sum of them in its .
+
+\begin{itemize}
+	\item \textbf{Advantages:}
+	\begin{itemize}
+		\item Balance between space-time consumption and accuracy
+		\item Guaranteed to find the goal
+		\item Gives the best possible path from start point to goal
+		
+		
+	\end{itemize}
+	\item \textbf{Disadvantages:}
+	\begin{itemize}
+		\item Slower than acceptable for real time (A few seconds)
+		
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Algorithm used in our project}
+After some tries and results demonstration We used a merge between them , good , but how?\\
+We used a map with the path we want the robot to follow when possible is white and all others are grey (127 of 255 brightness) , the algorithm uses heuristic only in white areas (GBFS) and the sum of heuristic and cost in gray areas (A*) , this way , we ensure the algorithm moves in the wanted path unless necessary , we also used lines with (195 of 255) gray to indicate whether the robot is next to a landmark or not .
+We also noticed that the GBFS algorithm doesn’t give the same results when going from source to destination and vice-versa , so we made the code run the algorithm both ways and choose the best to be operated.
+Flowchart of whole mapping role is shown in figure \ref{fig:map-flowchart}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width =1\textwidth]{Fig/mapping-flowchart.png}
+	\caption{Flowchart of mapping process.}
+	\label{fig:map-flowchart}
+\end{figure}
+
+\subsection{Mapping Example of our Department Floor}
+As we said first we use two kinds of search algorithm A* and GBFS. So, when the robot use them , as we show in this figure .. the map is build by colors from 0 to 255. 
+We use three colors  , if a robot in 127 color so it use A* search and the 195 color is detection rejoin if the robot in it  should be ready to detect a land mark and the land mark is represented by 200 , otherwise the robot use greedy search , as this way we granted the robot always try to use greedy search to reduce the cost .
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =.5\textwidth]{Fig/map-example.png}
+	\caption{Map example represented in bitmap file.}
+	\label{fig:map-example}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =.8\textwidth]{Fig/path-example.png}
+	\caption{Path example and commands created from some source to destination in a trial map.}
+	\label{fig:path-example}
+\end{figure}
 
 \newpage
 
 \section{Computer Vision}
+
 talk about how detection, recognition and tuning are processed.
 
 \newpage

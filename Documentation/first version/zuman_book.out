@@ -12,13 +12,19 @@
 \BOOKMARK [2][-]{subsection.3.3}{Proposed Algorithm for Autonomous Navigation}{section.3}% 12
 \BOOKMARK [1][-]{section.4}{GUI Implementation}{}% 13
 \BOOKMARK [1][-]{section.5}{Mapping of Environment}{}% 14
-\BOOKMARK [1][-]{section.6}{Computer Vision}{}% 15
-\BOOKMARK [1][-]{section.7}{Hardware Node and Modules Structure Tree}{}% 16
-\BOOKMARK [2][-]{subsection.7.1}{Hardware ROS node}{section.7}% 17
-\BOOKMARK [2][-]{subsection.7.2}{Low-level Hardware Kits and Modules}{section.7}% 18
-\BOOKMARK [2][-]{subsection.7.3}{Hardware Tree Structure}{section.7}% 19
-\BOOKMARK [1][-]{section.8}{Mechanical Design and Low-Level Control}{}% 20
-\BOOKMARK [2][-]{subsection.8.1}{Choosing Suitable DC Motor 203}{section.8}% 21
-\BOOKMARK [2][-]{subsection.8.2}{Robot Dimension and Solid Design}{section.8}% 22
-\BOOKMARK [1][-]{appendix.A}{Hardware modules and sensors}{}% 23
-\BOOKMARK [1][-]{appendix.B}{Solid Design Parts}{}% 24
+\BOOKMARK [2][-]{subsection.5.1}{Introduction}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.2}{Mapping Algorithms considered}{section.5}% 16
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Greedy Best First Search\(GBFS\) Algorithm :}{subsection.5.2}% 17
+\BOOKMARK [3][-]{subsubsection.5.2.2}{A* Algorithm:}{subsection.5.2}% 18
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Algorithm used in our project}{subsection.5.2}% 19
+\BOOKMARK [2][-]{subsection.5.3}{Mapping Example of our Department Floor}{section.5}% 20
+\BOOKMARK [1][-]{section.6}{Computer Vision}{}% 21
+\BOOKMARK [1][-]{section.7}{Hardware Node and Modules Structure Tree}{}% 22
+\BOOKMARK [2][-]{subsection.7.1}{Hardware ROS node}{section.7}% 23
+\BOOKMARK [2][-]{subsection.7.2}{Low-level Hardware Kits and Modules}{section.7}% 24
+\BOOKMARK [2][-]{subsection.7.3}{Hardware Tree Structure}{section.7}% 25
+\BOOKMARK [1][-]{section.8}{Mechanical Design and Low-Level Control}{}% 26
+\BOOKMARK [2][-]{subsection.8.1}{Choosing Suitable DC Motor 203}{section.8}% 27
+\BOOKMARK [2][-]{subsection.8.2}{Robot Dimension and Solid Design}{section.8}% 28
+\BOOKMARK [1][-]{appendix.A}{Hardware modules and sensors}{}% 29
+\BOOKMARK [1][-]{appendix.B}{Solid Design Parts}{}% 30
