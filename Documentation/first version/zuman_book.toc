@@ -17,14 +17,20 @@
 \contentsline {subsubsection}{\numberline {5.2.1}Greedy Best First Search(GBFS) Algorithm :}{10}{subsubsection.5.2.1}
 \contentsline {subsubsection}{\numberline {5.2.2}A* Algorithm:}{11}{subsubsection.5.2.2}
 \contentsline {subsubsection}{\numberline {5.2.3}Algorithm used in our project}{11}{subsubsection.5.2.3}
-\contentsline {subsection}{\numberline {5.3}Mapping Example of our Department Floor}{11}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.3}Mapping Example of indoor environment}{11}{subsection.5.3}
 \contentsline {section}{\numberline {6}Computer Vision}{14}{section.6}
-\contentsline {section}{\numberline {7}Hardware Node and Modules Structure Tree}{15}{section.7}
-\contentsline {subsection}{\numberline {7.1}Hardware ROS node}{15}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Low-level Hardware Kits and Modules}{16}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Hardware Tree Structure}{17}{subsection.7.3}
-\contentsline {section}{\numberline {8}Mechanical Design and Low-Level Control}{19}{section.8}
-\contentsline {subsection}{\numberline {8.1}Choosing Suitable DC Motor \cite {203}}{19}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Robot Dimension and Solid Design}{21}{subsection.8.2}
-\contentsline {section}{\numberline {A}Hardware modules and sensors}{22}{appendix.A}
-\contentsline {section}{\numberline {B}Solid Design Parts}{22}{appendix.B}
+\contentsline {subsection}{\numberline {6.1}Landmark detection for Localization}{14}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Using Computer Vision for obstacle avoiding}{16}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Canny Technique}{16}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Floor Subtraction Technique}{16}{subsubsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.3}Stereo BM/SGBM Techniques}{17}{subsubsection.6.2.3}
+\contentsline {subsubsection}{\numberline {6.2.4}Used Method}{17}{subsubsection.6.2.4}
+\contentsline {section}{\numberline {7}Hardware Node and Modules Structure Tree}{18}{section.7}
+\contentsline {subsection}{\numberline {7.1}Hardware ROS node}{18}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Low-level Hardware Kits and Modules}{19}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Hardware Tree Structure}{20}{subsection.7.3}
+\contentsline {section}{\numberline {8}Mechanical Design and Low-Level Control}{22}{section.8}
+\contentsline {subsection}{\numberline {8.1}Choosing Suitable DC Motor \cite {203}}{22}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Robot Dimension and Solid Design}{24}{subsection.8.2}
+\contentsline {section}{\numberline {A}Hardware modules and sensors}{25}{appendix.A}
+\contentsline {section}{\numberline {B}Solid Design Parts}{25}{appendix.B}

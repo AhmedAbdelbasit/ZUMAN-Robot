@@ -17,14 +17,20 @@
 \BOOKMARK [3][-]{subsubsection.5.2.1}{Greedy Best First Search\(GBFS\) Algorithm :}{subsection.5.2}% 17
 \BOOKMARK [3][-]{subsubsection.5.2.2}{A* Algorithm:}{subsection.5.2}% 18
 \BOOKMARK [3][-]{subsubsection.5.2.3}{Algorithm used in our project}{subsection.5.2}% 19
-\BOOKMARK [2][-]{subsection.5.3}{Mapping Example of our Department Floor}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.3}{Mapping Example of indoor environment}{section.5}% 20
 \BOOKMARK [1][-]{section.6}{Computer Vision}{}% 21
-\BOOKMARK [1][-]{section.7}{Hardware Node and Modules Structure Tree}{}% 22
-\BOOKMARK [2][-]{subsection.7.1}{Hardware ROS node}{section.7}% 23
-\BOOKMARK [2][-]{subsection.7.2}{Low-level Hardware Kits and Modules}{section.7}% 24
-\BOOKMARK [2][-]{subsection.7.3}{Hardware Tree Structure}{section.7}% 25
-\BOOKMARK [1][-]{section.8}{Mechanical Design and Low-Level Control}{}% 26
-\BOOKMARK [2][-]{subsection.8.1}{Choosing Suitable DC Motor 203}{section.8}% 27
-\BOOKMARK [2][-]{subsection.8.2}{Robot Dimension and Solid Design}{section.8}% 28
-\BOOKMARK [1][-]{appendix.A}{Hardware modules and sensors}{}% 29
-\BOOKMARK [1][-]{appendix.B}{Solid Design Parts}{}% 30
+\BOOKMARK [2][-]{subsection.6.1}{Landmark detection for Localization}{section.6}% 22
+\BOOKMARK [2][-]{subsection.6.2}{Using Computer Vision for obstacle avoiding}{section.6}% 23
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Canny Technique}{subsection.6.2}% 24
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Floor Subtraction Technique}{subsection.6.2}% 25
+\BOOKMARK [3][-]{subsubsection.6.2.3}{Stereo BM/SGBM Techniques}{subsection.6.2}% 26
+\BOOKMARK [3][-]{subsubsection.6.2.4}{Used Method}{subsection.6.2}% 27
+\BOOKMARK [1][-]{section.7}{Hardware Node and Modules Structure Tree}{}% 28
+\BOOKMARK [2][-]{subsection.7.1}{Hardware ROS node}{section.7}% 29
+\BOOKMARK [2][-]{subsection.7.2}{Low-level Hardware Kits and Modules}{section.7}% 30
+\BOOKMARK [2][-]{subsection.7.3}{Hardware Tree Structure}{section.7}% 31
+\BOOKMARK [1][-]{section.8}{Mechanical Design and Low-Level Control}{}% 32
+\BOOKMARK [2][-]{subsection.8.1}{Choosing Suitable DC Motor 203}{section.8}% 33
+\BOOKMARK [2][-]{subsection.8.2}{Robot Dimension and Solid Design}{section.8}% 34
+\BOOKMARK [1][-]{appendix.A}{Hardware modules and sensors}{}% 35
+\BOOKMARK [1][-]{appendix.B}{Solid Design Parts}{}% 36

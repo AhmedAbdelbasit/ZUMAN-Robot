@@ -419,7 +419,7 @@ Flowchart of whole mapping role is shown in figure \ref{fig:map-flowchart}.
 	\label{fig:map-flowchart}
 \end{figure}
 
-\subsection{Mapping Example of our Department Floor}
+\subsection{Mapping Example of indoor environment}
 As we said first we use two kinds of search algorithm A* and GBFS. So, when the robot use them , as we show in this figure .. the map is build by colors from 0 to 255. 
 We use three colors  , if a robot in 127 color so it use A* search and the 195 color is detection rejoin if the robot in it  should be ready to detect a land mark and the land mark is represented by 200 , otherwise the robot use greedy search , as this way we granted the robot always try to use greedy search to reduce the cost .
 
@@ -440,8 +440,86 @@ We use three colors  , if a robot in 127 color so it use A* search and the 195 c
 \newpage
 
 \section{Computer Vision}
+If robot is designed to blindly access the environment, its error rate will increase and its uses will be limited, So we used a Couple of Cameras with our robot for it to properly “see” the environment and better interact with it , we also used a library Called OpenCV which is – as the name implies – an Open source Computer Vision library , with methods used to process photos and extract info from them , we will use this library to help us locate our robots via landmarks , and detect and avoid obstacles (as a helping factor in addition to ultrasonic) , among other things.
 
-talk about how detection, recognition and tuning are processed.
+\subsection{Landmark detection for Localization}
+Our robot uses an offline map to navigate its environment , so it needs a landmark to use as a starting point , it may also use them as proof it has reached a specific point in the map and to compensate for errors , good , but how?\\
+
+\noindent OpenCV is good with detecting circles , so we first chose our landmarks to be a thick circle with a number in it , when the robot is placed in a certain place , it spins around itself until it sees a landmark , then it goes and stands next to it , also when it knows (from the offline map) ,  that it is standing next to a landmark ,  it takes a photograph to confirm its location , the algorithm detects if there are two circle inside one another (the thick circle inner and outer perimeters) , then it confirms the results by cropping the outer circle and detecting the inner circle , the function returns the biggest thick circle in the scene and then recognizes it via OCR to determine which landmark it is , compare OCR results with landmark text it expects to find the best match.\\
+
+\noindent This approach was not very good as circles get mis-recognized by the
+Tesseract OCR engine we used to recognize which landmark it is, so we decided to detect rectangles instead of circles, and we made the landmarks to be white small rectangular cards (which will work fine with better results than circles as long as the door it’s sticked to is not white too) , and to solve the OCR problem further we used two OCR engines : Tesseract and OCRad , to get better results (these were the only two free OCR engines we could find).\\
+
+\noindent Experimental result for landmark detection and recognition is shown in figure \ref{fig:landmark-result}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width =0.8\textwidth]{Fig/landmark-result.png}
+	\caption{Detection and recognition of landmark.}
+	\label{fig:landmark-result}
+\end{figure}
+
+\newpage
+
+\subsection{Using Computer Vision for obstacle avoiding}
+Of Course an obvious question arises here , if we are already using Ultrasonic Sensors to detect obstacle , wouldn’t it be redundant to use Computer Vision as well ? Of course extra precautions never hurts , but there is another reason , Ultrasonic sensor only detects the obstacle if its normal to the sensor , otherwise the ultrasonic signal will reflect away from the surface and won’t be detected.\\
+
+\noindent There are many ways to detect obstacles using computer vision , but each one has its pros and cons , we will discuss the methods we tried with our robot here.
+
+\subsubsection{Canny Technique}
+The technique depends on detecting the edges of the objects in the image , by blurring the image and using the canny transform , we get the edges of the objects in the image ,if the floor is not very rough it will have no edges and then it will be very simple to detect obstacles and walls!\\
+
+\begin{itemize}
+	\item Advantages:
+	\begin{itemize}
+		\item Easy to understand and implement 
+		\item Super-Fast
+		\item Gives decent results in simple situations
+	\end{itemize}
+	\item Disadvantages:
+	\begin{itemize}
+		\item Does not work when floor is rough or has different colors 
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Floor Subtraction Technique}
+The technique depends on subtracting the most significant blob near the bottom of the image , which is bound to be the floor , keeping only the obstacles and the walls , the robot finds the longest path it can walk in without hitting anything and turns left or right accordingly , yes , it’s as simple as that!
+
+\begin{itemize}
+	\item Advantages:
+	\begin{itemize}
+		\item Easy to understand and implement 
+		\item Very Fast
+		\item Gives decent results
+		
+	\end{itemize}
+	\item Disadvantages:
+	\begin{itemize}
+		\item gets complicated (but solvable) when floor has different colors 
+		\item The robots design obscures its view of the ground (not solvable)
+		
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Stereo BM/SGBM Techniques}
+That’s how professionals do it ! BM/SGBM Stand for Block Matching / Semi Global Block Matching techniques , Both techniques are very similar , they both use two cameras as left eye and right eye , they both use a transform to find out which parts in the images are similar, they both return a grayscale map where near objects are brighter than far ones , this way we can detect obstacles as the near objects that are higher than a certain threshold from the floor , and find our way round them by finding the darkest part of the image and move towards it!
+•	SGBM is more accurate than BM but it consumes much more time , so it’s a tradeoff between time and accuracy
+
+\begin{itemize}
+	\item Advantages:
+	\begin{itemize}
+		\item Most accurate and professional way to find obstacles
+		\item Works on all kinds of floors
+	\end{itemize}
+	\item Disadvantages:
+	\begin{itemize}
+		\item Consumes large portions of processing power and memory
+		\item Slower than other methods
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Used Method}
+We used SGBM while reducing the image size by 1/(8x8) of its original size to increase speed , the method uses threshold to determine whether there is something closer than a given distance and sends a remap command to the Mapping part if there is , it takes about half a second to process every frame so it should detect the obstacle when it’s half a second away.
 
 \newpage
 

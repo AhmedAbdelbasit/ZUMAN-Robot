@@ -9,6 +9,7 @@
 \contentsline {figure}{\numberline {9}{\ignorespaces Flowchart of mapping process.\relax }}{12}{figure.caption.14}
 \contentsline {figure}{\numberline {10}{\ignorespaces Map example represented in bitmap file.\relax }}{13}{figure.caption.15}
 \contentsline {figure}{\numberline {11}{\ignorespaces Path example and commands created from some source to destination in a trial map.\relax }}{13}{figure.caption.16}
-\contentsline {figure}{\numberline {12}{\ignorespaces Hardware node standing midway between ROS nodes and hardware modules.\relax }}{15}{figure.caption.17}
-\contentsline {figure}{\numberline {13}{\ignorespaces Hardware modules structure.\relax }}{18}{figure.caption.18}
-\contentsline {figure}{\numberline {14}{\ignorespaces DC motor SG-555123000-30K selected for driving the robot.\relax }}{20}{figure.caption.19}
+\contentsline {figure}{\numberline {12}{\ignorespaces Detection and recognition of landmark.\relax }}{15}{figure.caption.17}
+\contentsline {figure}{\numberline {13}{\ignorespaces Hardware node standing midway between ROS nodes and hardware modules.\relax }}{18}{figure.caption.18}
+\contentsline {figure}{\numberline {14}{\ignorespaces Hardware modules structure.\relax }}{21}{figure.caption.19}
+\contentsline {figure}{\numberline {15}{\ignorespaces DC motor SG-555123000-30K selected for driving the robot.\relax }}{23}{figure.caption.20}
