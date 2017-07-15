@@ -13,6 +13,12 @@
 \contentsline {section}{\numberline {4}GUI Implementation}{9}{section.4}
 \contentsline {section}{\numberline {5}Mapping of Environment}{10}{section.5}
 \contentsline {section}{\numberline {6}Computer Vision}{11}{section.6}
-\contentsline {section}{\numberline {7}Hardware Design and Low-Level Control}{12}{section.7}
-\contentsline {subsection}{\numberline {7.1}Choosing Suitable DC Motor \cite {203}}{12}{subsection.7.1}
-\contentsline {section}{\numberline {A}Solid Design Parts}{14}{appendix.A}
+\contentsline {section}{\numberline {7}Hardware Node and Modules Structure Tree}{12}{section.7}
+\contentsline {subsection}{\numberline {7.1}Hardware ROS node}{12}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Low-level Hardware Kits and Modules}{13}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Hardware Tree Structure}{14}{subsection.7.3}
+\contentsline {section}{\numberline {8}Mechanical Design and Low-Level Control}{16}{section.8}
+\contentsline {subsection}{\numberline {8.1}Choosing Suitable DC Motor \cite {203}}{16}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Robot Dimension and Solid Design}{18}{subsection.8.2}
+\contentsline {section}{\numberline {A}Hardware modules and sensors}{19}{appendix.A}
+\contentsline {section}{\numberline {B}Solid Design Parts}{19}{appendix.B}

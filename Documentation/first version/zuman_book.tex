@@ -203,7 +203,7 @@ Key abbreviations
     ROS & Robots Operating System	\\
     GUI & Graphical User Interface	\\
     RPi &   Raspberry Pi	\\
-    
+    NiMH & Nickel–Metal Hydride\\
     PID & Proportion Integral Derivative  \\  
     PWM &  Pulse Width Modulation  \\   
     $I^2C$  & Inter-Integrated Circuit   \\  
@@ -370,7 +370,101 @@ talk about how detection, recognition and tuning are processed.
 
 \newpage
 
-\section{Hardware Design and Low-Level Control}
+\section{Hardware Node and Modules Structure Tree}
+In prior sections we always look at hardware as a black box. This view is sufficient when we want to describe the overall operation of the robot. But lets now take this part in some details to know how instructions are processed after being received from either mapping or computer vision node. \\
+In the design stage of hard ware, One of the most important aspects taken into consideration is modularity of design. Each Part in the hardware structure has a unique role and a method by which this role can be triggered for execution. Another important style of design followed is assigning low level tasks to multiple separate modules rather than having a central unit responsible for the whole operation. This method of design saves a lot of resources in the master unit opening the way for other complicated operations to be performed faster. In the following sections we will talk first about the role of hardware ROS node and then go down at low level.
+
+\subsection{Hardware ROS node}
+As mentioned in figure \ref{fig:full-algorithm} the hardware node stands midway between both mapping and computer vision nodes. its main role is receiving instructions from other nodes, refining them and forwarding them to low-level modules to be performed by robot. This leads to two important results. First, the hardware ROS node is free of low-level operations which keeps its main role of regarding and communicating with other nodes. Second, low level modules save their processing capability for optimized motion and performance rather than being concerned with communication of multiple parts. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.45\textwidth]{Fig/hw-node.png}
+	\caption{Hardware node standing midway between ROS nodes and hardware modules.}
+	\label{fig:hw-node}
+\end{figure}
+
+\newpage
+
+\subsection{Low-level Hardware Kits and Modules}
+Here we reached to the stage of choosing the suitable kits and modules that can meet the needs of other nodes. In this case We must first encounter the whole instructions hardware may receive. These commands are as follow:
+\begin{itemize}
+	\item move straight some distance
+	\item rotate robot some degrees
+	\item set camera orientation
+	\item measure distance between robot and any object around
+	\item switch on flash light
+	\item set motors speed
+\end{itemize}
+Each of these instructions has some requirements to be done. The modules we brought to fulfill these requirements can be encountered as follow:
+\begin{center}
+	\begin{tabular}{| c | c | c|}
+		\hline
+		Component & Function & Number of units \\
+		\hline
+		\hline
+		Raspberry Pi R3 & Master Unit & 1\\
+		\hline
+		Arduino Nano Kits & processing units & 3\\
+		\hline
+		NodeMCU & micro controller with embedded WiFi module & 1\\
+		\hline
+		Motor driver & controlling motor speed and direction & 1\\
+		\hline
+		DC Motors & manipulators for robot motion & 4\\
+		\hline
+		Wheels & attached to motors & 4\\
+		\hline
+		Motor shaft encoder & counting revolutions of motor & 2\\
+		\hline
+		Compass Module & measuring heading angle & 1\\
+		\hline
+		Ultrasonic module & range finder & 4\\
+		\hline
+		Sharp IR sensor & range finder with longer distance span & 1\\
+		\hline
+		Camera & capturing the environment around & 2\\
+		\hline
+		Servo Motors & controlling camera orientation & 2\\
+		\hline
+		Lithium Battery & Power source for motors and Light & 1\\
+		\hline
+		Power bank 5V & Power source for Raspberry PI & 1\\
+		\hline
+		NiMH Battery 5V & Power source for Servo motors & 1\\
+		\hline
+	\end{tabular}
+\end{center}
+
+\noindent Components figures and data sheets are both included in appendix.
+
+\newpage
+
+\subsection{Hardware Tree Structure}
+In this section we get closer to know how exactly project parts are connected to communicate. Also we will define the exact role for each part. As shown in figure \ref{fig:harware-structure} there are three sub nodes underlying the hardware node. Each one has sub-modules to control or communicate with. All these nodes are implemented on Arduino kits and this is a magnificent advantage for ROS as it provides libraries that enables us to implement ROS nodes on such kits.\cite{205} So, for each node it can publish and subscribe for message from the main hardware node on Raspberry Pi master. This enables us to have a single type of communication valid to use in all parts. We can identify the role of each node as follow:
+\begin{itemize}
+	\item \textbf{Manipulator Node:}\\
+	This node is responsible for executing motion commands. The controller is implemented in this node. As we can see in figure \ref{fig:harware-structure} there three underlying parts, the motor driver, flash light and ultrasonic. You may wonder why ultrasonic is here in the manipulator node. This simply because we needed to summarize all parts that participate in the motion control in a single node to minimize the flow of communication message as possible. The motor driver has two tasks; sending speed signals to motors and combine the encoder pulses to the Arduino. More details about each module will be figured out in next sections.
+	
+	\item \textbf{Sensors Node:}\\
+	
+	
+	\item \textbf{Manual Controller Box:}\\
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.9\textwidth]{Fig/hardware-structure.png}
+		\caption{Hardware modules structure.}
+		\label{fig:harware-structure}
+	\end{figure}
+
+	
+\end{itemize}
+
+
+
+\newpage
+
+\section{Mechanical Design and Low-Level Control}
 In this section we are about to take a close look on the design procedure of robot hardware both mechanical and electrical. The design stage of any application depends on the tasks and requirements it is supposed to fulfill. So, we will talk about functional requirements of project and how we select components to best suit them. Design engineers are usually constrained by one or more of these 5 concerns; time, money, knowledge, power and weight. So, there is no absolute good choice but we try to select the best one that meets the requirements and follow constraints. \cite{203} Then we will get a brief view on frame design, materials used and how manufacturing operation done. After that we will get closer to the low level control and talk about electronic modules and sensors used, function, advantages and disadvantages of each. Finally we reach the controller design; how it was implemented, tuned and tested.  
 
 \subsection{Choosing Suitable DC Motor  \cite{203}}
@@ -417,6 +511,7 @@ Here is the calculation steps based on the lecture notes referenced in section t
 	\end{itemize}
 \end{itemize}
 
+This is still acceptable speed because the robot is not supposed to work in full load all time. Moreover the speed of about 0.5 m/s is suitable also for indoor navigation purposes.
 
 \begin{figure}[H]
 	\centering
@@ -424,6 +519,14 @@ Here is the calculation steps based on the lecture notes referenced in section t
 	\caption{DC motor SG-555123000-30K selected for driving the robot.}
 	\label{fig:dc-motor}
 \end{figure}
+
+
+
+\newpage
+
+\subsection{Robot Dimension and Solid Design}
+
+
 
 mechanical analysis, solid design, final assembly, Motors choice.
 Electric components, circuits, structure.
@@ -433,8 +536,9 @@ Control system for straight line and rotation motion.
 \newpage
 \appendix
 
-\section{Solid Design Parts}
+\section{Hardware modules and sensors}
 
+\section{Solid Design Parts}
 
 \newpage
  

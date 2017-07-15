@@ -6,4 +6,6 @@
 \contentsline {figure}{\numberline {6}{\ignorespaces Proposed algorithm's phases\relax }}{7}{figure.caption.11}
 \contentsline {figure}{\numberline {7}{\ignorespaces Localization using computer vision\relax }}{7}{figure.caption.12}
 \contentsline {figure}{\numberline {8}{\ignorespaces Flowchart for whole algorithm applied for autonomous navigation.\relax }}{8}{figure.caption.13}
-\contentsline {figure}{\numberline {9}{\ignorespaces DC motor SG-555123000-30K selected for driving the robot.\relax }}{13}{figure.caption.14}
+\contentsline {figure}{\numberline {9}{\ignorespaces Hardware node standing midway between ROS nodes and hardware modules.\relax }}{12}{figure.caption.14}
+\contentsline {figure}{\numberline {10}{\ignorespaces Hardware modules structure.\relax }}{15}{figure.caption.15}
+\contentsline {figure}{\numberline {11}{\ignorespaces DC motor SG-555123000-30K selected for driving the robot.\relax }}{17}{figure.caption.16}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.28)  14 JUL 2017 22:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.28)  15 JUL 2017 04:03
 entering extended mode
 **./zuman_book.tex
 (zuman_book.tex
@@ -1077,7 +1077,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count161
-<Fig/faculty.png, id=75, 568.37344pt x 455.45157pt>
+<Fig/faculty.png, id=99, 568.37344pt x 455.45157pt>
 File: Fig/faculty.png Graphic file (type png)
  <use Fig/faculty.png>
 Package pdftex.def Info: Fig/faculty.png used on input line 109.
@@ -1101,7 +1101,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 \openout5 = `zuman_book.lof'.
 
  [4]
-<Fig/Introduction.png, id=150, 460.72125pt x 380.92313pt>
+<Fig/Introduction.png, id=185, 460.72125pt x 380.92313pt>
 File: Fig/Introduction.png Graphic file (type png)
 
 <use Fig/Introduction.png>
@@ -1113,21 +1113,21 @@ been already used, duplicate ignored
                    \relax 
 l.251 
        [1 <./Fig/Introduction.png>]
-<Fig/mobile_robots_apps.jpg, id=155, 602.25pt x 529.98pt>
+<Fig/mobile_robots_apps.jpg, id=190, 602.25pt x 529.98pt>
 File: Fig/mobile_robots_apps.jpg Graphic file (type jpg)
 
 <use Fig/mobile_robots_apps.jpg>
 Package pdftex.def Info: Fig/mobile_robots_apps.jpg used on input line 255.
 (pdftex.def)             Requested size: 268.847pt x 236.59647pt.
  [2 <./Fig/mobile_robots_apps.jpg>]
-<Fig/overview.png, id=163, 557.08125pt x 392.96812pt>
+<Fig/overview.png, id=198, 557.08125pt x 392.96812pt>
 File: Fig/overview.png Graphic file (type png)
  <use Fig/overview.png>
 Package pdftex.def Info: Fig/overview.png used on input line 276.
 (pdftex.def)             Requested size: 268.847pt x 189.64789pt.
 
 [3 <./Fig/overview.png>] [4]
-<Fig/rosLogo.png, id=173, 705.63625pt x 342.27875pt>
+<Fig/rosLogo.png, id=208, 705.63625pt x 342.27875pt>
 File: Fig/rosLogo.png Graphic file (type png)
  <use Fig/rosLogo.png>
 Package pdftex.def Info: Fig/rosLogo.png used on input line 300.
@@ -1138,21 +1138,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 293--302
  []
 
 [5 <./Fig/rosLogo.png>]
-<Fig/Project-Nodes.png, id=181, 651.93562pt x 348.55219pt>
+<Fig/Project-Nodes.png, id=216, 651.93562pt x 348.55219pt>
 File: Fig/Project-Nodes.png Graphic file (type png)
 
 <use Fig/Project-Nodes.png>
 Package pdftex.def Info: Fig/Project-Nodes.png used on input line 310.
 (pdftex.def)             Requested size: 268.847pt x 143.74231pt.
 
-<Fig/Algorithm-phases.png, id=183, 587.19376pt x 359.84438pt>
+<Fig/Algorithm-phases.png, id=218, 587.19376pt x 359.84438pt>
 File: Fig/Algorithm-phases.png Graphic file (type png)
 
 <use Fig/Algorithm-phases.png>
 Package pdftex.def Info: Fig/Algorithm-phases.png used on input line 325.
 (pdftex.def)             Requested size: 313.65028pt x 192.2101pt.
 
-<Fig/localization.png, id=185, 630.355pt x 483.8075pt>
+<Fig/localization.png, id=220, 630.355pt x 483.8075pt>
 File: Fig/localization.png Graphic file (type png)
 
 <use Fig/localization.png>
@@ -1160,7 +1160,7 @@ Package pdftex.def Info: Fig/localization.png used on input line 335.
 (pdftex.def)             Requested size: 179.22678pt x 137.55437pt.
  [6 <./Fig/Project-Nodes.png>] [7 <./Fig/Algorithm-phases.png> <./Fig/localizat
 ion.png>]
-<Fig/full-algorithm.png, id=196, 1020.81375pt x 1751.7947pt>
+<Fig/full-algorithm.png, id=231, 1020.81375pt x 1751.7947pt>
 File: Fig/full-algorithm.png Graphic file (type png)
 
 <use Fig/full-algorithm.png>
@@ -1169,58 +1169,87 @@ Package pdftex.def Info: Fig/full-algorithm.png used on input line 346.
  [8 <./Fig/full-algorithm.png>] [9
 
 ] [10] [11]
+<Fig/hw-node.png, id=250, 477.28313pt x 450.18187pt>
+File: Fig/hw-node.png Graphic file (type png)
+ <use Fig/hw-node.png>
+Package pdftex.def Info: Fig/hw-node.png used on input line 381.
+(pdftex.def)             Requested size: 201.63184pt x 190.18103pt.
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 376.
+[12 <./Fig/hw-node.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 391.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 380.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 380.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 391.
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--394
+Overfull \hbox (11.42818pt too wide) in paragraph at lines 400--436
+ [] 
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 397--401
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
 
  []
 
-<Fig/dc-motor.jpg, id=224, 433.62pt x 433.62pt>
+<Fig/hardware-structure.png, id=263, 1062.97125pt x 909.3975pt>
+File: Fig/hardware-structure.png Graphic file (type png)
+
+<use Fig/hardware-structure.png>
+Package pdftex.def Info: Fig/hardware-structure.png used on input line 455.
+(pdftex.def)             Requested size: 403.26367pt x 345.00572pt.
+ [14] [15 <./Fig/hardware-structure.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@ifnextchar' on input line 470.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--488
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 491--495
+
+ []
+
+<Fig/dc-motor.jpg, id=283, 433.62pt x 433.62pt>
 File: Fig/dc-motor.jpg Graphic file (type jpg)
  <use Fig/dc-motor.jpg>
-Package pdftex.def Info: Fig/dc-motor.jpg used on input line 423.
+Package pdftex.def Info: Fig/dc-motor.jpg used on input line 518.
 (pdftex.def)             Requested size: 156.82855pt x 156.83089pt.
- [13 <./Fig/dc-motor.jpg>] [14] (zuman_book.bbl
+ [17 <./Fig/dc-motor.jpg>] [18] [19] (zuman_book.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 []\T1/cmr/m/n/12 M. Ahmed.  Lec-ture notes un-der-stand-ing us-ing dc mo-tors s
 pecs.
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 444.
- [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 444.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 548.
+ [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 548.
  (zuman_book.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 444.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 444.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 548.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 548.
 Package rerunfilecheck Info: File `zuman_book.out' has not changed.
-(rerunfilecheck)             Checksum: 5A7205069EFAA7837C968ADF2E4AF299;1203.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 444.
+(rerunfilecheck)             Checksum: 4919DF36C93EBC84CDA2B21405014274;1659.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 548.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11969 strings out of 493333
- 174372 string characters out of 3139197
- 399657 words of memory out of 3000000
- 15234 multiletter control sequences out of 15000+200000
+ 12002 strings out of 493333
+ 174887 string characters out of 3139197
+ 401849 words of memory out of 3000000
+ 15251 multiletter control sequences out of 15000+200000
  16936 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,11n,43p,958b,5288s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1241,9 +1270,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on zuman_book.pdf (20 pages, 1002794 bytes).
+Output written on zuman_book.pdf (25 pages, 1108394 bytes).
 PDF statistics:
- 650 PDF objects out of 1000 (max. 8388607)
- 55 named destinations out of 1000 (max. 500000)
- 195 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 727 PDF objects out of 1000 (max. 8388607)
+ 69 named destinations out of 1000 (max. 500000)
+ 253 words of extra memory for PDF output out of 10000 (max. 10000000)
 

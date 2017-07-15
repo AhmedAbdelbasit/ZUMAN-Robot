@@ -14,6 +14,11 @@ ROS.
 \newblock About ros.
 \newblock http://www.ros.org/about-ros/, Mar 2017.
 
+\bibitem{205}
+R.~wiki.
+\newblock rosserial arduino tutorials.
+\newblock http://wiki.ros.org/rosserial\_arduino/Tutorials, Sep 2014.
+
 \bibitem{202}
 Wikipedia.
 \newblock Mobile robots.
