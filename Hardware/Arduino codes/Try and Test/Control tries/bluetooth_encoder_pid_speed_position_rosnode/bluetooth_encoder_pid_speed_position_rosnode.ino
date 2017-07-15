@@ -29,6 +29,10 @@
 volatile int Left_Encoder_Ticks=0;
 volatile int Right_Encoder_Ticks=0;
 
+boolean Move_Ack = LOW;
+float Goal_Distance = 0;
+boolean Rotate_Ack = LOW;
+float Rotation_Tick = 0; // 107 per 90 degrees
 
 
 // Left-Side Motors Control
@@ -69,20 +73,18 @@ float Kp_S= 2;
 float Ki_S= 2;
 float Kd_S= 0.5;
 
-boolean Move_Ack = LOW;
-float Goal_Distance = 0;
-boolean Rotate_Ack = LOW;
-float Angle_Distance = 0;
 
 ros::NodeHandle nh;
 zuman_msgs::Instruction hw_msg;
 ros::Publisher info_Pub("hw_low", &hw_msg);
 void inst_CB(const zuman_msgs::Instruction& msg) {
+  
   if( String(msg.command) == String("light_on")){
     digitalWrite(Light_Pin, HIGH);
   }else if( String(msg.command) == String("light_off")){
     digitalWrite(Light_Pin, LOW);
-  }else if (String(msg.command) == String("move") ){
+    
+  }else if ( String(msg.command) == String("map_move") || String(msg.command) == String("cv_move")  ){
     Error_Sum_Left = 0;
     Error_Sum_Right = 0;
     Last_Error_Left = 0;
@@ -93,28 +95,39 @@ void inst_CB(const zuman_msgs::Instruction& msg) {
     int Ticks = floor(Goal_Distance*180.0/Distance_Per_Rev);
     if(Ticks < 0)
       Dir = 'B';
+      
     Right_Encoder_Ticks = abs(Ticks);
     Left_Encoder_Ticks = abs(Ticks);
     Move_Ack = HIGH;
     
-  }else if (String(msg.command) == String("rotate") ){
+  }else if (String(msg.command) == String("map_rotate")  || String(msg.command) == String("cv_rotate")){
     Error_Sum_Left = 0;
     Error_Sum_Right = 0;
     Last_Error_Left = 0;
     Last_Error_Right = 0;
 
-    Goal_Angle = msg.arg1;
-    if(Goal_Angle >0){
+    Rotation_Tick = msg.arg1;
+    if(Rotation_Tick >0){
       Dir = 'L';
     }else{
       Dir = 'R';
     }
     
-    int Ticks = floor(Goal_Angle*180.0/Distance_Per_Rev);
-    Right_Encoder_Ticks = abs(Ticks);
-    Left_Encoder_Ticks = abs(Ticks);
+    Right_Encoder_Ticks = abs(Rotation_Tick);
+    Left_Encoder_Ticks = abs(Rotation_Tick);
+      
+    //int Ticks = floor(Goal_Angle*180.0/Distance_Per_Rev);
+    
+    //Right_Encoder_Ticks = abs(Ticks);
+    //Left_Encoder_Ticks = abs(Ticks);
     Rotate_Ack = HIGH;
   }
+  if ( String(msg.command) == String("map_move") || String(msg.command) == String("map_rotate") ){
+    hw_msg.command = "done_map";
+  }else if ( String(msg.command) == String("cv_move") || String(msg.command) == String("cv_rotate") ){
+    hw_msg.command = "done_cv";
+  }
+  
 }
 ros::Subscriber<zuman_msgs::Instruction> inst_sub("hw_low", &inst_CB);
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.28)  15 JUL 2017 04:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.28)  15 JUL 2017 23:15
 entering extended mode
 **./zuman_book.tex
 (zuman_book.tex
@@ -1188,41 +1188,31 @@ Overfull \hbox (11.42818pt too wide) in paragraph at lines 400--436
  [] 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 448--449
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 451--452
-
- []
-
-<Fig/hardware-structure.png, id=263, 1062.97125pt x 909.3975pt>
+[13] <Fig/hardware-structure.png, id=263, 1062.97125pt x 909.3975pt>
 File: Fig/hardware-structure.png Graphic file (type png)
 
 <use Fig/hardware-structure.png>
-Package pdftex.def Info: Fig/hardware-structure.png used on input line 455.
+Package pdftex.def Info: Fig/hardware-structure.png used on input line 457.
 (pdftex.def)             Requested size: 403.26367pt x 345.00572pt.
  [14] [15 <./Fig/hardware-structure.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 470.
+(hyperref)                removing `\@ifnextchar' on input line 472.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 483--488
+Underfull \hbox (badness 10000) in paragraph at lines 485--490
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 491--495
+Underfull \hbox (badness 10000) in paragraph at lines 493--497
 
  []
 
 <Fig/dc-motor.jpg, id=283, 433.62pt x 433.62pt>
 File: Fig/dc-motor.jpg Graphic file (type jpg)
  <use Fig/dc-motor.jpg>
-Package pdftex.def Info: Fig/dc-motor.jpg used on input line 518.
+Package pdftex.def Info: Fig/dc-motor.jpg used on input line 520.
 (pdftex.def)             Requested size: 156.82855pt x 156.83089pt.
  [17 <./Fig/dc-motor.jpg>] [18] [19] (zuman_book.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
@@ -1231,15 +1221,15 @@ pecs.
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 548.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 550.
  [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 548.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 550.
  (zuman_book.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 548.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 548.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 550.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 550.
 Package rerunfilecheck Info: File `zuman_book.out' has not changed.
 (rerunfilecheck)             Checksum: 4919DF36C93EBC84CDA2B21405014274;1659.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 548.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 550.
  )
 (\end occurred inside a group at level 1)
 
@@ -1270,7 +1260,7 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on zuman_book.pdf (25 pages, 1108394 bytes).
+Output written on zuman_book.pdf (25 pages, 1109407 bytes).
 PDF statistics:
  727 PDF objects out of 1000 (max. 8388607)
  69 named destinations out of 1000 (max. 500000)

@@ -446,9 +446,11 @@ In this section we get closer to know how exactly project parts are connected to
 	This node is responsible for executing motion commands. The controller is implemented in this node. As we can see in figure \ref{fig:harware-structure} there three underlying parts, the motor driver, flash light and ultrasonic. You may wonder why ultrasonic is here in the manipulator node. This simply because we needed to summarize all parts that participate in the motion control in a single node to minimize the flow of communication message as possible. The motor driver has two tasks; sending speed signals to motors and combine the encoder pulses to the Arduino. More details about each module will be figured out in next sections.
 	
 	\item \textbf{Sensors Node:}\\
-	
+	Like the previous node, this one is implemented on an Arduino Nano kit and attached to it other sensors included in our project; Compass, Ultrasonic, IR range finder and servo motors that control the orientation of camera. One of the critical tasks this node is responsible for is regarding the front path of robot to give alarms if there is some obstacle. Another task is participating in estimation of robot orientation when rotation motion is performed. More details about each sensor and how we get use of its readings will be discussed in lated sections. 
 	
 	\item \textbf{Manual Controller Box:}\\
+	This node is considered the main tool for adding a feature that the robot can be controlled remotely by man. Here in this node the main objective is giving user the ability to guide robot, change camera orientation and switching on/off flash light. This feature is so useful in exploration of new environments whose map is not available for autonomous motion. and it opens the way for adding on-line of such new environments.\\
+	By determining the objective we can encounter the hardware units needed. So, for user-friendly controller we developed it using potentiometers and a switch connected to Arduino unit. And for publishing commands over the network a NodeMCU kit is used to implement a ROS publisher node on. 
 	
 	\begin{figure}[H]
 		\centering

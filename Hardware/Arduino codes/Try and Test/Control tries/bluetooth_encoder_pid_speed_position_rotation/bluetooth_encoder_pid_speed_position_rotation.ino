@@ -25,6 +25,7 @@
 
 volatile int Left_Encoder_Ticks=0;
 volatile int Right_Encoder_Ticks=0;
+
 int Rotation_Ticks = 120;
 float Goal_Distance = 90;
 boolean Move_Ack = LOW;
