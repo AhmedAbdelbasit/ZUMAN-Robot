@@ -31,7 +31,13 @@
 \setlength{\footskip}{.8in}
 
 
+\usepackage{afterpage}
 
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}
 
 
 % Default fixed font does not support bold face
@@ -164,10 +170,6 @@ showstringspaces=false            %
 
 
 
-
-
-
-
 \pagenumbering{roman}
 \section*{\begin{center}
 Abstract
@@ -183,50 +185,62 @@ Abstract
  
 \addcontentsline{toc}{section}{\numberline{}Abstract}
 
-
-
-
-
-
-
-
-
-
-
+\afterpage{\blankpage}
 \newpage
-\renewcommand{\headrulewidth}{0pt}
+
+
 \section*{\begin{Large}
-Key abbreviations
+		Acknowledgments
 \end{Large}}
 
- \begin{tabular}{  l    l   }
-    ROS & Robots Operating System	\\
-    GUI & Graphical User Interface	\\
-    RPi &   Raspberry Pi	\\
-    NiMH & Nickel–Metal Hydride\\
-    BMP & Bitmap \\
-    GBFS & Greedy Best First Search\\
-  
-    PID & Proportion Integral Derivative  \\  
-    PWM &  Pulse Width Modulation  \\   
-    $I^2C$  & Inter-Integrated Circuit   \\  
-    IMU &  Inertial Measurement Unit \\  
-    LiPo &   Lithium Polymer\\ 
-    RPM   & Revolution Per Minute  \\
-    ADC   & Analog-Digital Converter   \\  
-    LPF & Low Pass Filter \\
-    FPS & Frame Per Seconds\\
-    GND & Ground
-    
-  \end{tabular} 
 
-\addcontentsline{toc}{section}{\numberline{}Key abbreviations}
+\addcontentsline{toc}{section}{\numberline{}Acknoledgements}
+
+\afterpage{\blankpage}
+
 \newpage
-\renewcommand{\headrulewidth}{.5pt}
 
 
 \tableofcontents
+\afterpage{\blankpage}
 \newpage
+
+\renewcommand{\headrulewidth}{0pt}
+\section*{\begin{Large}
+		Key abbreviations
+\end{Large}}
+
+\begin{tabular}{  l    l   }
+	ROS & Robots Operating System	\\
+	GUI & Graphical User Interface	\\
+	RPi &   Raspberry Pi	\\
+	NiMH & Nickel–Metal Hydride\\
+	BMP & Bitmap \\
+	GBFS & Greedy Best First Search\\
+	PPR & Pulse Per Revolution \\
+	IR & Infra Red \\
+	
+	PID & Proportion Integral Derivative  \\  
+	PWM &  Pulse Width Modulation  \\   
+	$I^2C$  & Inter-Integrated Circuit   \\  
+	IMU &  Inertial Measurement Unit \\  
+	LiPo &   Lithium Polymer\\ 
+	RPM   & Revolution Per Minute  \\
+	ADC   & Analog-Digital Converter   \\  
+	LPF & Low Pass Filter \\
+	FPS & Frame Per Seconds\\
+	GND & Ground
+	
+\end{tabular} 
+
+\addcontentsline{toc}{section}{\numberline{}Key abbreviations}
+
+
+
+\newpage
+
+\renewcommand{\headrulewidth}{.5pt}
+
 \listoffigures
 \thispagestyle{empty}
 \newpage
@@ -615,11 +629,99 @@ In this section we get closer to know how exactly project parts are connected to
 	
 \end{itemize}
 
+\subsection{Electronics Involved in Project}
+In this part we are to talk about electronics modules and components used in out project. For each components we will discuss its function, how it is operated, advantages, limitations and how we used it as a port of the full structure. Electronic components are to classified into four categories; processing units, sensors, passive components and power sources
 
+\subsubsection{Processing Units}
+\begin{itemize}
+	\item \textbf{Raspberry PI R3}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.6\textwidth]{Fig/Electronics/Raspberry.png}
+		\caption{Raspberry Pi R3.}
+		\label{fig:raspberry}
+	\end{figure}
+
+	\item \textbf{NodeMCU}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.4\textwidth]{Fig/Electronics/nodemcu.jpg}
+		\caption{LoLin V3 NodeMcu}
+		\label{fig:nodemcu}
+	\end{figure}
+	
+	\item \textbf{Arduino Nano}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.3\textwidth]{Fig/Electronics/nano.jpg}
+		\caption{Arduino nano kit}
+		\label{fig:nano}
+	\end{figure}
+
+\end{itemize}
+
+\subsubsection{Kits and Sensor modules}
+\begin{itemize}
+	\item \textbf{Motor Driver}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.5\textwidth]{Fig/Electronics/motor-driver.jpg}
+		\caption{DC Motor Driver for Robot 4 channel}
+		\label{fig:motor-driver}
+	\end{figure}
+
+	\item \textbf{Shaft Encoder}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.4\textwidth]{Fig/Electronics/encoder.png}
+		\caption{Motor shaft encoder 3PPR}
+		\label{fig:encoder}
+	\end{figure}
+	
+	\item \textbf{Ultrasonic sensor}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.4\textwidth]{Fig/Electronics/ultrasonic.jpg}
+		\caption{Ultrasonic sensor}
+		\label{fig:ultrasonic}
+	\end{figure}
+	
+	\item \textbf{Compass Module}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.4\textwidth]{Fig/Electronics/compass.jpg}
+		\caption{compass module HMC5883L}
+		\label{fig:compass}
+	\end{figure}
+
+
+	\item \textbf{Accelerometer and Gyroscope}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.4\textwidth]{Fig/Electronics/mpu.jpg}
+		\caption{MPU6050 Accelerometer and Gyroscope}
+		\label{fig:mpu}
+	\end{figure}
+		
+	\item \textbf{IR Range Finder}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.4\textwidth]{Fig/Electronics/ir.jpg}
+		\caption{IR sharp sensor}
+		\label{fig:ir}
+	\end{figure}
+\end{itemize}
 
 \newpage
 
-\section{Mechanical Design and Low-Level Control}
+\section{Software Implementation of Hardware nodes}
+\subsection{WiFi Reamot Controller}
+\subsection{Manipulator Node}
+\subsection{Sensors Node}
+
+\newpage
+
+\section{Mechanical Design}
 In this section we are about to take a close look on the design procedure of robot hardware both mechanical and electrical. The design stage of any application depends on the tasks and requirements it is supposed to fulfill. So, we will talk about functional requirements of project and how we select components to best suit them. Design engineers are usually constrained by one or more of these 5 concerns; time, money, knowledge, power and weight. So, there is no absolute good choice but we try to select the best one that meets the requirements and follow constraints. \cite{203} Then we will get a brief view on frame design, materials used and how manufacturing operation done. After that we will get closer to the low level control and talk about electronic modules and sensors used, function, advantages and disadvantages of each. Finally we reach the controller design; how it was implemented, tuned and tested.  
 
 \subsection{Choosing Suitable DC Motor  \cite{203}}

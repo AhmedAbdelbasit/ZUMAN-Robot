@@ -1,5 +1,6 @@
 \contentsline {section}{\hbox to\@tempdima {\hfil }Abstract}{i}{section*.2}
-\contentsline {section}{\hbox to\@tempdima {\hfil }Key abbreviations}{ii}{section*.3}
+\contentsline {section}{\hbox to\@tempdima {\hfil }Acknoledgements}{ii}{section*.3}
+\contentsline {section}{\hbox to\@tempdima {\hfil }Key abbreviations}{v}{section*.5}
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \contentsline {subsection}{\numberline {1.1}History of Mobile Robots}{1}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Project Objectives}{2}{subsection.1.2}
@@ -29,8 +30,15 @@
 \contentsline {subsection}{\numberline {7.1}Hardware ROS node}{18}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Low-level Hardware Kits and Modules}{19}{subsection.7.2}
 \contentsline {subsection}{\numberline {7.3}Hardware Tree Structure}{20}{subsection.7.3}
-\contentsline {section}{\numberline {8}Mechanical Design and Low-Level Control}{22}{section.8}
-\contentsline {subsection}{\numberline {8.1}Choosing Suitable DC Motor \cite {203}}{22}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Robot Dimension and Solid Design}{24}{subsection.8.2}
-\contentsline {section}{\numberline {A}Hardware modules and sensors}{25}{appendix.A}
-\contentsline {section}{\numberline {B}Solid Design Parts}{25}{appendix.B}
+\contentsline {subsection}{\numberline {7.4}Electronics Involved in Project}{21}{subsection.7.4}
+\contentsline {subsubsection}{\numberline {7.4.1}Processing Units}{21}{subsubsection.7.4.1}
+\contentsline {subsubsection}{\numberline {7.4.2}Kits and Sensor modules}{23}{subsubsection.7.4.2}
+\contentsline {section}{\numberline {8}Software Implementation of Hardware nodes}{27}{section.8}
+\contentsline {subsection}{\numberline {8.1}WiFi Reamot Controller}{27}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Manipulator Node}{27}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Sensors Node}{27}{subsection.8.3}
+\contentsline {section}{\numberline {9}Mechanical Design}{28}{section.9}
+\contentsline {subsection}{\numberline {9.1}Choosing Suitable DC Motor \cite {203}}{28}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Robot Dimension and Solid Design}{30}{subsection.9.2}
+\contentsline {section}{\numberline {A}Hardware modules and sensors}{31}{appendix.A}
+\contentsline {section}{\numberline {B}Solid Design Parts}{31}{appendix.B}
