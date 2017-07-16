@@ -157,13 +157,11 @@ showstringspaces=false            %
  
  
  
- 
+ \afterpage{\blankpage}
 
 \renewcommand{\headrulewidth}{0pt}
 
 \end {titlepage}
-
-
 
 
 
@@ -193,6 +191,16 @@ Abstract
 		Acknowledgments
 \end{Large}}
 
+\noindent We want to thank our department, computer and systems dept. at Zagazig University, who provided valuable comments, ideas, and assistance, which were essential to this study. This work is developed for and fully funded by Zagazig University, Faculty of Engineering as a part of development for a robotic platform.\\
+
+\noindent First of all, We want to thank our supervisor Dr.Eng. Ahmed Helmi for giving us the chance to work on this project and helped us to participate in a lot of conferences and competitions. Also we want to thank him for his valuable notes and advices for developing the proposed algorithm applied in our project.\\
+
+\noindent We also want to thank Dr.Ing Mohamed Nour for his helpful guidance and opening the way to learn and deal with Robots Operating System platform which represents the main core of our project.\\
+
+\noindent We would like to thank our friends for helping us in the manufacturing process of the robot frame. And many thanks to Eng. Mahmoud Ibrahim for providing us the material of the robot frame which makes our project more robust and leads to better performance.\\
+
+\noindent We would like to thank our parents and family for giving us the encouragement to reach our goals and saved no effort to provide us all the needs.
+
 
 \addcontentsline{toc}{section}{\numberline{}Acknoledgements}
 
@@ -219,6 +227,8 @@ Abstract
 	GBFS & Greedy Best First Search\\
 	PPR & Pulse Per Revolution \\
 	IR & Infra Red \\
+	SSH & Secure Shell\\
+	IDE & Integrated Development Environment\\
 	
 	PID & Proportion Integral Derivative  \\  
 	PWM &  Pulse Width Modulation  \\   
@@ -635,6 +645,7 @@ In this part we are to talk about electronics modules and components used in out
 \subsubsection{Processing Units}
 \begin{itemize}
 	\item \textbf{Raspberry PI R3}\\
+	This part represents the master unit for the whole process. Its powerful processing capabilities opens the way complex processes that need much resources like CPU cycles or storage. One of these operations is the image processing and computer vision operated in out project. all the other parts are connected to Raspberry Pi by some way in a tree structure fashion. The operating system running on such unit is Ubuntu Mate 16.04 and we installed ROS platform base on it. We communicate and deal with this unit using SSH (Secure Shell) connection operated remotley from any other computer device.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width =0.6\textwidth]{Fig/Electronics/Raspberry.png}
@@ -643,6 +654,9 @@ In this part we are to talk about electronics modules and components used in out
 	\end{figure}
 
 	\item \textbf{NodeMCU}\\
+	This unit is a developed with integrated WiFi module. This helped us too much in the design of the manual controller box. We implemented a ROS node on it that publishes the instructions which can guide the robot and control camera orientation or flash light. This design and procedure will be explained in the software development section.
+	We deal with this kit like an ordinary Arduino and program it using same Arduino IDE after installing some updates.
+	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width =0.4\textwidth]{Fig/Electronics/nodemcu.jpg}
@@ -651,6 +665,8 @@ In this part we are to talk about electronics modules and components used in out
 	\end{figure}
 	
 	\item \textbf{Arduino Nano}\\
+	This kit is limited but powerful processing unit that can be used in too many tasks and applications. Its small size, low cost and ease of use make it most common in many projects. In our project we used three kits of such type. First in the manipulator node that gets the motion instructions, run the controller and send output signals to motors. Second is used in Sensors node that have all sensors underlying it. This kits helped us too much in maintaining the modularity and integration of parts of our project.
+	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width =0.3\textwidth]{Fig/Electronics/nano.jpg}
@@ -663,7 +679,11 @@ In this part we are to talk about electronics modules and components used in out
 \subsubsection{Kits and Sensor modules}
 \begin{itemize}
 	\item \textbf{Motor Driver}\\
-	\begin{figure}[H]
+	There are a lot of modules having the function of controlling DC motors. Each has it own specs like max current, operating voltage and temperature. We find this kit is most suitable for our robot as it contains 4 channels for 4 dc motors. Moreover it requires just two pins to control both speed and direction of motors. It also have important features; current sensor and impeded logic circuitry for handling Encoder signals come from shaft encoder sensor.
+	Its Electrical specs are 12V operating voltage and max current of 4.5A for each channel. These features and specs make it the best choice for our robot.
+	
+	
+	\begin{figure}
 		\centering
 		\includegraphics[width =0.5\textwidth]{Fig/Electronics/motor-driver.jpg}
 		\caption{DC Motor Driver for Robot 4 channel}
@@ -671,30 +691,63 @@ In this part we are to talk about electronics modules and components used in out
 	\end{figure}
 
 	\item \textbf{Shaft Encoder}\\
+	One of the most popular method of tracking the robot position is calculating the number of revolution each motor made. This way is called Odometry feedback. Each encoder has a property of number of pulses generated per revolution. This is an indication of how much distance change the robot can feel and encounter. The type we used in out project is 3 PPR. But our motor is geared with a gear head of ratio 1:30. That makes the exact value 90 pulses generated for each wheel revolution  Moreover, This Encoder has 2 channels each generates 3 pulses per revolution with phase shift 90 degrees. The logic circuitry in motor driver kit combines the two channels' pulses by an XOR gate resulting in an interrupt signal of 180 PPR. This gives a resolution of 0.21 cm per encoder interrupt pulse.\\ 
+	But the most critical problem of this method of position estimation is that it may lead to fully wrong deviated measurements if the robot wheel slipped on the surface. There is no guarantee that the robot has already moved that distance without slipping. So, This drawback opens the way to think about how to make sure that the robot is actually moving not slipping.
+	Figure \ref{fig:encoder-pulses} shows the two channel pulses and the resultant interrupt signal used by combining them through XOR Gate.\\
+	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width =0.4\textwidth]{Fig/Electronics/encoder.png}
+		\includegraphics[width =0.6\textwidth]{Fig/Electronics/encoder.png}
 		\caption{Motor shaft encoder 3PPR}
 		\label{fig:encoder}
 	\end{figure}
 	
-	\item \textbf{Ultrasonic sensor}\\
 	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.4\textwidth]{Fig/Electronics/encoder-pulses.png}
+		\caption{Quadrature encoder pulses explained}
+		\label{fig:encoder-pulses}
+	\end{figure}
+
+	\item \textbf{Ultrasonic sensor}\\
+		\begin{figure}[H]
 		\centering
 		\includegraphics[width =0.4\textwidth]{Fig/Electronics/ultrasonic.jpg}
 		\caption{Ultrasonic sensor}
 		\label{fig:ultrasonic}
 	\end{figure}
+	This is a common sensor used for distance measurement between the sensor and the any object sitting in front of it. Its principle of operation depends upon sending an ultrasonic pulse and calculating the time passes until that signal echo come back and detected. The type we used has an operating range 1:300 cm. But there are many problems occur when using this sensor. These problems can be encountered as follow:
+	\begin{itemize}
+		\item accuracy of reading becomes bad while the measured distance increases.
+		\item the procedure of measurement depending upon waiting until the signal comes back. This makes the processing unit idle and causes synchronization problems with other electronic modules running on the same micro-controller
+		\item the sensor is not guaranteed to get a reading as the signal may be absorbed by some obstacle materials or reflected far away on inclined surface of the obstacle.  
+	\end{itemize} 
+
 	
 	\item \textbf{Compass Module}\\
+	This sensor make use of measuring magnetic field of earth to get the heading angle(the angle between X axis of module and North directing ), We paid this sensor much intention at first steps of work because it gives an absolute angle of robot heading which can be combined with encoder information about the displacement of robot to get a full estimation of robot location from the start point. But during our work we faced many problems that made us can not depend on its reading for estimation of robot position or heading. \\
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width =0.4\textwidth]{Fig/Electronics/compass.jpg}
+		\includegraphics[width =0.3\textwidth]{Fig/Electronics/compass.jpg}
 		\caption{compass module HMC5883L}
 		\label{fig:compass}
 	\end{figure}
-
-
+	The worst problem associated with this module is that it is affected by any magnetic field around it. This is a big problem because indoor navigation makes the robot among too many electrical devices that generate different magnetic field patterns and so different effects on compass reading. Compass reading may encounter a scaling problem, dc shift or combination of them.
+	To visualize this problem, we plot te compass readings while rotating it, the pattern we get is shown in figure \ref{fig:compass-sh}.\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.4\textwidth]{Fig/compass-sh.png}
+		\caption{Showing the shifting problem in compass readings}
+		\label{fig:compass-sh}
+	\end{figure}
+	About the sensitivity we took a reading pattern while rotating the compass and repeated the process at same place but a mobile phone was put at distance of 20 cm away from the module. the pattern was changed in both shift ans scale values. This result is shown in figure \ref{fig:compass-diff-sh}
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.4\textwidth]{Fig/compass-diff-shift.png}
+		\caption{Showing the shifting problem in compass readings}
+		\label{fig:compass-diff-sh}
+	\end{figure}
+	
 	\item \textbf{Accelerometer and Gyroscope}\\
 	\begin{figure}[H]
 		\centering
@@ -712,11 +765,63 @@ In this part we are to talk about electronics modules and components used in out
 	\end{figure}
 \end{itemize}
 
+\subsubsection{Power Sources}
+\begin{itemize}
+
+	\item \textbf{Power Bank 5V}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.5\textwidth]{Fig/Electronics/power-bank.jpg}
+		\caption{Power Bank "Rechargeable Battery Pack" 7000mAh}
+		\label{fig:powerbank}
+	\end{figure}
+
+	\item \textbf{Lithium-ion 12V Battery}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.5\textwidth]{Fig/Electronics/bat12.jpg}
+		\caption{Lithium-ion Super Rechargeable Battery Pack (12V, 7000mAh)}
+		\label{fig:bat12}
+	\end{figure}
+	
+		\item \textbf{NiMH 5V Battery}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.5\textwidth]{Fig/Electronics/bat5.jpg}
+		\caption{NiMH Rechargeable Battery (5V-1500mAh)}
+		\label{fig:bat5}
+	\end{figure}
+	
+\end{itemize}
+
+\subsubsection{Passive Components}
+\begin{itemize}
+	\item \textbf{Potentiometer}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.5\textwidth]{Fig/Electronics/pot.jpg}
+		\caption{Potentiometer 50 Kohm }
+		\label{fig:pot}
+	\end{figure}
+
+	\item \textbf{LEDs}\\
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.5\textwidth]{Fig/Electronics/LED.jpg}
+		\caption{White LEDs 5 mm 3V}
+		\label{fig:led}
+	\end{figure}
+
+\end{itemize}
+
 \newpage
 
-\section{Software Implementation of Hardware nodes}
+\section{Software Implementation of Micro-Controller nodes}
+
 \subsection{WiFi Reamot Controller}
+
 \subsection{Manipulator Node}
+
 \subsection{Sensors Node}
 
 \newpage
@@ -781,21 +886,78 @@ This is still acceptable speed because the robot is not supposed to work in full
 
 \newpage
 
-\subsection{Robot Dimension and Solid Design}
+\subsection{Robot Dimensions and Design Considerations}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.8\textwidth]{Fig/solid/solid-planes.png}
+	\caption{Front, side and top planes for assembly of robot frame}
+	\label{fig:frame-planes}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.4\textwidth]{Fig/Introduction.png}
+	\caption{3D Real view of robot frame}
+\end{figure}
+
+%talk about old design
+%aluminium design
+
+\subsection{Mechanical Parts}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.8\textwidth]{Fig/solid/frame-3d.png}
+	\caption{Aluminum Base frame}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.6\textwidth]{Fig/solid/side-frame.png}
+	\caption{Side frame}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.8\textwidth]{Fig/solid/top-front-cover.png}
+	\caption{Top front cover}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.8\textwidth]{Fig/solid/mid-part.png}
+	\caption{Top mid link}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.8\textwidth]{Fig/solid/top-back-cover.png}
+	\caption{Top back cover}
+\end{figure}
 
 
 
-mechanical analysis, solid design, final assembly, Motors choice.
-Electric components, circuits, structure.
-Sensors
-Control system for straight line and rotation motion.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.5\textwidth]{Fig/solid/cam-holder-2.png}
+	\caption{Upper Link of Camera Holder}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.5\textwidth]{Fig/solid/cam-holder-1.png}
+	\caption{lower Link of Camera Holder}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.8\textwidth]{Fig/solid/Motor-cover.png}
+	\caption{DC motors Cover}
+\end{figure}
 
 \newpage
 \appendix
-
-\section{Hardware modules and sensors}
-
-\section{Solid Design Parts}
 
 \newpage
  

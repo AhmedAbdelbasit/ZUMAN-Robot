@@ -15,10 +15,28 @@
 \contentsline {figure}{\numberline {15}{\ignorespaces Raspberry Pi R3.\relax }}{22}{figure.caption.21}
 \contentsline {figure}{\numberline {16}{\ignorespaces LoLin V3 NodeMcu\relax }}{22}{figure.caption.22}
 \contentsline {figure}{\numberline {17}{\ignorespaces Arduino nano kit\relax }}{23}{figure.caption.23}
-\contentsline {figure}{\numberline {18}{\ignorespaces DC Motor Driver for Robot 4 channel\relax }}{23}{figure.caption.24}
+\contentsline {figure}{\numberline {18}{\ignorespaces DC Motor Driver for Robot 4 channel\relax }}{24}{figure.caption.24}
 \contentsline {figure}{\numberline {19}{\ignorespaces Motor shaft encoder 3PPR\relax }}{24}{figure.caption.25}
-\contentsline {figure}{\numberline {20}{\ignorespaces Ultrasonic sensor\relax }}{24}{figure.caption.26}
-\contentsline {figure}{\numberline {21}{\ignorespaces compass module HMC5883L\relax }}{25}{figure.caption.27}
-\contentsline {figure}{\numberline {22}{\ignorespaces MPU6050 Accelerometer and Gyroscope\relax }}{25}{figure.caption.28}
-\contentsline {figure}{\numberline {23}{\ignorespaces IR sharp sensor\relax }}{26}{figure.caption.29}
-\contentsline {figure}{\numberline {24}{\ignorespaces DC motor SG-555123000-30K selected for driving the robot.\relax }}{29}{figure.caption.30}
+\contentsline {figure}{\numberline {20}{\ignorespaces Quadrature encoder pulses explained\relax }}{25}{figure.caption.26}
+\contentsline {figure}{\numberline {21}{\ignorespaces Ultrasonic sensor\relax }}{25}{figure.caption.27}
+\contentsline {figure}{\numberline {22}{\ignorespaces compass module HMC5883L\relax }}{26}{figure.caption.28}
+\contentsline {figure}{\numberline {23}{\ignorespaces Showing the shifting problem in compass readings\relax }}{26}{figure.caption.29}
+\contentsline {figure}{\numberline {24}{\ignorespaces Showing the shifting problem in compass readings\relax }}{27}{figure.caption.30}
+\contentsline {figure}{\numberline {25}{\ignorespaces MPU6050 Accelerometer and Gyroscope\relax }}{27}{figure.caption.31}
+\contentsline {figure}{\numberline {26}{\ignorespaces IR sharp sensor\relax }}{28}{figure.caption.32}
+\contentsline {figure}{\numberline {27}{\ignorespaces Power Bank "Rechargeable Battery Pack" 7000mAh\relax }}{28}{figure.caption.33}
+\contentsline {figure}{\numberline {28}{\ignorespaces Lithium-ion Super Rechargeable Battery Pack (12V, 7000mAh)\relax }}{29}{figure.caption.34}
+\contentsline {figure}{\numberline {29}{\ignorespaces NiMH Rechargeable Battery (5V-1500mAh)\relax }}{29}{figure.caption.35}
+\contentsline {figure}{\numberline {30}{\ignorespaces Potentiometer 50 Kohm \relax }}{30}{figure.caption.36}
+\contentsline {figure}{\numberline {31}{\ignorespaces White LEDs 5 mm 3V\relax }}{30}{figure.caption.37}
+\contentsline {figure}{\numberline {32}{\ignorespaces DC motor SG-555123000-30K selected for driving the robot.\relax }}{33}{figure.caption.38}
+\contentsline {figure}{\numberline {33}{\ignorespaces Front, side and top planes for assembly of robot frame\relax }}{34}{figure.caption.39}
+\contentsline {figure}{\numberline {34}{\ignorespaces 3D Real view of robot frame\relax }}{34}{figure.caption.40}
+\contentsline {figure}{\numberline {35}{\ignorespaces Aluminum Base frame\relax }}{35}{figure.caption.41}
+\contentsline {figure}{\numberline {36}{\ignorespaces Side frame\relax }}{35}{figure.caption.42}
+\contentsline {figure}{\numberline {37}{\ignorespaces Top front cover\relax }}{36}{figure.caption.43}
+\contentsline {figure}{\numberline {38}{\ignorespaces Top mid link\relax }}{36}{figure.caption.44}
+\contentsline {figure}{\numberline {39}{\ignorespaces Top back cover\relax }}{36}{figure.caption.45}
+\contentsline {figure}{\numberline {40}{\ignorespaces Upper Link of Camera Holder\relax }}{37}{figure.caption.46}
+\contentsline {figure}{\numberline {41}{\ignorespaces lower Link of Camera Holder\relax }}{37}{figure.caption.47}
+\contentsline {figure}{\numberline {42}{\ignorespaces DC motors Cover\relax }}{38}{figure.caption.48}

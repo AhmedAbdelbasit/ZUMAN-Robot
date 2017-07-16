@@ -33,12 +33,13 @@
 \contentsline {subsection}{\numberline {7.4}Electronics Involved in Project}{21}{subsection.7.4}
 \contentsline {subsubsection}{\numberline {7.4.1}Processing Units}{21}{subsubsection.7.4.1}
 \contentsline {subsubsection}{\numberline {7.4.2}Kits and Sensor modules}{23}{subsubsection.7.4.2}
-\contentsline {section}{\numberline {8}Software Implementation of Hardware nodes}{27}{section.8}
-\contentsline {subsection}{\numberline {8.1}WiFi Reamot Controller}{27}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Manipulator Node}{27}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Sensors Node}{27}{subsection.8.3}
-\contentsline {section}{\numberline {9}Mechanical Design}{28}{section.9}
-\contentsline {subsection}{\numberline {9.1}Choosing Suitable DC Motor \cite {203}}{28}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Robot Dimension and Solid Design}{30}{subsection.9.2}
-\contentsline {section}{\numberline {A}Hardware modules and sensors}{31}{appendix.A}
-\contentsline {section}{\numberline {B}Solid Design Parts}{31}{appendix.B}
+\contentsline {subsubsection}{\numberline {7.4.3}Power Sources}{28}{subsubsection.7.4.3}
+\contentsline {subsubsection}{\numberline {7.4.4}Passive Components}{29}{subsubsection.7.4.4}
+\contentsline {section}{\numberline {8}Software Implementation of Micro-Controller nodes}{31}{section.8}
+\contentsline {subsection}{\numberline {8.1}WiFi Reamot Controller}{31}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Manipulator Node}{31}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Sensors Node}{31}{subsection.8.3}
+\contentsline {section}{\numberline {9}Mechanical Design}{32}{section.9}
+\contentsline {subsection}{\numberline {9.1}Choosing Suitable DC Motor \cite {203}}{32}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Robot Dimensions and Design Considerations}{34}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.3}Mechanical Parts}{35}{subsection.9.3}

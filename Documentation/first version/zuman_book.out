@@ -33,12 +33,13 @@
 \BOOKMARK [2][-]{subsection.7.4}{Electronics Involved in Project}{section.7}% 33
 \BOOKMARK [3][-]{subsubsection.7.4.1}{Processing Units}{subsection.7.4}% 34
 \BOOKMARK [3][-]{subsubsection.7.4.2}{Kits and Sensor modules}{subsection.7.4}% 35
-\BOOKMARK [1][-]{section.8}{Software Implementation of Hardware nodes}{}% 36
-\BOOKMARK [2][-]{subsection.8.1}{WiFi Reamot Controller}{section.8}% 37
-\BOOKMARK [2][-]{subsection.8.2}{Manipulator Node}{section.8}% 38
-\BOOKMARK [2][-]{subsection.8.3}{Sensors Node}{section.8}% 39
-\BOOKMARK [1][-]{section.9}{Mechanical Design}{}% 40
-\BOOKMARK [2][-]{subsection.9.1}{Choosing Suitable DC Motor 203}{section.9}% 41
-\BOOKMARK [2][-]{subsection.9.2}{Robot Dimension and Solid Design}{section.9}% 42
-\BOOKMARK [1][-]{appendix.A}{Hardware modules and sensors}{}% 43
-\BOOKMARK [1][-]{appendix.B}{Solid Design Parts}{}% 44
+\BOOKMARK [3][-]{subsubsection.7.4.3}{Power Sources}{subsection.7.4}% 36
+\BOOKMARK [3][-]{subsubsection.7.4.4}{Passive Components}{subsection.7.4}% 37
+\BOOKMARK [1][-]{section.8}{Software Implementation of Micro-Controller nodes}{}% 38
+\BOOKMARK [2][-]{subsection.8.1}{WiFi Reamot Controller}{section.8}% 39
+\BOOKMARK [2][-]{subsection.8.2}{Manipulator Node}{section.8}% 40
+\BOOKMARK [2][-]{subsection.8.3}{Sensors Node}{section.8}% 41
+\BOOKMARK [1][-]{section.9}{Mechanical Design}{}% 42
+\BOOKMARK [2][-]{subsection.9.1}{Choosing Suitable DC Motor 203}{section.9}% 43
+\BOOKMARK [2][-]{subsection.9.2}{Robot Dimensions and Design Considerations}{section.9}% 44
+\BOOKMARK [2][-]{subsection.9.3}{Mechanical Parts}{section.9}% 45

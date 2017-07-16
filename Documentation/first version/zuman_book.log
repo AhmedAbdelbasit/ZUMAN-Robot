@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.28)  16 JUL 2017 02:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.28)  16 JUL 2017 11:03
 entering extended mode
 **./zuman_book.tex
 (zuman_book.tex
@@ -1083,7 +1083,7 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count161
-<Fig/faculty.png, id=179, 568.37344pt x 455.45157pt>
+<Fig/faculty.png, id=183, 568.37344pt x 455.45157pt>
 File: Fig/faculty.png Graphic file (type png)
  <use Fig/faculty.png>
 Package pdftex.def Info: Fig/faculty.png used on input line 115.
@@ -1091,7 +1091,13 @@ Package pdftex.def Info: Fig/faculty.png used on input line 115.
 
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./Fig/faculty.png>]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./Fig/faculty.png>]pdfTeX
+ warning (ext4): destination with the same identifier (name{page.1}) has been a
+lready used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.164 \end {titlepage}
+                       [1]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1102,12 +1108,32 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.189 \newpage
-               [1] [2]pdfTeX warning (ext4): destination with the same identifi
-er (name{page.ii}) has been already used, duplicate ignored
+l.187 \newpage
+               [1]
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
+
+ []
+
+[2]pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) 
+has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.201 \newpage
+l.209 \newpage
                [2] (zuman_book.toc [3])
 \tf@toc=\write4
 \openout4 = `zuman_book.toc'.
@@ -1116,310 +1142,445 @@ l.201 \newpage
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.206 \newpage
-               [4] [5] (zuman_book.lof)
+l.214 \newpage
+               [4] [5] (zuman_book.lof [6])
 \tf@lof=\write5
 \openout5 = `zuman_book.lof'.
 
- [6]
-<Fig/Introduction.png, id=330, 460.72125pt x 380.92313pt>
+ [7]
+<Fig/Introduction.png, id=378, 460.72125pt x 380.92313pt>
 File: Fig/Introduction.png Graphic file (type png)
 
 <use Fig/Introduction.png>
-Package pdftex.def Info: Fig/Introduction.png used on input line 259.
+Package pdftex.def Info: Fig/Introduction.png used on input line 269.
 (pdftex.def)             Requested size: 179.22678pt x 148.18161pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.268 
+l.278 
        [1 <./Fig/Introduction.png>]
-<Fig/mobile_robots_apps.jpg, id=335, 602.25pt x 529.98pt>
+<Fig/mobile_robots_apps.jpg, id=384, 602.25pt x 529.98pt>
 File: Fig/mobile_robots_apps.jpg Graphic file (type jpg)
 
 <use Fig/mobile_robots_apps.jpg>
-Package pdftex.def Info: Fig/mobile_robots_apps.jpg used on input line 272.
+Package pdftex.def Info: Fig/mobile_robots_apps.jpg used on input line 282.
 (pdftex.def)             Requested size: 268.847pt x 236.59647pt.
  [2 <./Fig/mobile_robots_apps.jpg>]
-<Fig/overview.png, id=342, 557.08125pt x 392.96812pt>
+<Fig/overview.png, id=391, 557.08125pt x 392.96812pt>
 File: Fig/overview.png Graphic file (type png)
  <use Fig/overview.png>
-Package pdftex.def Info: Fig/overview.png used on input line 293.
+Package pdftex.def Info: Fig/overview.png used on input line 303.
 (pdftex.def)             Requested size: 268.847pt x 189.64789pt.
 
 [3 <./Fig/overview.png>] [4]
-<Fig/rosLogo.png, id=353, 705.63625pt x 342.27875pt>
+<Fig/rosLogo.png, id=401, 705.63625pt x 342.27875pt>
 File: Fig/rosLogo.png Graphic file (type png)
  <use Fig/rosLogo.png>
-Package pdftex.def Info: Fig/rosLogo.png used on input line 317.
+Package pdftex.def Info: Fig/rosLogo.png used on input line 327.
 (pdftex.def)             Requested size: 134.4235pt x 65.20076pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--319
+Underfull \hbox (badness 10000) in paragraph at lines 320--329
 
  []
 
 [5 <./Fig/rosLogo.png>]
-<Fig/Project-Nodes.png, id=361, 651.93562pt x 348.55219pt>
+<Fig/Project-Nodes.png, id=409, 651.93562pt x 348.55219pt>
 File: Fig/Project-Nodes.png Graphic file (type png)
 
 <use Fig/Project-Nodes.png>
-Package pdftex.def Info: Fig/Project-Nodes.png used on input line 327.
+Package pdftex.def Info: Fig/Project-Nodes.png used on input line 337.
 (pdftex.def)             Requested size: 268.847pt x 143.74231pt.
 
-<Fig/Algorithm-phases.png, id=363, 587.19376pt x 359.84438pt>
+<Fig/Algorithm-phases.png, id=411, 587.19376pt x 359.84438pt>
 File: Fig/Algorithm-phases.png Graphic file (type png)
 
 <use Fig/Algorithm-phases.png>
-Package pdftex.def Info: Fig/Algorithm-phases.png used on input line 342.
+Package pdftex.def Info: Fig/Algorithm-phases.png used on input line 352.
 (pdftex.def)             Requested size: 313.65028pt x 192.2101pt.
 
-<Fig/localization.png, id=365, 630.355pt x 483.8075pt>
+<Fig/localization.png, id=413, 630.355pt x 483.8075pt>
 File: Fig/localization.png Graphic file (type png)
 
 <use Fig/localization.png>
-Package pdftex.def Info: Fig/localization.png used on input line 352.
+Package pdftex.def Info: Fig/localization.png used on input line 362.
 (pdftex.def)             Requested size: 179.22678pt x 137.55437pt.
  [6 <./Fig/Project-Nodes.png>] [7 <./Fig/Algorithm-phases.png> <./Fig/localizat
 ion.png>]
-<Fig/full-algorithm.png, id=376, 1020.81375pt x 1751.7947pt>
+<Fig/full-algorithm.png, id=425, 1020.81375pt x 1751.7947pt>
 File: Fig/full-algorithm.png Graphic file (type png)
 
 <use Fig/full-algorithm.png>
-Package pdftex.def Info: Fig/full-algorithm.png used on input line 363.
+Package pdftex.def Info: Fig/full-algorithm.png used on input line 373.
 (pdftex.def)             Requested size: 336.05534pt x 576.70407pt.
  [8 <./Fig/full-algorithm.png>] [9
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 390.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 400.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 390.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 400.
  [10]
-<Fig/mapping-flowchart.png, id=392, 930.47626pt x 1068.99374pt>
+<Fig/mapping-flowchart.png, id=440, 930.47626pt x 1068.99374pt>
 File: Fig/mapping-flowchart.png Graphic file (type png)
 
 <use Fig/mapping-flowchart.png>
-Package pdftex.def Info: Fig/mapping-flowchart.png used on input line 431.
+Package pdftex.def Info: Fig/mapping-flowchart.png used on input line 441.
 (pdftex.def)             Requested size: 448.07379pt x 514.77495pt.
 
-<Fig/map-example.png, id=393, 617.30624pt x 335.00156pt>
+<Fig/map-example.png, id=441, 617.30624pt x 335.00156pt>
 File: Fig/map-example.png Graphic file (type png)
 
 <use Fig/map-example.png>
-Package pdftex.def Info: Fig/map-example.png used on input line 442.
+Package pdftex.def Info: Fig/map-example.png used on input line 452.
 (pdftex.def)             Requested size: 224.0369pt x 121.58191pt.
  [11] [12 <./Fig/mapping-flowchart.png>]
-<Fig/path-example.png, id=402, 360.59718pt x 378.66469pt>
+<Fig/path-example.png, id=450, 360.59718pt x 378.66469pt>
 File: Fig/path-example.png Graphic file (type png)
 
 <use Fig/path-example.png>
-Package pdftex.def Info: Fig/path-example.png used on input line 449.
+Package pdftex.def Info: Fig/path-example.png used on input line 459.
 (pdftex.def)             Requested size: 358.46039pt x 376.4219pt.
  [13 <./Fig/map-example.png> <./Fig/path-example.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
+Underfull \hbox (badness 10000) in paragraph at lines 472--473
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--466
+Underfull \hbox (badness 10000) in paragraph at lines 474--476
 
  []
 
-<Fig/landmark-result.png, id=408, 226.59656pt x 316.18124pt>
+<Fig/landmark-result.png, id=457, 226.59656pt x 316.18124pt>
 File: Fig/landmark-result.png Graphic file (type png)
 
 <use Fig/landmark-result.png>
-Package pdftex.def Info: Fig/landmark-result.png used on input line 471.
+Package pdftex.def Info: Fig/landmark-result.png used on input line 481.
 (pdftex.def)             Requested size: 358.46039pt x 500.17842pt.
  [14] [15 <./Fig/landmark-result.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
+Underfull \hbox (badness 10000) in paragraph at lines 489--490
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 484--485
+Underfull \hbox (badness 10000) in paragraph at lines 494--495
 
  []
 
-[16] [17] <Fig/hw-node.png, id=427, 477.28313pt x 450.18187pt>
+[16] [17] <Fig/hw-node.png, id=475, 477.28313pt x 450.18187pt>
 File: Fig/hw-node.png Graphic file (type png)
 
 <use Fig/hw-node.png>
-Package pdftex.def Info: Fig/hw-node.png used on input line 548.
+Package pdftex.def Info: Fig/hw-node.png used on input line 558.
 (pdftex.def)             Requested size: 201.63184pt x 190.18103pt.
  [18 <./Fig/hw-node.png>]
-Overfull \hbox (11.42818pt too wide) in paragraph at lines 567--603
+Overfull \hbox (11.42818pt too wide) in paragraph at lines 577--613
  [] 
  []
 
-[19] <Fig/hardware-structure.png, id=439, 1062.97125pt x 909.3975pt>
+[19] <Fig/hardware-structure.png, id=488, 1062.97125pt x 909.3975pt>
 File: Fig/hardware-structure.png Graphic file (type png)
 
 <use Fig/hardware-structure.png>
-Package pdftex.def Info: Fig/hardware-structure.png used on input line 624.
+Package pdftex.def Info: Fig/hardware-structure.png used on input line 634.
 (pdftex.def)             Requested size: 403.26367pt x 345.00572pt.
  [20]
-<Fig/Electronics/Raspberry.png, id=445, 2964.07375pt x 1651.16875pt>
+<Fig/Electronics/Raspberry.png, id=494, 2964.07375pt x 1651.16875pt>
 File: Fig/Electronics/Raspberry.png Graphic file (type png)
 
 <use Fig/Electronics/Raspberry.png>
-Package pdftex.def Info: Fig/Electronics/Raspberry.png used on input line 640.
+Package pdftex.def Info: Fig/Electronics/Raspberry.png used on input line 651.
 (pdftex.def)             Requested size: 268.847pt x 149.75774pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 637--643
-
- []
-
-[21 <./Fig/hardware-structure.png>]
-<Fig/Electronics/nodemcu.jpg, id=451, 362.35374pt x 362.35374pt>
+ [21 <./Fig/hardware-structure.png>]
+<Fig/Electronics/nodemcu.jpg, id=499, 362.35374pt x 362.35374pt>
 File: Fig/Electronics/nodemcu.jpg Graphic file (type jpg)
 
 <use Fig/Electronics/nodemcu.jpg>
-Package pdftex.def Info: Fig/Electronics/nodemcu.jpg used on input line 648.
+Package pdftex.def Info: Fig/Electronics/nodemcu.jpg used on input line 662.
 (pdftex.def)             Requested size: 179.22678pt x 179.2302pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 645--651
-
- []
-
-<Fig/Electronics/nano.jpg, id=452, 301.125pt x 301.125pt>
+ [22 <./Fig/Electronics/Raspberry.png> <./Fig/Electronics/nodemcu.jpg>]
+<Fig/Electronics/nano.jpg, id=505, 301.125pt x 301.125pt>
 File: Fig/Electronics/nano.jpg Graphic file (type jpg)
 
 <use Fig/Electronics/nano.jpg>
-Package pdftex.def Info: Fig/Electronics/nano.jpg used on input line 656.
+Package pdftex.def Info: Fig/Electronics/nano.jpg used on input line 672.
 (pdftex.def)             Requested size: 134.4235pt x 134.42981pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 653--659
-
- []
-
-[22 <./Fig/Electronics/Raspberry.png> <./Fig/Electronics/nodemcu.jpg>]
-<Fig/Electronics/motor-driver.jpg, id=458, 1042.31662pt x 730.8431pt>
+<Fig/Electronics/motor-driver.jpg, id=506, 1042.31662pt x 730.8431pt>
 File: Fig/Electronics/motor-driver.jpg Graphic file (type jpg)
 
 <use Fig/Electronics/motor-driver.jpg>
-Package pdftex.def Info: Fig/Electronics/motor-driver.jpg used on input line 66
+Package pdftex.def Info: Fig/Electronics/motor-driver.jpg used on input line 68
 8.
 (pdftex.def)             Requested size: 224.0369pt x 157.08359pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 665--671
+Underfull \hbox (badness 10000) in paragraph at lines 693--697
 
  []
 
-<Fig/Electronics/encoder.png, id=459, 72.27pt x 48.18pt>
+[23 <./Fig/Electronics/nano.jpg>]
+<Fig/Electronics/encoder.png, id=512, 72.27pt x 48.18pt>
 File: Fig/Electronics/encoder.png Graphic file (type png)
 
 <use Fig/Electronics/encoder.png>
-Package pdftex.def Info: Fig/Electronics/encoder.png used on input line 676.
-(pdftex.def)             Requested size: 179.22678pt x 119.49097pt.
+Package pdftex.def Info: Fig/Electronics/encoder.png used on input line 700.
+(pdftex.def)             Requested size: 268.847pt x 179.27985pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 673--679
+<Fig/Electronics/encoder-pulses.png, id=513, 144.54pt x 114.4275pt>
+File: Fig/Electronics/encoder-pulses.png Graphic file (type png)
 
- []
-
-[23 <./Fig/Electronics/nano.jpg> <./Fig/Electronics/motor-driver.jpg>]
-<Fig/Electronics/ultrasonic.jpg, id=464, 602.25pt x 602.25pt>
+<use Fig/Electronics/encoder-pulses.png>
+Package pdftex.def Info: Fig/Electronics/encoder-pulses.png used on input line 
+707.
+(pdftex.def)             Requested size: 179.22678pt x 141.8956pt.
+ [24 <./Fig/Electronics/motor-driver.jpg> <./Fig/Electronics/encoder.png>]
+<Fig/Electronics/ultrasonic.jpg, id=519, 420.06938pt x 290.58563pt>
 File: Fig/Electronics/ultrasonic.jpg Graphic file (type jpg)
 
 <use Fig/Electronics/ultrasonic.jpg>
-Package pdftex.def Info: Fig/Electronics/ultrasonic.jpg used on input line 684.
+Package pdftex.def Info: Fig/Electronics/ultrasonic.jpg used on input line 715.
 
-(pdftex.def)             Requested size: 179.22678pt x 179.22443pt.
+(pdftex.def)             Requested size: 179.22678pt x 123.98277pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 681--687
+Underfull \hbox (badness 10000) in paragraph at lines 712--718
 
  []
 
-<Fig/Electronics/compass.jpg, id=465, 903.375pt x 903.375pt>
+<Fig/Electronics/compass.jpg, id=520, 460.72125pt x 397.485pt>
 File: Fig/Electronics/compass.jpg Graphic file (type jpg)
 
 <use Fig/Electronics/compass.jpg>
-Package pdftex.def Info: Fig/Electronics/compass.jpg used on input line 692.
-(pdftex.def)             Requested size: 179.22678pt x 179.22444pt.
+Package pdftex.def Info: Fig/Electronics/compass.jpg used on input line 731.
+(pdftex.def)             Requested size: 134.4235pt x 115.97125pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 689--695
+Underfull \hbox (badness 10000) in paragraph at lines 727--734
 
  []
 
-[24 <./Fig/Electronics/encoder.png> <./Fig/Electronics/ultrasonic.jpg>]
-<Fig/Electronics/mpu.jpg, id=471, 356.33125pt x 318.18875pt>
+[25 <./Fig/Electronics/encoder-pulses.png (PNG copy)> <./Fig/Electronics/ultras
+onic.jpg>] <Fig/compass-sh.png, id=527, 199.49532pt x 192.72pt>
+File: Fig/compass-sh.png Graphic file (type png)
+
+<use Fig/compass-sh.png>
+Package pdftex.def Info: Fig/compass-sh.png used on input line 739.
+(pdftex.def)             Requested size: 179.22678pt x 173.14642pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 735--742
+
+ []
+
+<Fig/compass-diff-shift.png, id=529, 204.01219pt x 197.98969pt>
+File: Fig/compass-diff-shift.png Graphic file (type png)
+
+<use Fig/compass-diff-shift.png>
+Package pdftex.def Info: Fig/compass-diff-shift.png used on input line 746.
+(pdftex.def)             Requested size: 179.22678pt x 173.94444pt.
+ [26 <./Fig/Electronics/compass.jpg> <./Fig/compass-sh.png>] <Fig/Electronics/m
+pu.jpg, id=534, 356.33125pt x 318.18875pt>
 File: Fig/Electronics/mpu.jpg Graphic file (type jpg)
 
 <use Fig/Electronics/mpu.jpg>
-Package pdftex.def Info: Fig/Electronics/mpu.jpg used on input line 701.
+Package pdftex.def Info: Fig/Electronics/mpu.jpg used on input line 754.
 (pdftex.def)             Requested size: 179.22678pt x 160.04073pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 698--704
+Underfull \hbox (badness 10000) in paragraph at lines 751--757
 
  []
 
-<Fig/Electronics/ir.jpg, id=472, 496.85625pt x 281.05pt>
+<Fig/Electronics/ir.jpg, id=535, 496.85625pt x 281.05pt>
 File: Fig/Electronics/ir.jpg Graphic file (type jpg)
 
 <use Fig/Electronics/ir.jpg>
-Package pdftex.def Info: Fig/Electronics/ir.jpg used on input line 709.
+Package pdftex.def Info: Fig/Electronics/ir.jpg used on input line 762.
 (pdftex.def)             Requested size: 179.22678pt x 101.37947pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 706--712
+Underfull \hbox (badness 10000) in paragraph at lines 759--765
 
  []
 
-[25 <./Fig/Electronics/compass.jpg> <./Fig/Electronics/mpu.jpg>] [26 <./Fig/Ele
-ctronics/ir.jpg>] [27]
+[27 <./Fig/compass-diff-shift.png> <./Fig/Electronics/mpu.jpg>]
+<Fig/Electronics/power-bank.jpg, id=540, 438.13687pt x 212.29312pt>
+File: Fig/Electronics/power-bank.jpg Graphic file (type jpg)
+
+<use Fig/Electronics/power-bank.jpg>
+Package pdftex.def Info: Fig/Electronics/power-bank.jpg used on input line 774.
+
+(pdftex.def)             Requested size: 224.0369pt x 108.55635pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 771--777
+
+ []
+
+<Fig/Electronics/bat12.jpg, id=541, 533.995pt x 527.9725pt>
+File: Fig/Electronics/bat12.jpg Graphic file (type jpg)
+
+<use Fig/Electronics/bat12.jpg>
+Package pdftex.def Info: Fig/Electronics/bat12.jpg used on input line 782.
+(pdftex.def)             Requested size: 224.0369pt x 221.5133pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 779--785
+
+ []
+
+[28 <./Fig/Electronics/ir.jpg> <./Fig/Electronics/power-bank.jpg>]
+<Fig/Electronics/bat5.jpg, id=546, 1042.31662pt x 710.48535pt>
+File: Fig/Electronics/bat5.jpg Graphic file (type jpg)
+
+<use Fig/Electronics/bat5.jpg>
+Package pdftex.def Info: Fig/Electronics/bat5.jpg used on input line 790.
+(pdftex.def)             Requested size: 224.0369pt x 152.70801pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 787--793
+
+ []
+
+<Fig/Electronics/pot.jpg, id=547, 361.35pt x 361.35pt>
+File: Fig/Electronics/pot.jpg Graphic file (type jpg)
+
+<use Fig/Electronics/pot.jpg>
+Package pdftex.def Info: Fig/Electronics/pot.jpg used on input line 802.
+(pdftex.def)             Requested size: 224.0369pt x 224.04019pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--805
+
+ []
+
+[29 <./Fig/Electronics/bat12.jpg> <./Fig/Electronics/bat5.jpg>]
+<Fig/Electronics/LED.jpg, id=552, 451.6875pt x 338.76563pt>
+File: Fig/Electronics/LED.jpg Graphic file (type jpg)
+
+<use Fig/Electronics/LED.jpg>
+Package pdftex.def Info: Fig/Electronics/LED.jpg used on input line 810.
+(pdftex.def)             Requested size: 224.0369pt x 168.02808pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 807--813
+
+ []
+
+[30 <./Fig/Electronics/pot.jpg> <./Fig/Electronics/LED.jpg>] [31]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 727.
+(hyperref)                removing `\@ifnextchar' on input line 832.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 740--745
-
- []
-
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 748--752
+Underfull \hbox (badness 10000) in paragraph at lines 845--850
 
  []
 
-<Fig/dc-motor.jpg, id=495, 433.62pt x 433.62pt>
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 853--857
+
+ []
+
+<Fig/dc-motor.jpg, id=571, 433.62pt x 433.62pt>
 File: Fig/dc-motor.jpg Graphic file (type jpg)
  <use Fig/dc-motor.jpg>
-Package pdftex.def Info: Fig/dc-motor.jpg used on input line 775.
+Package pdftex.def Info: Fig/dc-motor.jpg used on input line 880.
 (pdftex.def)             Requested size: 156.82855pt x 156.83089pt.
- [29 <./Fig/dc-motor.jpg>] [30] [31] (zuman_book.bbl
+ [33 <./Fig/dc-motor.jpg>]
+<Fig/solid/solid-planes.png, id=579, 861.2175pt x 767.86874pt>
+File: Fig/solid/solid-planes.png Graphic file (type png)
+
+<use Fig/solid/solid-planes.png>
+Package pdftex.def Info: Fig/solid/solid-planes.png used on input line 892.
+(pdftex.def)             Requested size: 358.46039pt x 319.60864pt.
+File: Fig/Introduction.png Graphic file (type png)
+ <use Fig/Introduction.png>
+Package pdftex.def Info: Fig/Introduction.png used on input line 899.
+(pdftex.def)             Requested size: 179.22678pt x 148.18161pt.
+
+<Fig/solid/frame-3d.png, id=580, 469.00218pt x 320.69812pt>
+File: Fig/solid/frame-3d.png Graphic file (type png)
+
+<use Fig/solid/frame-3d.png>
+Package pdftex.def Info: Fig/solid/frame-3d.png used on input line 909.
+(pdftex.def)             Requested size: 358.46039pt x 245.10815pt.
+ [34 <./Fig/solid/solid-planes.png>]
+<Fig/solid/side-frame.png, id=585, 487.8225pt x 364.36125pt>
+File: Fig/solid/side-frame.png Graphic file (type png)
+
+<use Fig/solid/side-frame.png>
+Package pdftex.def Info: Fig/solid/side-frame.png used on input line 915.
+(pdftex.def)             Requested size: 268.847pt x 200.80516pt.
+
+<Fig/solid/top-front-cover.png, id=586, 481.8pt x 232.61906pt>
+File: Fig/solid/top-front-cover.png Graphic file (type png)
+
+<use Fig/solid/top-front-cover.png>
+Package pdftex.def Info: Fig/solid/top-front-cover.png used on input line 921.
+(pdftex.def)             Requested size: 358.46039pt x 173.07246pt.
+ [35 <./Fig/solid/frame-3d.png> <./Fig/solid/side-frame.png>] <Fig/solid/mid-pa
+rt.png, id=591, 480.29437pt x 95.6072pt>
+File: Fig/solid/mid-part.png Graphic file (type png)
+
+<use Fig/solid/mid-part.png>
+Package pdftex.def Info: Fig/solid/mid-part.png used on input line 927.
+(pdftex.def)             Requested size: 358.46039pt x 71.35654pt.
+
+<Fig/solid/top-back-cover.png, id=592, 478.03593pt x 225.09094pt>
+File: Fig/solid/top-back-cover.png Graphic file (type png)
+
+<use Fig/solid/top-back-cover.png>
+Package pdftex.def Info: Fig/solid/top-back-cover.png used on input line 933.
+(pdftex.def)             Requested size: 358.46039pt x 168.78687pt.
+
+<Fig/solid/cam-holder-2.png, id=593, 301.8778pt x 350.05782pt>
+File: Fig/solid/cam-holder-2.png Graphic file (type png)
+
+<use Fig/solid/cam-holder-2.png>
+Package pdftex.def Info: Fig/solid/cam-holder-2.png used on input line 942.
+(pdftex.def)             Requested size: 224.0369pt x 259.79185pt.
+ [36 <./Fig/solid/top-front-cover.png> <./Fig/solid/mid-part.png> <./Fig/solid/
+top-back-cover.png>]
+<Fig/solid/cam-holder-1.png, id=598, 229.60782pt x 250.68657pt>
+File: Fig/solid/cam-holder-1.png Graphic file (type png)
+
+<use Fig/solid/cam-holder-1.png>
+Package pdftex.def Info: Fig/solid/cam-holder-1.png used on input line 948.
+(pdftex.def)             Requested size: 224.0369pt x 244.6154pt.
+
+<Fig/solid/Motor-cover.png, id=599, 450.18187pt x 295.1025pt>
+File: Fig/solid/Motor-cover.png Graphic file (type png)
+
+<use Fig/solid/Motor-cover.png>
+Package pdftex.def Info: Fig/solid/Motor-cover.png used on input line 955.
+(pdftex.def)             Requested size: 358.46039pt x 234.9881pt.
+ [37 <./Fig/solid/cam-holder-2.png> <./Fig/solid/cam-holder-1.png>] [38 <./Fig/
+solid/Motor-cover.png>] (zuman_book.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 4--7
 []\T1/cmr/m/n/12 M. Ahmed.  Lec-ture notes un-der-stand-ing us-ing dc mo-tors s
 pecs.
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 805.
- [32]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 805.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 967.
+ [39]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 967.
  (zuman_book.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 805.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 805.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 967.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 967.
 Package rerunfilecheck Info: File `zuman_book.out' has not changed.
-(rerunfilecheck)             Checksum: C3A96FE05B4C4923DC1370D2F7438F8D;3216.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 805.
+(rerunfilecheck)             Checksum: BFCD78A78778957C20EA231F18B0C749;3332.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 967.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 12168 strings out of 493333
- 178117 string characters out of 3139197
- 403193 words of memory out of 3000000
- 15353 multiletter control sequences out of 15000+200000
+ 12291 strings out of 493333
+ 180969 string characters out of 3139197
+ 406866 words of memory out of 3000000
+ 15431 multiletter control sequences out of 15000+200000
  16936 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,12n,43p,958b,5308s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1440,9 +1601,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on zuman_book.pdf (42 pages, 3672429 bytes).
+Output written on zuman_book.pdf (51 pages, 4611809 bytes).
 PDF statistics:
- 971 PDF objects out of 1000 (max. 8388607)
- 116 named destinations out of 1000 (max. 500000)
- 478 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1078 PDF objects out of 1200 (max. 8388607)
+ 143 named destinations out of 1000 (max. 500000)
+ 571 words of extra memory for PDF output out of 10000 (max. 10000000)
 
