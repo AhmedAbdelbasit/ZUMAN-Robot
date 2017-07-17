@@ -7,39 +7,53 @@
 \contentsline {subsection}{\numberline {1.3}Limitations}{3}{subsection.1.3}
 \contentsline {subsection}{\numberline {1.4}Overview on the project parts}{3}{subsection.1.4}
 \contentsline {section}{\numberline {2}User Manual and GUI}{4}{section.2}
-\contentsline {section}{\numberline {3}System Structure and Proposed Algorithm}{5}{section.3}
-\contentsline {subsection}{\numberline {3.1}Robots Operating System (ROS)}{5}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Project Nodes and Communication Process}{6}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Proposed Algorithm for Autonomous Navigation}{6}{subsection.3.3}
-\contentsline {section}{\numberline {4}GUI Implementation}{9}{section.4}
-\contentsline {section}{\numberline {5}Mapping of Environment}{10}{section.5}
-\contentsline {subsection}{\numberline {5.1}Introduction}{10}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Mapping Algorithms considered}{10}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}Greedy Best First Search(GBFS) Algorithm :}{10}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}A* Algorithm:}{11}{subsubsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.3}Algorithm used in our project}{11}{subsubsection.5.2.3}
-\contentsline {subsection}{\numberline {5.3}Mapping Example of indoor environment}{11}{subsection.5.3}
-\contentsline {section}{\numberline {6}Computer Vision}{14}{section.6}
-\contentsline {subsection}{\numberline {6.1}Landmark detection for Localization}{14}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Using Computer Vision for obstacle avoiding}{16}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Canny Technique}{16}{subsubsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.2}Floor Subtraction Technique}{16}{subsubsection.6.2.2}
-\contentsline {subsubsection}{\numberline {6.2.3}Stereo BM/SGBM Techniques}{17}{subsubsection.6.2.3}
-\contentsline {subsubsection}{\numberline {6.2.4}Used Method}{17}{subsubsection.6.2.4}
-\contentsline {section}{\numberline {7}Hardware Node and Modules Structure Tree}{18}{section.7}
-\contentsline {subsection}{\numberline {7.1}Hardware ROS node}{18}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Low-level Hardware Kits and Modules}{19}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Hardware Tree Structure}{20}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Electronics Involved in Project}{21}{subsection.7.4}
-\contentsline {subsubsection}{\numberline {7.4.1}Processing Units}{21}{subsubsection.7.4.1}
-\contentsline {subsubsection}{\numberline {7.4.2}Kits and Sensor modules}{23}{subsubsection.7.4.2}
-\contentsline {subsubsection}{\numberline {7.4.3}Power Sources}{28}{subsubsection.7.4.3}
-\contentsline {subsubsection}{\numberline {7.4.4}Passive Components}{29}{subsubsection.7.4.4}
-\contentsline {section}{\numberline {8}Software Implementation of Micro-Controller nodes}{31}{section.8}
-\contentsline {subsection}{\numberline {8.1}WiFi Reamot Controller}{31}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Manipulator Node}{31}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Sensors Node}{31}{subsection.8.3}
-\contentsline {section}{\numberline {9}Mechanical Design}{32}{section.9}
-\contentsline {subsection}{\numberline {9.1}Choosing Suitable DC Motor \cite {203}}{32}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Robot Dimensions and Design Considerations}{34}{subsection.9.2}
-\contentsline {subsection}{\numberline {9.3}Mechanical Parts}{35}{subsection.9.3}
+\contentsline {subsection}{\numberline {2.1}Main Scene of Application}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Manned Mode}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Autonomous mode}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Developer Mode}{6}{subsection.2.4}
+\contentsline {section}{\numberline {3}System Structure and Proposed Algorithm}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Robots Operating System (ROS)}{7}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Project Nodes and Communication Process}{8}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Proposed Algorithm for Autonomous Navigation}{8}{subsection.3.3}
+\contentsline {section}{\numberline {4}GUI Implementation}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Connection with the Raspberry Pi}{10}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Video Stream from IP Camera}{12}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}JavaFx software platform}{12}{subsection.4.3}
+\contentsline {section}{\numberline {5}Mapping of Environment}{15}{section.5}
+\contentsline {subsection}{\numberline {5.1}Introduction}{15}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Mapping Algorithms considered}{15}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Greedy Best First Search(GBFS) Algorithm :}{15}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}A* Algorithm:}{16}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Algorithm used in our project}{16}{subsubsection.5.2.3}
+\contentsline {subsection}{\numberline {5.3}Mapping Example of indoor environment}{16}{subsection.5.3}
+\contentsline {section}{\numberline {6}Computer Vision}{19}{section.6}
+\contentsline {subsection}{\numberline {6.1}Landmark detection for Localization}{19}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Using Computer Vision for obstacle avoiding}{21}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Canny Technique}{21}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Floor Subtraction Technique}{21}{subsubsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.3}Stereo BM/SGBM Techniques}{22}{subsubsection.6.2.3}
+\contentsline {subsubsection}{\numberline {6.2.4}Used Method}{22}{subsubsection.6.2.4}
+\contentsline {section}{\numberline {7}Hardware Node and Modules Tree Structure}{23}{section.7}
+\contentsline {subsection}{\numberline {7.1}Hardware ROS node}{23}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Low-level Hardware Kits and Modules}{24}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Hardware Tree Structure}{25}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Electronics Involved in Project}{27}{subsection.7.4}
+\contentsline {subsubsection}{\numberline {7.4.1}Processing Units}{27}{subsubsection.7.4.1}
+\contentsline {subsubsection}{\numberline {7.4.2}Kits and Sensor modules}{28}{subsubsection.7.4.2}
+\contentsline {subsubsection}{\numberline {7.4.3}Power Sources}{34}{subsubsection.7.4.3}
+\contentsline {subsubsection}{\numberline {7.4.4}Passive Components}{35}{subsubsection.7.4.4}
+\contentsline {section}{\numberline {8}Software Implementation of Micro-Controller nodes}{37}{section.8}
+\contentsline {subsection}{\numberline {8.1}WiFi Remote Controller}{37}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Manipulator Node}{39}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Sensors Node}{40}{subsection.8.3}
+\contentsline {section}{\numberline {9}Design of PID Controller and feedback}{41}{section.9}
+\contentsline {subsection}{\numberline {9.1}About The Controlled Process}{41}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}PID Controller}{41}{subsection.9.2}
+\contentsline {subsubsection}{\numberline {9.2.1}Theoretical Background about PID}{41}{subsubsection.9.2.1}
+\contentsline {subsubsection}{\numberline {9.2.2}Practical implementation}{42}{subsubsection.9.2.2}
+\contentsline {subsubsection}{\numberline {9.2.3}Software Implementation of PID}{42}{subsubsection.9.2.3}
+\contentsline {subsection}{\numberline {9.3}Design of Feedback}{43}{subsection.9.3}
+\contentsline {section}{\numberline {10}Mechanical Design}{44}{section.10}
+\contentsline {subsection}{\numberline {10.1}Choosing Suitable DC Motor \cite {203}}{44}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Robot Dimensions and Design Considerations}{46}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Mechanical Parts}{48}{subsection.10.3}

@@ -1,42 +1,56 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces A 3-D model for robot frame\relax }}{1}{figure.caption.7}
 \contentsline {figure}{\numberline {2}{\ignorespaces Different applications for mobile robots; industrial, military and transport\relax }}{2}{figure.caption.8}
 \contentsline {figure}{\numberline {3}{\ignorespaces Clustered view of main system structure\relax }}{3}{figure.caption.9}
-\contentsline {figure}{\numberline {4}{\ignorespaces ROS logo.\relax }}{5}{figure.caption.10}
-\contentsline {figure}{\numberline {5}{\ignorespaces The implemented nodes and advertised topics between them.\relax }}{6}{figure.caption.11}
-\contentsline {figure}{\numberline {6}{\ignorespaces Proposed algorithm's phases\relax }}{7}{figure.caption.12}
-\contentsline {figure}{\numberline {7}{\ignorespaces Localization using computer vision\relax }}{7}{figure.caption.13}
-\contentsline {figure}{\numberline {8}{\ignorespaces Flowchart for whole algorithm applied for autonomous navigation.\relax }}{8}{figure.caption.14}
-\contentsline {figure}{\numberline {9}{\ignorespaces Flowchart of mapping process.\relax }}{12}{figure.caption.15}
-\contentsline {figure}{\numberline {10}{\ignorespaces Map example represented in bitmap file.\relax }}{13}{figure.caption.16}
-\contentsline {figure}{\numberline {11}{\ignorespaces Path example and commands created from some source to destination in a trial map.\relax }}{13}{figure.caption.17}
-\contentsline {figure}{\numberline {12}{\ignorespaces Detection and recognition of landmark.\relax }}{15}{figure.caption.18}
-\contentsline {figure}{\numberline {13}{\ignorespaces Hardware node standing midway between ROS nodes and hardware modules.\relax }}{18}{figure.caption.19}
-\contentsline {figure}{\numberline {14}{\ignorespaces Hardware modules structure.\relax }}{21}{figure.caption.20}
-\contentsline {figure}{\numberline {15}{\ignorespaces Raspberry Pi R3.\relax }}{22}{figure.caption.21}
-\contentsline {figure}{\numberline {16}{\ignorespaces LoLin V3 NodeMcu\relax }}{22}{figure.caption.22}
-\contentsline {figure}{\numberline {17}{\ignorespaces Arduino nano kit\relax }}{23}{figure.caption.23}
-\contentsline {figure}{\numberline {18}{\ignorespaces DC Motor Driver for Robot 4 channel\relax }}{24}{figure.caption.24}
-\contentsline {figure}{\numberline {19}{\ignorespaces Motor shaft encoder 3PPR\relax }}{24}{figure.caption.25}
-\contentsline {figure}{\numberline {20}{\ignorespaces Quadrature encoder pulses explained\relax }}{25}{figure.caption.26}
-\contentsline {figure}{\numberline {21}{\ignorespaces Ultrasonic sensor\relax }}{25}{figure.caption.27}
-\contentsline {figure}{\numberline {22}{\ignorespaces compass module HMC5883L\relax }}{26}{figure.caption.28}
-\contentsline {figure}{\numberline {23}{\ignorespaces Showing the shifting problem in compass readings\relax }}{26}{figure.caption.29}
-\contentsline {figure}{\numberline {24}{\ignorespaces Showing the shifting problem in compass readings\relax }}{27}{figure.caption.30}
-\contentsline {figure}{\numberline {25}{\ignorespaces MPU6050 Accelerometer and Gyroscope\relax }}{27}{figure.caption.31}
-\contentsline {figure}{\numberline {26}{\ignorespaces IR sharp sensor\relax }}{28}{figure.caption.32}
-\contentsline {figure}{\numberline {27}{\ignorespaces Power Bank "Rechargeable Battery Pack" 7000mAh\relax }}{28}{figure.caption.33}
-\contentsline {figure}{\numberline {28}{\ignorespaces Lithium-ion Super Rechargeable Battery Pack (12V, 7000mAh)\relax }}{29}{figure.caption.34}
-\contentsline {figure}{\numberline {29}{\ignorespaces NiMH Rechargeable Battery (5V-1500mAh)\relax }}{29}{figure.caption.35}
-\contentsline {figure}{\numberline {30}{\ignorespaces Potentiometer 50 Kohm \relax }}{30}{figure.caption.36}
-\contentsline {figure}{\numberline {31}{\ignorespaces White LEDs 5 mm 3V\relax }}{30}{figure.caption.37}
-\contentsline {figure}{\numberline {32}{\ignorespaces DC motor SG-555123000-30K selected for driving the robot.\relax }}{33}{figure.caption.38}
-\contentsline {figure}{\numberline {33}{\ignorespaces Front, side and top planes for assembly of robot frame\relax }}{34}{figure.caption.39}
-\contentsline {figure}{\numberline {34}{\ignorespaces 3D Real view of robot frame\relax }}{34}{figure.caption.40}
-\contentsline {figure}{\numberline {35}{\ignorespaces Aluminum Base frame\relax }}{35}{figure.caption.41}
-\contentsline {figure}{\numberline {36}{\ignorespaces Side frame\relax }}{35}{figure.caption.42}
-\contentsline {figure}{\numberline {37}{\ignorespaces Top front cover\relax }}{36}{figure.caption.43}
-\contentsline {figure}{\numberline {38}{\ignorespaces Top mid link\relax }}{36}{figure.caption.44}
-\contentsline {figure}{\numberline {39}{\ignorespaces Top back cover\relax }}{36}{figure.caption.45}
-\contentsline {figure}{\numberline {40}{\ignorespaces Upper Link of Camera Holder\relax }}{37}{figure.caption.46}
-\contentsline {figure}{\numberline {41}{\ignorespaces lower Link of Camera Holder\relax }}{37}{figure.caption.47}
-\contentsline {figure}{\numberline {42}{\ignorespaces DC motors Cover\relax }}{38}{figure.caption.48}
+\contentsline {figure}{\numberline {4}{\ignorespaces Main scene of the application\relax }}{4}{figure.caption.10}
+\contentsline {figure}{\numberline {5}{\ignorespaces Manned mode scene in the application\relax }}{5}{figure.caption.11}
+\contentsline {figure}{\numberline {6}{\ignorespaces Autonomous mode scene in the application\relax }}{5}{figure.caption.12}
+\contentsline {figure}{\numberline {7}{\ignorespaces Developer mode scene in the application\relax }}{6}{figure.caption.13}
+\contentsline {figure}{\numberline {8}{\ignorespaces ROS logo.\relax }}{7}{figure.caption.14}
+\contentsline {figure}{\numberline {9}{\ignorespaces The implemented nodes and advertised topics between them.\relax }}{8}{figure.caption.15}
+\contentsline {figure}{\numberline {10}{\ignorespaces Proposed algorithm's phases\relax }}{9}{figure.caption.16}
+\contentsline {figure}{\numberline {11}{\ignorespaces Localization using computer vision\relax }}{9}{figure.caption.17}
+\contentsline {figure}{\numberline {13}{\ignorespaces Flowchart for SSH connection with Raspberry Pi\relax }}{10}{figure.caption.19}
+\contentsline {figure}{\numberline {12}{\ignorespaces Flowchart for whole algorithm applied for autonomous navigation.\relax }}{11}{figure.caption.18}
+\contentsline {figure}{\numberline {14}{\ignorespaces Flowchart for receiving video stream from ip camera\relax }}{12}{figure.caption.20}
+\contentsline {figure}{\numberline {15}{\ignorespaces Video stream window in the application\relax }}{13}{figure.caption.21}
+\contentsline {figure}{\numberline {16}{\ignorespaces Error message for failed SSH connection\relax }}{13}{figure.caption.22}
+\contentsline {figure}{\numberline {17}{\ignorespaces Flowchart of mapping process.\relax }}{17}{figure.caption.23}
+\contentsline {figure}{\numberline {18}{\ignorespaces Map example represented in bitmap file.\relax }}{18}{figure.caption.24}
+\contentsline {figure}{\numberline {19}{\ignorespaces Path example and commands created from some source to destination in a trial map.\relax }}{18}{figure.caption.25}
+\contentsline {figure}{\numberline {20}{\ignorespaces Detection and recognition of landmark.\relax }}{20}{figure.caption.26}
+\contentsline {figure}{\numberline {21}{\ignorespaces Hardware node standing midway between ROS nodes and hardware modules.\relax }}{23}{figure.caption.27}
+\contentsline {figure}{\numberline {22}{\ignorespaces Hardware modules structure.\relax }}{26}{figure.caption.28}
+\contentsline {figure}{\numberline {23}{\ignorespaces Raspberry Pi R3.\relax }}{27}{figure.caption.29}
+\contentsline {figure}{\numberline {24}{\ignorespaces LoLin V3 NodeMcu\relax }}{28}{figure.caption.30}
+\contentsline {figure}{\numberline {25}{\ignorespaces Arduino nano kit\relax }}{28}{figure.caption.31}
+\contentsline {figure}{\numberline {26}{\ignorespaces DC Motor Driver for Robot 4 channel\relax }}{29}{figure.caption.32}
+\contentsline {figure}{\numberline {27}{\ignorespaces Motor shaft encoder 3PPR\relax }}{30}{figure.caption.33}
+\contentsline {figure}{\numberline {28}{\ignorespaces Quadrature encoder pulses explained\relax }}{30}{figure.caption.34}
+\contentsline {figure}{\numberline {29}{\ignorespaces Ultrasonic sensor\relax }}{30}{figure.caption.35}
+\contentsline {figure}{\numberline {30}{\ignorespaces compass module HMC5883L\relax }}{31}{figure.caption.36}
+\contentsline {figure}{\numberline {31}{\ignorespaces Showing the shifting problem in compass readings\relax }}{32}{figure.caption.37}
+\contentsline {figure}{\numberline {32}{\ignorespaces Showing the shifting problem in compass readings\relax }}{32}{figure.caption.38}
+\contentsline {figure}{\numberline {33}{\ignorespaces MPU6050 Accelerometer and Gyroscope\relax }}{33}{figure.caption.39}
+\contentsline {figure}{\numberline {34}{\ignorespaces IR sharp sensor\relax }}{33}{figure.caption.40}
+\contentsline {figure}{\numberline {35}{\ignorespaces Power Bank "Rechargeable Battery Pack" 7000mAh\relax }}{34}{figure.caption.41}
+\contentsline {figure}{\numberline {36}{\ignorespaces Lithium-ion Super Rechargeable Battery Pack (12V, 7000mAh)\relax }}{34}{figure.caption.42}
+\contentsline {figure}{\numberline {37}{\ignorespaces NiMH Rechargeable Battery (5V-1500mAh)\relax }}{35}{figure.caption.43}
+\contentsline {figure}{\numberline {38}{\ignorespaces Potentiometer 50 Kohm \relax }}{35}{figure.caption.44}
+\contentsline {figure}{\numberline {39}{\ignorespaces White LEDs 5 mm 3V\relax }}{36}{figure.caption.45}
+\contentsline {figure}{\numberline {40}{\ignorespaces Circuit diagram for flash light\relax }}{36}{figure.caption.46}
+\contentsline {figure}{\numberline {41}{\ignorespaces Hardware structure of Remote Controller Node\relax }}{38}{figure.caption.47}
+\contentsline {figure}{\numberline {42}{\ignorespaces Hardware Structure of manipulator node\relax }}{39}{figure.caption.48}
+\contentsline {figure}{\numberline {43}{\ignorespaces Hardware structure of sensor node\relax }}{40}{figure.caption.49}
+\contentsline {figure}{\numberline {44}{\ignorespaces Low pass filter introduced before the DC motor\relax }}{41}{figure.caption.50}
+\contentsline {figure}{\numberline {45}{\ignorespaces flowchart for the PID loop\relax }}{42}{figure.caption.51}
+\contentsline {figure}{\numberline {46}{\ignorespaces DC motor SG-555123000-30K selected for driving the robot.\relax }}{45}{figure.caption.52}
+\contentsline {figure}{\numberline {47}{\ignorespaces 3D Real view of robot frame\relax }}{46}{figure.caption.53}
+\contentsline {figure}{\numberline {48}{\ignorespaces Front, side and top planes for assembly of robot frame\relax }}{47}{figure.caption.54}
+\contentsline {figure}{\numberline {49}{\ignorespaces Aluminum Base frame\relax }}{48}{figure.caption.55}
+\contentsline {figure}{\numberline {50}{\ignorespaces Side frame\relax }}{48}{figure.caption.56}
+\contentsline {figure}{\numberline {51}{\ignorespaces Top front cover\relax }}{49}{figure.caption.57}
+\contentsline {figure}{\numberline {52}{\ignorespaces Top mid link\relax }}{49}{figure.caption.58}
+\contentsline {figure}{\numberline {53}{\ignorespaces Top back cover\relax }}{49}{figure.caption.59}
+\contentsline {figure}{\numberline {54}{\ignorespaces Upper Link of Camera Holder\relax }}{50}{figure.caption.60}
+\contentsline {figure}{\numberline {55}{\ignorespaces lower Link of Camera Holder\relax }}{50}{figure.caption.61}
+\contentsline {figure}{\numberline {56}{\ignorespaces DC motors Cover\relax }}{51}{figure.caption.62}

@@ -228,8 +228,10 @@ Abstract
 	PPR & Pulse Per Revolution \\
 	IR & Infra Red \\
 	SSH & Secure Shell\\
+	API & Application Program Interface\\
 	IDE & Integrated Development Environment\\
-	
+	JSCH & Java Secure Channel\\
+	mAh & milli Ampere Hour \\
 	PID & Proportion Integral Derivative  \\  
 	PWM &  Pulse Width Modulation  \\   
 	$I^2C$  & Inter-Integrated Circuit   \\  
@@ -257,8 +259,8 @@ Abstract
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-
 \section{Introduction}
+
  In daily life there are a lot of situations in which robots are needed to perform some tasks man can not deal with. Some of these situations may be risky, difficult or such impossible for man to do. Think about a risky place we want to discover like disasters area, places of extreme environmental conditions or military purposes. In these situations introducing a robot is important for saving human life.\\
  Robots also can help people of special needs with what they can not do like carrying heavy things, holding and placing parts or even home cleaning.\\
  Robots have many configurations, styles and mechanisms for motion. Some are legged, others are wheeled and the rest can fly, swim or dive. Each configuration has its functionality that others can not do and also has limitations.
@@ -304,14 +306,68 @@ The main system structure of our project as shown in figure \ref{fig:system-stru
 	\caption{Clustered view of main system structure}
 	\label{fig:system-structure}
 \end{figure}
+
+\afterpage{\blankpage}
 \newpage
 
 \section{User Manual and GUI}
-talk about how to use the GUI to run the project on different modes.
+For the ease of controlling the robot by non-technical users, a user-friendly desktop application is created so that the user can operate on the robot with a few button clicks and also can follow the robot behavior with a video stream from a camera installed on it.
 
+\subsection{Main Scene of Application}
+For controlling the robot, the user can choose one of two modes from the first screen of the application:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.7\textwidth]{Fig/gui-main.png}
+	\caption{ Main scene of the application}
+	\label{fig:gui-main}
+\end{figure}
+
+\subsection{Manned Mode}
+The user can control the robot manually by clicking on the Manned button and he will be forwarded for the manned mode screen:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.7\textwidth]{Fig/manned-mode.png}
+	\caption{Manned mode scene in the application}
+	\label{fig:manned-mode}
+\end{figure}
+
+\noindent At the click on \textit{Start Camera} button, a video stream will be started on the black rectangle on the screen so the user can follow with the robot.\\
+At the click on \textit{Start Connection} button, the robot will start operating so the user can control it from a
+handy stick.
+
+\subsection{Autonomous mode}
+For the robot to operate independently, the user can go with the autonomous mode by clicking \textit{Autonomous} button on the first screen to be forwarded for this window:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.7\textwidth]{Fig/auto-mode.png}
+	\caption{Autonomous mode scene in the application}
+	\label{fig:auto-mode}
+\end{figure}
+
+\noindent The Start Camera and Start Connection button functions are the same as the manned mode, for the robot to start operating autonomously, it needs the destination to go to so firstly, the user need to click on the Get Location button so the robot can recognize its current location and secondly, the user need to choose a destination from the drop-down menu and the robot will start operating.
+
+
+\subsection{Developer Mode}
+This mode is provided for technical users (i.e. maintainers) it they want to test the robot with different control commands before changing the source code. At the click on Developer button on the first screen, the user will be forwarded to this screen:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.7\textwidth]{Fig/developer-mode.png}
+	\caption{Developer mode scene in the application}
+	\label{fig:develop-mode}
+\end{figure}
+
+\noindent The command text box is used for sending messages to the robot and then click on send button.
+For subscribing to a specific topic, just write the topic name in the Topic name text box and click on
+echo button and the subscribed messages will be displayed on the Subscribed data text area.
+
+\afterpage{\blankpage}
 \newpage
 
 \section{System Structure and Proposed Algorithm}
+
 In the design stage of project, three main parts arises to be implemented; mapping, computer vision and hardware. Each part represents an executable program that can interact with other parts in a manner to fulfill the required task. So, lets first talk briefly about ROS and how it provided a great help in connecting project parts and how communication between processes becomes easy.
 
 
@@ -374,14 +430,86 @@ In the autonomous navigation mission, each of the three nodes has its own task t
 	\caption{Flowchart for whole algorithm applied for autonomous navigation.}
 	\label{fig:full-algorithm}
 \end{figure}
+\newpage
 
-\newpage
-\clearpage
-\newpage
+\afterpage{\blankpage}
+
+
 
 \section{GUI Implementation}
-talk about the Java application and how it is implemented, how it communicates with master unit to send navigation instruction. also how video stream is received
+The main tasks of the user interface are two:\\
+1. Instantiate a connection with the main processing unit (Raspberry Pi) of the robot so it can control its functionality.\\
+2. Connect to the IP camera installed on the robot to retrieve a video stream and show it to the user.
 
+\subsection{Connection with the Raspberry Pi}
+As our main robot system is based on ROS that it can operate from the system terminal so it needs to connect through the SSH (Secure Shell Protocol) and start to launch the required nodes. For the SSH connection, we have used JSCH (Java Secure Channel) API, it is open source with a BSD style license, it is not the best but it meets our requirements.\\
+The ROS nodes that need to be operated are packed in a roslaunch file and it is launched through the SSH connection inside the application.\\
+For the SSH connections to occur, the code follows this flowchart:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.55\textwidth]{Fig/connection-flowchart.jpg}
+	\caption{Flowchart for SSH connection with Raspberry Pi}
+	\label{fig:connection-flowchart}
+\end{figure}
+
+
+\subsection{Video Stream from IP Camera}
+For displaying a video, we need to process its frames first so we used OpenCV 3.2 for Java. The process of the camera connection is shown in the following flowchart:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.55\textwidth]{Fig/camera-flowchart.jpg}
+	\caption{Flowchart for receiving video stream from ip camera}
+	\label{fig:camera-flowchart}
+\end{figure}
+
+\subsection{JavaFx software platform}
+The application is implemented using JavaFx software platform as is is the most suitable for creating
+desktop applications that can run across a wide variety of devices.
+Our application is consisting of one stage and four scenes, the first and main scene is main scene and it
+allows the user to choose a mode to operate the robot on as shown in figure \ref{fig:gui-main}.
+
+Each of these three buttons is forwarding the user to a different mode with a different scene of controls at a click event.
+The second scene is for the manned mode which is used by the user to control the robot manually through a stick.
+At the click on button Manned in the first scene, the user is forwarded to the scene shown in figure \ref{fig:camera-scene}:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.7\textwidth]{Fig/camera-scene.png}
+	\caption{Video stream window in the application}
+	\label{fig:camera-scene}
+\end{figure}
+
+\noindent At the click event of the Start Camera button, a video stream is retrieved from a specified IP and is displayed on this black rectangle of the scene.\\
+
+\noindent At the click event of the Start Connection button, the application starts to connect to the Raspberry Pi.\\
+On a successful connection, a specified roslaunch file is launched through a shell command and then the user can operate on the robot manually and the button state is changing to Stop connection so the user can stop the connection and exit at any time. On a failed connection, an error dialog is displayed to the user as shown in figure \ref{fig:error-window}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.4\textwidth]{Fig/error-window.png}
+	\caption{Error message for failed SSH connection}
+	\label{fig:error-window}
+\end{figure}
+
+\noindent At the click event of the second button, the user will be forwarded to the third scene of the app for the
+Autonomous mode of the robot, as shown in figure \ref{fig:auto-mode}.
+
+This scene has the same elements and functions as the previous one with some additional functions.\\
+
+\noindent At the click event of the Get Location button, a message is sent to the CV node to start recognizing its current location and then it sends it back.\\
+
+\noindent For determining the destination for the robot, a drop-down menu has all the places of the robot environment and at the selection of a place, a message is sent to the MAP node to start determining the route between the current and the destination location.
+
+%talk about the Java application and how it is implemented, how it communicates with master unit to send navigation instruction. also how video stream is received
+
+
+
+
+
+
+
+
+\afterpage{\blankpage}
 \newpage
 
 \section{Mapping of Environment}
@@ -461,6 +589,7 @@ We use three colors  , if a robot in 127 color so it use A* search and the 195 c
 	\label{fig:path-example}
 \end{figure}
 
+\afterpage{\blankpage}
 \newpage
 
 \section{Computer Vision}
@@ -545,9 +674,10 @@ That’s how professionals do it ! BM/SGBM Stand for Block Matching / Semi Globa
 \subsubsection{Used Method}
 We used SGBM while reducing the image size by 1/(8x8) of its original size to increase speed , the method uses threshold to determine whether there is something closer than a given distance and sends a remap command to the Mapping part if there is , it takes about half a second to process every frame so it should detect the obstacle when it’s half a second away.
 
+\afterpage{\blankpage}
 \newpage
 
-\section{Hardware Node and Modules Structure Tree}
+\section{Hardware Node and Modules Tree Structure}
 In prior sections we always look at hardware as a black box. This view is sufficient when we want to describe the overall operation of the robot. But lets now take this part in some details to know how instructions are processed after being received from either mapping or computer vision node. \\
 In the design stage of hard ware, One of the most important aspects taken into consideration is modularity of design. Each Part in the hardware structure has a unique role and a method by which this role can be triggered for execution. Another important style of design followed is assigning low level tasks to multiple separate modules rather than having a central unit responsible for the whole operation. This method of design saves a lot of resources in the master unit opening the way for other complicated operations to be performed faster. In the following sections we will talk first about the role of hardware ROS node and then go down at low level.
 
@@ -638,7 +768,8 @@ In this section we get closer to know how exactly project parts are connected to
 
 	
 \end{itemize}
-
+ 
+\newpage
 \subsection{Electronics Involved in Project}
 In this part we are to talk about electronics modules and components used in out project. For each components we will discuss its function, how it is operated, advantages, limitations and how we used it as a port of the full structure. Electronic components are to classified into four categories; processing units, sensors, passive components and power sources
 
@@ -748,7 +879,9 @@ In this part we are to talk about electronics modules and components used in out
 		\label{fig:compass-diff-sh}
 	\end{figure}
 	
+	
 	\item \textbf{Accelerometer and Gyroscope}\\
+	This sensor provides measurements of both acceleration and angular velocity. So it can help in the estimation process as we know that displacement is the integral of integral of acceleration. And on the other hand, the heading angle of robot can be calculated from integrating the angular velocity measured by gyroscope. But the integration operation in such case leads to accumulated errors as we will show in next sections. So, it must be filtered to 
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width =0.4\textwidth]{Fig/Electronics/mpu.jpg}
@@ -757,6 +890,7 @@ In this part we are to talk about electronics modules and components used in out
 	\end{figure}
 		
 	\item \textbf{IR Range Finder}\\
+	This sensor is used for measurement of distances between the robot and objects in front of it. Its range is larger than the ultrasonic sensor but in short distances the returned readings goes fully wrong. Experiments figured out that the readings are reasonably acceptable in range from 80 cm to 500 cm.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width =0.4\textwidth]{Fig/Electronics/ir.jpg}
@@ -765,10 +899,12 @@ In this part we are to talk about electronics modules and components used in out
 	\end{figure}
 \end{itemize}
 
+\newpage
 \subsubsection{Power Sources}
 \begin{itemize}
 
 	\item \textbf{Power Bank 5V}\\
+	This power bank is 7000 mAh annd can support output current up to 2.4 A. This means about 2 hours and 48 minutes of continuous operation at full load. This is the power source that operates the Raspberry Pi unit.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width =0.5\textwidth]{Fig/Electronics/power-bank.jpg}
@@ -776,15 +912,17 @@ In this part we are to talk about electronics modules and components used in out
 		\label{fig:powerbank}
 	\end{figure}
 
-	\item \textbf{Lithium-ion 12V Battery}\\
+	\item \textbf{Lithium-Polymer 12V Battery}\\
+	This battery is 7000 Ah and is the power feeder to DC motors and flash light. It can support up to 7A making it lasts for one our of operation under full load condition.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width =0.5\textwidth]{Fig/Electronics/bat12.jpg}
+		\includegraphics[width =0.6\textwidth]{Fig/Electronics/bat12.jpg}
 		\caption{Lithium-ion Super Rechargeable Battery Pack (12V, 7000mAh)}
 		\label{fig:bat12}
 	\end{figure}
 	
-		\item \textbf{NiMH 5V Battery}\\
+	\item \textbf{NiMH 5V Battery}\\
+	This battery powers up the servo motors controlling the camera orientation. Its capacity is 1500 mAh and has sufficient high discharge current
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width =0.5\textwidth]{Fig/Electronics/bat5.jpg}
@@ -797,6 +935,7 @@ In this part we are to talk about electronics modules and components used in out
 \subsubsection{Passive Components}
 \begin{itemize}
 	\item \textbf{Potentiometer}\\
+	We used potentiometers in the manual contoller box to give a variable input in range we can use to map it into both speed and camera orientation angle. we used 4 potentiometers controlling left motor and right motors and camera yaw and pitch angle.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width =0.5\textwidth]{Fig/Electronics/pot.jpg}
@@ -805,6 +944,7 @@ In this part we are to talk about electronics modules and components used in out
 	\end{figure}
 
 	\item \textbf{LEDs}\\
+	We used LEDs so that the robot can navigate in dark environment without losing the ability of landmark detection. Moreover, when a man control the robot remotely he can switch on light to figure out the around environment via the video stream. The circuit's scheme we designed for this purpose is shown in figure \ref{fig:light-circuit} .
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width =0.5\textwidth]{Fig/Electronics/LED.jpg}
@@ -812,19 +952,141 @@ In this part we are to talk about electronics modules and components used in out
 		\label{fig:led}
 	\end{figure}
 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.7\textwidth]{Fig/light-circuit.png}
+		\caption{Circuit diagram for flash light}
+		\label{fig:light-circuit}
+	\end{figure}
 \end{itemize}
 
+
+\afterpage{\blankpage}
 \newpage
+
 
 \section{Software Implementation of Micro-Controller nodes}
+Here we reached the final step in project, that is the implementation of low level control on Arduino boards to directly take actions on the robot. All programs, trials and results can be found as an open source provided here in this link:
+\begin{center}
+	 https://github.com/AhmedAbdelbasit/ZUMAN-Robot/tree/master/Hardware 
+\end{center}
 
-\subsection{WiFi Reamot Controller}
 
-\subsection{Manipulator Node}
+\subsection{WiFi Remote Controller}
+	The main task of this node as explained before is to enable the project user to guide the robot motion, camera orientation and flash light. 
+	Electronics used in this part are:
+	\begin{itemize}
+		\item NodeMCU
+		\item Arduino Nano
+		\item 5 Potentiometer
+		\item Toggle switch\\
+	\end{itemize}
 
-\subsection{Sensors Node}
+	\noindent The reason for that choice of components it the the potentiometer need analog input pins to read. Arduino Nano has 8 analog-input pins so it is good choice. But the problem here is that we can not publish the commands on the network by it. We thought about attaching wifi module with the Nano kit but we found that Nano resources will be in unstable performance.
+	So, we started to search for another solution and we find NodeMCU kit which opens the way for further upgrades and performance. This kit has many advantages compared with the Nano kit. It has higher processing speed, larger storage capacity and has an embedded wifi module. All these aspects make it a better solution to replace the Nano kit. But there is one limitation that makes us use the Nano board with it. It has only one analog input pin. So, we established the following structure shown in figure \ref{fig:man-controller} :\\ \\
+	
+	For network optimization and avoiding conflicts of unusable messages, both the Nano and NodeMCU are programed and tuned such that the message transmission takes places when there is a change in the potentiometer values which means that the user want to send one or more new values to the robot. \\
+	For communication between NodeMCU and Nano we uses the Software-Serial library. Messages consists of a character identify the command speed, camera orientation or flash light and a value mapped from potentiometer reading to the required range.\\
+	A video showing the operation of this node is here in this link:
+	\begin{center}
+ 		https://www.youtube.com/watch?v=U6jN9-zoa5M
+	\end{center}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =1\textwidth]{Fig/man-controller.png}
+		\caption{Hardware structure of Remote Controller Node}
+		\label{fig:man-controller}
+	\end{figure}
 
 \newpage
+
+\subsection{Manipulator Node}
+	Here in this node, the control process takes place on the performance of robot motion. This node receives the low level instruction from the Hardware Node, initiates the controller and start the controlling loop and gives the suitable signals to the motor driver which in turn controls the DC motors. These signals are both PWM and Direction. \\
+	This node also has a feedback signal represented in the shaft encoder we talk about in a prior section. Another feedback available for this node is the current passed for each motor. This piece of information can be useful in the estimation of the load and actual speed that the motor rotates by.\\
+	The implementation of such controller and feedback system will be discussed in details next chapter.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =1\textwidth]{Fig/manipulator-node.png}
+		\caption{Hardware Structure of manipulator node}
+		\label{fig:manipulator-node}
+	\end{figure}
+
+\newpage
+
+\subsection{Sensors Node}
+	This node was designed to keep track of all sensors readings and make suitable filtering on them. So, compass, ultrasonic, MPU are attached to it. However, due to lack of experience about system modeling and the bad accuracy of sensors we could not fulfill this step of design. but this node is still used for controlling the camera orientation by two servos attached to the robot frame in a manner to control both yaw and pitch rotation angles of camera.
+	This node is visualized in figure \ref{fig:sensor-node}.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =1\textwidth]{Fig/sensor-node.png}
+		\caption{Hardware structure of sensor node}
+		\label{fig:sensor-node}
+	\end{figure}
+
+\afterpage{\blankpage}
+\newpage
+
+\section{Design of PID Controller and feedback}
+	\subsection{About The Controlled Process}
+	In our project the process here is the dc motor. The type we brought has a fast response time which makes the controlling process oscillatory. We did not spend much time trying to reach the exact model of such motor as we found out that the motor changes its behavior over short periods. Instead, we put a low pass filter midway between the motor and controller such that the over all response time for the open loop system become slightly slow and controllable by our limited processing resources. The result for this action was significantly good and enhanced the motion performance of robot.  
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.7\textwidth]{Fig/lpf.png}
+		\caption{Low pass filter introduced before the DC motor}
+		\label{fig:lpf}
+	\end{figure}
+
+	\subsection{PID Controller}
+	
+	\subsubsection{Theoretical Background about PID}
+	PID stands for Proportional-Integral-Derivative controller. It is a simple but effective digital controller and is commonly used in industrial processes. Each term contributes to rapidly correct the error in system. Proportional term works by multiplying the error by a factor causing the manipulated signal to be larger and so the plant process is given a higher signal to recover the error done in the output of system. Put the main side effect of increasing the P term is that it increases the overshoot of the system response. Moreover, in common digital micro-controllers there is a limit in output voltage which means that if the manipulated output exceeded this limit, the signal is clipped causing nonlinearity in the system. 
+	The integral term works on eliminating the steady state error. It accumulates the whole past errors and multiply the accumulation by a factor to get the manipulated signal. But the bad side of the integral term in digital controllers is that it may cause oscillations around the steady state value because of the quantization error of digital signals. So, the accumulation reaches zero after many oscillations.
+	The derivative term can be used to overcome the problem of both Proportional and Integral terms. It works on the error change rate. So, if the error is recognized and the system going toward the steady state value, the derivative term decreases the manipulated signal so that it can fix the output just when it reaches the steady state for the first time without oscillations or overshooting. The case is called ‘critical response’. Now, let’s talk about the implementation of this type of controllers.
+	
+	
+	\subsubsection{Practical implementation}
+	The PID controller design basically depends on the overall required response of the system. For example, the system we try to implement is a controller for robot speed. So, our plant process here is the DC motor attached to each of robot sides. This DC motor has a transfer function which forms a relation between input signal ‘voltage’ and output ‘speed of rotation’. So, want to implement a controller before the DC motor so that the overall transfer function of the system can meet out requirements like stability, no steady state error and low overshoot.
+	But in our practical work we faced some problems in identifying the DC motor parameters and transfer function. So, we followed a practical algorithm to determine the values of P, I \& D constants. This manual method for PID tuning is described as follow:
+	1-	Set Ki and Kd to zero.
+	2-	Increase Kp till the output oscillate.
+	3-	Then set Kp to approximately half of that value.
+	4-	Increase Ki until any offset is corrected in sufficient time.
+	5-	If required, increase Kd until the loop is acceptably quick to reaches its reference value. 
+	
+	\subsubsection{Software Implementation of PID}
+	Here is a flowchart describing the PID commands needed to be appended within the loop procedure of the micro-controller program.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width =0.4\textwidth]{Fig/pid.png}
+		\caption{flowchart for the PID loop}
+		\label{fig:pid}
+	\end{figure}
+
+\newpage
+	\subsection{Design of Feedback}
+	As we know, the feedback is so critical in the closed loop system. This simply because having a wrong indication for system state leads to generating wrong manipulated signal which in turn makes the error increases more and more causing instability. So, we paid much attention about this part and tried many ways to fulfill an accurate feedback. \\
+	For our project the system state is represented as x, y positions and the heading angle of the robot and the final goal is to perform instructions come from other nodes with minimum error as possible. So we can encounter these tasks as follow:
+	\begin{itemize}
+		\item Robot must be able to move in a straight line
+		\item Robot must know how far he moved from the start point.
+		\item Robot must be able to rotate with a given angle
+	\end{itemize}
+
+	\noindent To accomplish these tasks we started to use the available sensors one after another until we got the reasonably acceptable performance that meets the needs of other nodes' instructions. Lets summarize our results now.
+	
+	\noindent For measuring the distance that the robot moved by we used the shaft encoder. We managed to have both speed and position information from these pulses. Speed in rpm is measured as:
+	\begin{center}
+		$ \dfrac{60}{Time\ between\ two\ consecutive\ pulses \times 180} $
+	\end{center}
+	\noindent This is because the the encoder we used generates 180 pulses for one revolution of wheel shaft. For measuring displacement these pulses are accumulated to get total pulses. then we can find the distance using this equation:
+	\begin{center}
+		$ \dfrac{Total\ Pulses  \times Wheel\ Circumference}{180} $
+	\end{center}
+	
+
+
+\newpage
+
 
 \section{Mechanical Design}
 In this section we are about to take a close look on the design procedure of robot hardware both mechanical and electrical. The design stage of any application depends on the tasks and requirements it is supposed to fulfill. So, we will talk about functional requirements of project and how we select components to best suit them. Design engineers are usually constrained by one or more of these 5 concerns; time, money, knowledge, power and weight. So, there is no absolute good choice but we try to select the best one that meets the requirements and follow constraints. \cite{203} Then we will get a brief view on frame design, materials used and how manufacturing operation done. After that we will get closer to the low level control and talk about electronic modules and sensors used, function, advantages and disadvantages of each. Finally we reach the controller design; how it was implemented, tuned and tested.  
@@ -887,6 +1149,23 @@ This is still acceptable speed because the robot is not supposed to work in full
 \newpage
 
 \subsection{Robot Dimensions and Design Considerations}
+Within the introduction section we figured out many problems and situations where robots are needed instead of man whether for safety issues or just it is impossible for man to do. So, in our design of robot frame we consider many points that lead to the frame presented. These points can be encountered as follow:
+\begin{itemize}
+	\item Frame must be reasonably small so that the robot can path through narrow places man can do.
+	\item Differential steering is to be used with four driven wheels.
+	\item Distance between front and back wheels must be small enough to decrease friction forces the wheel exposed to during rotation motion in such differential steering. 
+	\item the overall frame style must be friendly so that people like to use
+	\item The frame strength must be high enough to overcome any external shocks
+	\item Contained parts must be attached well to frame and nothing may shake.
+\end{itemize}
+
+After more than one design plan we reached this frame shown in following figure and robot dimensions with different views are shown in figure \ref{fig:frame-planes}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width =0.4\textwidth]{Fig/Introduction.png}
+	\caption{3D Real view of robot frame}
+\end{figure}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width =0.8\textwidth]{Fig/solid/solid-planes.png}
@@ -894,16 +1173,16 @@ This is still acceptable speed because the robot is not supposed to work in full
 	\label{fig:frame-planes}
 \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width =0.4\textwidth]{Fig/Introduction.png}
-	\caption{3D Real view of robot frame}
-\end{figure}
 
-%talk about old design
-%aluminium design
+
+\newpage
 
 \subsection{Mechanical Parts}
+All solid work file for parts, assemble and dxf are available in this link:
+\begin{center}
+ https://goo.gl/YEUib9
+\end{center}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width =0.8\textwidth]{Fig/solid/frame-3d.png}

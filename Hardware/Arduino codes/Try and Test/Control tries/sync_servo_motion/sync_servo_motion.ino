@@ -35,26 +35,26 @@ void setup() {
 
 void loop() {
   
-//  if( Serial.available() > 0){
-//    c = Serial.read();
-//    degree = Serial.parseInt();
-//    if(c == 'y'){
-//      Yaw_Goal = degree;
-//    }else if(c == 'p'){
-//      Pitch_Goal = degree;
-//    }else if(c == 'l'){
-//      digitalWrite(Light, 1-digitalRead(Light));
-//    }
-//  }
-
-  int y=0, p=0;
-  for (int i=0 ; i<Num_Of_Readings ; i++){
-    y += analogRead(Yaw_In);
-    p += analogRead(Pitch_In);
+  if( Serial.available() > 0){
+    c = Serial.read();
+    degree = Serial.parseInt();
+    if(c == 'y'){
+      Yaw_Goal = degree;
+    }else if(c == 'p'){
+      Pitch_Goal = degree;
+    }else if(c == 'l'){
+      digitalWrite(Light, 1-digitalRead(Light));
+    }
   }
-  Yaw_Goal = map(y/Num_Of_Readings, 0, 1023, 10, 170);
-  Pitch_Goal = map(p/Num_Of_Readings, 0, 1023, 10, 170);;
-  
+
+//  int y=0, p=0;
+//  for (int i=0 ; i<Num_Of_Readings ; i++){
+//    y += analogRead(Yaw_In);
+//    p += analogRead(Pitch_In);
+//  }
+//  Yaw_Goal = map(y/Num_Of_Readings, 0, 1023, 10, 170);
+//  Pitch_Goal = map(p/Num_Of_Readings, 0, 1023, 10, 170);;
+//  
   if(Yaw_Goal > Yaw_Angle){
     Yaw_Angle ++;
   }else if(Yaw_Goal < Yaw_Angle){
