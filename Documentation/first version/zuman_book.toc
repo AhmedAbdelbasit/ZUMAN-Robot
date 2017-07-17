@@ -51,9 +51,10 @@
 \contentsline {subsection}{\numberline {9.2}PID Controller}{41}{subsection.9.2}
 \contentsline {subsubsection}{\numberline {9.2.1}Theoretical Background about PID}{41}{subsubsection.9.2.1}
 \contentsline {subsubsection}{\numberline {9.2.2}Practical implementation}{42}{subsubsection.9.2.2}
-\contentsline {subsubsection}{\numberline {9.2.3}Software Implementation of PID}{42}{subsubsection.9.2.3}
-\contentsline {subsection}{\numberline {9.3}Design of Feedback}{43}{subsection.9.3}
-\contentsline {section}{\numberline {10}Mechanical Design}{44}{section.10}
-\contentsline {subsection}{\numberline {10.1}Choosing Suitable DC Motor \cite {203}}{44}{subsection.10.1}
-\contentsline {subsection}{\numberline {10.2}Robot Dimensions and Design Considerations}{46}{subsection.10.2}
-\contentsline {subsection}{\numberline {10.3}Mechanical Parts}{48}{subsection.10.3}
+\contentsline {subsubsection}{\numberline {9.2.3}Software Implementation of PID}{43}{subsubsection.9.2.3}
+\contentsline {subsection}{\numberline {9.3}Design of Feedback}{44}{subsection.9.3}
+\contentsline {section}{\numberline {10}Mechanical Design}{45}{section.10}
+\contentsline {subsection}{\numberline {10.1}Choosing Suitable DC Motor \cite {203}}{45}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Robot Dimensions and Design Considerations}{47}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Mechanical Parts}{49}{subsection.10.3}
+\contentsline {section}{\numberline {11}Future Work}{53}{section.11}

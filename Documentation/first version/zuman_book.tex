@@ -1039,25 +1039,29 @@ Here we reached the final step in project, that is the implementation of low lev
 	\subsection{PID Controller}
 	
 	\subsubsection{Theoretical Background about PID}
-	PID stands for Proportional-Integral-Derivative controller. It is a simple but effective digital controller and is commonly used in industrial processes. Each term contributes to rapidly correct the error in system. Proportional term works by multiplying the error by a factor causing the manipulated signal to be larger and so the plant process is given a higher signal to recover the error done in the output of system. Put the main side effect of increasing the P term is that it increases the overshoot of the system response. Moreover, in common digital micro-controllers there is a limit in output voltage which means that if the manipulated output exceeded this limit, the signal is clipped causing nonlinearity in the system. 
-	The integral term works on eliminating the steady state error. It accumulates the whole past errors and multiply the accumulation by a factor to get the manipulated signal. But the bad side of the integral term in digital controllers is that it may cause oscillations around the steady state value because of the quantization error of digital signals. So, the accumulation reaches zero after many oscillations.
+	PID stands for Proportional-Integral-Derivative controller. It is a simple but effective digital controller and is commonly used in industrial processes. Each term contributes to rapidly correct the error in system. \\
+	Proportional term works by multiplying the error by a factor causing the manipulated signal to be larger and so the plant process is given a higher signal to recover the error done in the output of system. Put the main side effect of increasing the P term is that it increases the overshoot of the system response. Moreover, in common digital micro-controllers there is a limit in output voltage which means that if the manipulated output exceeded this limit, the signal is clipped causing nonlinearity in the system.\\ 
+	The integral term works on eliminating the steady state error. It accumulates the whole past errors and multiply the accumulation by a factor to get the manipulated signal. But the bad side of the integral term in digital controllers is that it may cause oscillations around the steady state value because of the quantization error of digital signals. So, the accumulation reaches zero after many oscillations.\\
 	The derivative term can be used to overcome the problem of both Proportional and Integral terms. It works on the error change rate. So, if the error is recognized and the system going toward the steady state value, the derivative term decreases the manipulated signal so that it can fix the output just when it reaches the steady state for the first time without oscillations or overshooting. The case is called ‘critical response’. Now, let’s talk about the implementation of this type of controllers.
 	
 	
 	\subsubsection{Practical implementation}
 	The PID controller design basically depends on the overall required response of the system. For example, the system we try to implement is a controller for robot speed. So, our plant process here is the DC motor attached to each of robot sides. This DC motor has a transfer function which forms a relation between input signal ‘voltage’ and output ‘speed of rotation’. So, want to implement a controller before the DC motor so that the overall transfer function of the system can meet out requirements like stability, no steady state error and low overshoot.
 	But in our practical work we faced some problems in identifying the DC motor parameters and transfer function. So, we followed a practical algorithm to determine the values of P, I \& D constants. This manual method for PID tuning is described as follow:
-	1-	Set Ki and Kd to zero.
-	2-	Increase Kp till the output oscillate.
-	3-	Then set Kp to approximately half of that value.
-	4-	Increase Ki until any offset is corrected in sufficient time.
-	5-	If required, increase Kd until the loop is acceptably quick to reaches its reference value. 
+	\begin{itemize}
+		\item Set Ki and Kd to zero.
+		\item Increase Kp till the output oscillate.
+		\item Then set Kp to approximately half of that value.
+		\item Increase Ki until any offset is corrected in sufficient time.
+		\item If required, increase Kd until the loop is acceptably quick to reaches its reference value. 
+	\end{itemize}
 	
+	\newpage
 	\subsubsection{Software Implementation of PID}
 	Here is a flowchart describing the PID commands needed to be appended within the loop procedure of the micro-controller program.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width =0.4\textwidth]{Fig/pid.png}
+		\includegraphics[width = 0.6\textwidth]{Fig/pid.png}
 		\caption{flowchart for the PID loop}
 		\label{fig:pid}
 	\end{figure}
@@ -1076,15 +1080,19 @@ Here we reached the final step in project, that is the implementation of low lev
 	
 	\noindent For measuring the distance that the robot moved by we used the shaft encoder. We managed to have both speed and position information from these pulses. Speed in rpm is measured as:
 	\begin{center}
-		$ \dfrac{60}{Time\ between\ two\ consecutive\ pulses \times 180} $
+		$ Speed (rpm) = \dfrac{60}{Time\ between\ two\ consecutive\ pulses \times 180} $
 	\end{center}
 	\noindent This is because the the encoder we used generates 180 pulses for one revolution of wheel shaft. For measuring displacement these pulses are accumulated to get total pulses. then we can find the distance using this equation:
 	\begin{center}
-		$ \dfrac{Total\ Pulses  \times Wheel\ Circumference}{180} $
+		$ Distance = \dfrac{Total\ Pulses  \times Wheel\ Circumference}{180} $
 	\end{center}
 	
-
-
+	\noindent for the rotation motion we used the differential drive relations and reached a relation that maps the angle to the number of pulses each encoder shout count to rotate by the required angle.
+	\begin{center}
+		$ Num\ Of\ Pulses = \dfrac{105 \times Angle}{90} $
+	\end{center}
+	
+	\noindent All our tries with other sensors were not acceptable because of inaccuracy, the high sensitivity to external noise and low repeatability which makes the same input, at same place, by same controller has totally different responses. 
 \newpage
 
 
@@ -1235,8 +1243,16 @@ All solid work file for parts, assemble and dxf are available in this link:
 	\caption{DC motors Cover}
 \end{figure}
 
+\afterpage{\blankpage}
 \newpage
-\appendix
+
+\section{Future Work}
+This project is considered as a long term one and another group will work on it as their graduation project. We plan to provide sessions to put them on the way and save their time from starting from the beginning.\\
+
+\noindent First we will pay much attention to finish th over all algorithm and debug the problems appeared with us during our work. and then we will search for more accurate sensors to include in the hardware low level control. \\
+
+\noindent Another field of upgrade is installing robot arms on it to start interacting with the environment. Moreover, Research papers will pe introduced in conferences and participate in competitions.
+
 
 \newpage
  
