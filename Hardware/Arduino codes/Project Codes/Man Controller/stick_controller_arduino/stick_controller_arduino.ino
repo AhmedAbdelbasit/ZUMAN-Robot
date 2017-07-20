@@ -6,7 +6,7 @@
 #define Yaw_Pot_Pin A2
 #define Pitch_Pot_Pin A3
 
-SoftwareSerial mySerial(12, 13); // RX, TX
+SoftwareSerial mySerial(5, 6); // RX, TX
 
 uint16_t Left_Pot = 512 ;
 uint16_t Right_Pot = 512 ;
@@ -71,6 +71,26 @@ void loop(){
       Sync_Msg_Counter = 0;
       
     }
+    // added 
+    if(Last_Yaw != floor(Filtered_Yaw/4) || Last_Pitch != floor(Filtered_Pitch/4) ){
+      mySerial.print('c');
+      mySerial.print(char( floor(Filtered_Yaw/4) ));
+      mySerial.print(char( floor(Filtered_Pitch/4) ));
+      mySerial.print('\n');
+      
+      Serial.print( floor(Filtered_Yaw/4) );
+      Serial.print("\t\t");
+      Serial.print( floor(Filtered_Pitch/4) );
+      Serial.print("\t\t");
+      Serial.print(counter);
+      Serial.print("\t\t");
+      Serial.println(Sync_Msg_Counter);
+      
+      Last_Yaw = floor(Filtered_Yaw/4);
+      Last_Pitch = floor(Filtered_Pitch/4);
+      Sync_Msg_Counter = 0;
+      
+    }
     
     if( digitalRead(Switch_Pin) != Switch_State ){
       Switch_State = digitalRead(Switch_Pin);
@@ -118,8 +138,8 @@ void readPots(){
   for(int i=0; i<ReadingsPerTick ; i++){
     Left_Pot += analogRead(Left_Pot_Pin);
     Right_Pot += analogRead(Right_Pot_Pin);
-    Yaw_Pot += analogRead(Left_Pot_Pin);
-    Pitch_Pot += analogRead(Right_Pot_Pin);
+    Yaw_Pot += analogRead(Yaw_Pot_Pin);
+    Pitch_Pot += analogRead(Pitch_Pot_Pin);
   }
   Left_Pot /= ReadingsPerTick;
   Right_Pot /= ReadingsPerTick;

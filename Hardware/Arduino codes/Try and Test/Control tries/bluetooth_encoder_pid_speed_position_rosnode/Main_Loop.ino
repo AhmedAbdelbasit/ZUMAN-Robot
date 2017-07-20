@@ -5,12 +5,13 @@ void loop() {
 
     filterReading();
 
-    if(Dir != 'S')
+    if(Dir != 'S' && !Manned_Mode)
       controlSpeed();
       
     filterMotorSpeed();
-
-    checkGoal();
+    if(!Manned_Mode){
+      checkGoal();
+    }
     
     driveMotor();
   }

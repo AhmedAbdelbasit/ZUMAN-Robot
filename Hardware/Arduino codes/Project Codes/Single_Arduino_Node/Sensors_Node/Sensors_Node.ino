@@ -5,6 +5,8 @@
 #define Yaw_Pin 9
 #define Pitch_Pin 10
 
+boolean Manned_Mode = LOW;
+
 // Cycle
 long Last_Tic;
 long Time_Now;
@@ -41,8 +43,14 @@ void inst_CB(const zuman_msgs::Instruction& msg) {
     Cam_Done = HIGH;
     
   }else if( String(msg.command) == String("set_cam") ){
-    Yaw_Goal = msg.arg1;
-    Pitch_Goal = msg.arg2;
+    if(Manned_Mode){
+      Yaw_Goal = msg.arg1;
+      Pitch_Goal = msg.arg2;
+    }
+  }else if( String(msg.command) == String("start_manned") ){
+    Manned_Mode = HIGH;
+  }else if( String(msg.command) == String("end_manned") ){
+    Manned_Mode = LOW;
   }
 }
 ros::Subscriber<zuman_msgs::Instruction> inst_sub("hw_low", &inst_CB);

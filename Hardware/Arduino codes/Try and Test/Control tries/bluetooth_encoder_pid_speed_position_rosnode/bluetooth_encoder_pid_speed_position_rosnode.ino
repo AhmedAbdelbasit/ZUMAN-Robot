@@ -25,6 +25,7 @@
 #define Distance_Per_Rev 38.73
 
 #define Light_Pin 12
+boolean Manned_Mode = LOW;
 
 volatile int Left_Encoder_Ticks=0;
 volatile int Right_Encoder_Ticks=0;
@@ -121,7 +122,33 @@ void inst_CB(const zuman_msgs::Instruction& msg) {
     //Right_Encoder_Ticks = abs(Ticks);
     //Left_Encoder_Ticks = abs(Ticks);
     Rotate_Ack = HIGH;
+  }else if(String(msg.command) == String("start_manned")){
+    Manned_Mode = HIGH;
+  }else if(String(msg.command) == String("end_manned")){
+    Manned_Mode = LOW;
+  }else if(String(msg.command) == String("set_pwm")){
+    if(Manned_Mode){
+      int left = msg.arg1;
+      int right = msg.arg2;
+      if(left >=0 && right >=0)
+        Dir = 'F';
+      else if(left <0 && right <0)
+        Dir = 'B';
+      else if(left >=0 && right <0)
+        Dir = 'R';
+      else if(left <0 && right >=0)
+        Dir = 'L';
+      else if(left <0 && right >=0)
+        Dir = 'S';
+      
+      Front_Left_Speed = abs(msg.arg1) ;
+      Front_Right_Speed = abs(msg.arg2) ;
+    }
   }
+  
+
+
+  
   if ( String(msg.command) == String("map_move") || String(msg.command) == String("map_rotate") ){
     hw_msg.command = "done_map";
   }else if ( String(msg.command) == String("cv_move") || String(msg.command) == String("cv_rotate") ){
