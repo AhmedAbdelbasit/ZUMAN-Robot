@@ -60,13 +60,13 @@ float Filtered_Right_Speed=0;
 void setup() {
   Serial.begin(38400);
   pinMode(Back_Left_Dir,OUTPUT);
-  pinMode(Back_Left_PWM,OUTPUT);
+  //pinMode(Back_Left_PWM,OUTPUT);
   pinMode(Back_Right_Dir,OUTPUT);
-  pinMode(Back_Right_PWM,OUTPUT);
+  //pinMode(Back_Right_PWM,OUTPUT);
   pinMode(Front_Left_Dir,OUTPUT);
-  pinMode(Front_Left_PWM,OUTPUT);
+  //pinMode(Front_Left_PWM,OUTPUT);
   pinMode(Front_Right_Dir,OUTPUT);
-  pinMode(Front_Right_PWM,OUTPUT);
+  //pinMode(Front_Right_PWM,OUTPUT);
   
   pinMode(Front_Left_INT, INPUT);
   digitalWrite(Front_Left_INT, HIGH);
